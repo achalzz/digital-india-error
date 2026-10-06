@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital India Error Decoder — Understand the Error. Know What To Do Next.</title>
+  <meta name="description" content="An independent, plain-language troubleshooting directory explaining common errors on Indian digital public portals like Passport Seva, Parivahan, Aadhaar, and PAN.">
+  <link rel="canonical" href="https://error-decoder.in/">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://error-decoder.in/">
+  <meta property="og:title" content="Digital India Error Decoder — Plain Language Portal Help">
+  <meta property="og:description" content="Understand government portal errors, find verified causes, and follow safe, reversible steps to resolve issues without risk of duplicate payment.">
+  <meta property="og:site_name" content="Digital India Error Decoder">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://error-decoder.in/#website",
+        "url": "https://error-decoder.in/",
+        "name": "Digital India Error Decoder",
+        "description": "Plain language troubleshooting search engine for Indian digital public services.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://error-decoder.in/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://error-decoder.in/#organization",
+        "name": "Digital India Error Decoder Initiative",
+        "url": "https://error-decoder.in/",
+        "logo": "https://error-decoder.in/assets/logo.png",
+        "sameAs": []
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Trust Boundary & Non-Affiliation Banner -->
+  <div class="trust-banner" id="trust-banner">
+    <div class="container">
+      🛡️ <strong>Independent Citizen Utility:</strong> Not affiliated with the Government of India. We never ask for Aadhaar, PAN, OTP, or payments.
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-wrap">
+      <a href="#/" class="brand" id="brand-link" aria-label="Digital India Error Decoder Home">
+        <div class="brand-icon">ED</div>
+        <div class="brand-text">
+          <h1>Error Decoder</h1>
+          <span>Digital India Help Engine</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="main-navigation">
+        <li><a href="#/" class="nav-link active" id="nav-directory">Directory</a></li>
+        <li><a href="#/services/passport" class="nav-link" id="nav-passport">Passport</a></li>
+        <li><a href="#/services/aadhaar" class="nav-link" id="nav-aadhaar">Aadhaar</a></li>
+        <li><a href="#/services/driving-licence" class="nav-link" id="nav-parivahan">Driving Licence</a></li>
+        <li><a href="#/services/pan" class="nav-link" id="nav-pan">PAN</a></li>
+        <li><a href="#/guides/safe-troubleshooting" class="nav-link" id="nav-guide">Safe Troubleshooting</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode" title="Switch Theme">
+          <span id="theme-icon">☀️</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Route Views Container -->
+  <main id="app-main">
+
+    <!-- 1. Home / Directory View -->
+    <section id="view-home" class="route-view active">
+      <div class="container">
+        
+        <!-- Hero Section -->
+        <div class="hero-section" id="hero-section">
+          <div class="hero-pill">
+            <span>⚡ 100% Free • Independent • Verified Instructions</span>
+          </div>
+          <h2 class="hero-title">
+            Understand the error.<br>
+            <span>Know what to do next.</span>
+          </h2>
+          <p class="hero-subtitle">
+            Cryptic errors on Passport, Sarathi, Aadhaar, or PAN portals? Decode the meaning, verify safe checks, and resolve issues without risk of duplicate fees.
+          </p>
+
+          <!-- Search Engine Box -->
+          <div class="search-wrapper" id="search-wrapper">
+            <div class="search-input-box">
+              <span class="search-icon">🔍</span>
+              <input 
+                type="text" 
+                id="search-input" 
+                class="search-input" 
+                placeholder="Search error message, code, or portal (e.g. 'Payment Pending', 'OTP', 'Name Mismatch')..."
+                autocomplete="off"
+                aria-label="Search error directory"
+              >
+              <span class="search-badge" id="search-badge">Instant</span>
+            </div>
+
+            <!-- Quick Query Suggestions -->
+            <div class="quick-queries" id="quick-queries">
+              <span>Try searching:</span>
+              <button class="query-chip" data-query="payment pending">Payment Pending</button>
+              <button class="query-chip" data-query="otp not received">OTP Delayed</button>
+              <button class="query-chip" data-query="name mismatch">Name Mismatch</button>
+              <button class="query-chip" data-query="record not found">Record Not Found</button>
+              <button class="query-chip" data-query="document rejected">Document Rejected</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Portals Hub Section -->
+        <div class="services-section" id="services-section">
+          <h2 class="section-title">Major Public Service Hubs</h2>
+          <p class="section-subtitle">Select an official portal to view categorized troubleshooting guides, verified helplines, and turnaround times.</p>
+          <div class="services-grid" id="services-grid">
+            <!-- Dynamically populated by app.js -->
+          </div>
+        </div>
+
+        <!-- Error Directory Section -->
+        <div class="directory-section" id="directory-section">
+          <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:1rem; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <h2 class="section-title">Browse Verified Error Guides</h2>
+              <p class="section-subtitle" style="margin-bottom:0;">Filter by technical category or search keywords above.</p>
+            </div>
+            <span id="results-count" style="font-size:0.85rem; color:var(--accent-primary); font-weight:600;">15 Verified Guides</span>
+          </div>
+
+          <!-- Category Filter Bar -->
+          <div class="filter-bar" id="category-filters" role="tablist">
+            <button class="filter-btn active" data-category="All">All Categories</button>
+            <button class="filter-btn" data-category="Identity details">Identity Details</button>
+            <button class="filter-btn" data-category="Documents">Documents</button>
+            <button class="filter-btn" data-category="Records">Records</button>
+            <button class="filter-btn" data-category="Authentication">Authentication / OTP</button>
+            <button class="filter-btn" data-category="Payment">Payment & Fees</button>
+            <button class="filter-btn" data-category="Status">Application Status</button>
+            <button class="filter-btn" data-category="Availability">Server & Availability</button>
+            <button class="filter-btn" data-category="Session">Session & Timeout</button>
+          </div>
+
+          <!-- Errors Grid -->
+          <div class="errors-grid" id="errors-grid">
+            <!-- Dynamically populated by app.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. Guide Detail View -->
+    <section id="view-guide" class="route-view view-container">
+      <!-- Populated dynamically by app.js -->
+    </section>
+
+    <!-- 3. Service Hub View -->
+    <section id="view-service-hub" class="route-view view-container">
+      <!-- Populated dynamically by app.js -->
+    </section>
+
+    <!-- 4. General Safe Troubleshooting View -->
+    <section id="view-troubleshooting" class="route-view view-container">
+      <!-- Populated dynamically by app.js -->
+    </section>
+
+    <!-- 5. Static Governance Pages View (About, Policy, Contact, Disclaimer) -->
+    <section id="view-static" class="route-view view-container">
+      <!-- Populated dynamically by app.js -->
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand" style="margin-bottom:1rem;">
+            <div class="brand-icon">ED</div>
+            <div class="brand-text">
+              <span style="font-weight:700; font-size:1.1rem; color:var(--text-primary);">Error Decoder</span>
+              <span>Digital India Public Help</span>
+            </div>
+          </div>
+          <p style="color:var(--text-secondary); font-size:0.85rem; line-height:1.6; max-width:320px;">
+            An independent educational resource providing clear, plain-language troubleshooting steps for Indian public digital services.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Service Portals</h4>
+          <ul>
+            <li><a href="#/services/passport">Passport Seva</a></li>
+            <li><a href="#/services/aadhaar">UIDAI myAadhaar</a></li>
+            <li><a href="#/services/driving-licence">Parivahan Sarathi</a></li>
+            <li><a href="#/services/pan">NSDL / Protean PAN</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Help & Guides</h4>
+          <ul>
+            <li><a href="#/guides/safe-troubleshooting">Safe Troubleshooting</a></li>
+            <li><a href="#/" onclick="filterByCategory('Payment')">Payment Discrepancies</a></li>
+            <li><a href="#/" onclick="filterByCategory('Authentication')">OTP Issues</a></li>
+            <li><a href="#/" onclick="filterByCategory('Documents')">Document Uploads</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Trust & Policies</h4>
+          <ul>
+            <li><a href="#/about">About Initiative</a></li>
+            <li><a href="#/editorial-policy">Editorial Standards</a></li>
+            <li><a href="#/privacy-policy">Zero Data Privacy</a></li>
+            <li><a href="#/disclaimer">Statutory Disclaimer</a></li>
+            <li><a href="#/contact">Report Correction</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Digital India Error Decoder • Independent Open Educational Initiative.
+        </div>
+        <div style="font-size:0.75rem;">
+          Not affiliated with the Government of India or UIDAI/MEA/MoRTH/Income Tax.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

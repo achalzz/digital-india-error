@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+  xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:wp="http://wordpress.org/export/1.2/"
+>
+<channel>
+  <title>Digital India Error Decoder</title>
+  <link>https://error-decoder.in</link>
+  <description>Understand the error. Know what to do next.</description>
+  <pubDate>Tue, 06 Oct 2026 12:00:00 +0000</pubDate>
+  <language>en-US</language>
+  <wp:wxr_version>1.2</wp:wxr_version>
+  <wp:base_site_url>https://error-decoder.in</wp:base_site_url>
+  <wp:base_blog_url>https://error-decoder.in</wp:base_blog_url>
+  
+  <item>
+    <title>Name Mismatch in Online Application</title>
+    <link>https://error-decoder.in/errors/name-mismatch/</link>
+    <pubDate>Tue, 06 Oct 2026 10:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <category domain="category" nicename="identity-details"><![CDATA[Identity details]]></category>
+    <category domain="post_tag" nicename="aadhaar"><![CDATA[Aadhaar]]></category>
+<category domain="post_tag" nicename="pan"><![CDATA[PAN]]></category>
+<category domain="post_tag" nicename="passport"><![CDATA[Passport]]></category>
+    <guid isPermaLink="false">https://error-decoder.in/?p=101</guid>
+    <description></description>
+    <content:encoded><![CDATA[<!-- wp:paragraph -->
+<p><strong>Quick Answer:</strong> Occurs when your submitted name string does not character-for-character match the backend database of the verifying authority (e.g. UIDAI database vs Income Tax CBDT record), often due to initials, expanded middle names, or maiden names.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Where It Appears</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong>Stage:</strong> Aadhaar e-KYC verification, PAN-Aadhaar linking, or Passport demographic check</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Possible Causes</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul><li>Initials used on one document (e.g., &apos;K. Sharma&apos;) while expanded on another (&apos;Kumar Sharma&apos;)</li><li>Transposed first and last names in portal forms</li><li>Maiden name retained after marriage without updating official gazette or marriage certificate</li><li>Honorific prefixes (Mr./Ms./Dr.) inadvertently entered into the primary name field</li></ul>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Step-by-Step Resolution</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true} -->
+<ol><li>Determine the &apos;Master Anchor&apos; document: Usually, your Aadhaar must reflect the exact spelling on your Class 10 Certificate or Passport.</li><li>If Aadhaar has the error, initiate a demographic update online at myaadhaar.uidai.gov.in using a valid POI (Proof of Identity) document.</li><li>If PAN has the error, apply for &apos;Changes or Correction in existing PAN Data&apos; via Protean (NSDL) or UTIITSL.</li><li>Wait for the corrected document to generate before re-attempting the linking or application submission.</li></ol>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Official Helpline</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Helpline: <strong>UIDAI 1947 | Income Tax 1800-180-1961</strong> | <a href="https://myaadhaar.uidai.gov.in">Visit Official Portal</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+    <excerpt:encoded><![CDATA[Occurs when your submitted name string does not character-for-character match the backend database of the verifying authority (e.g. UIDAI database vs Income Tax CBDT record), often due to initials, expanded middle names, or maiden names.]]></excerpt:encoded>
+    <wp:post_id>101</wp:post_id>
+    <wp:post_date>2026-10-06 10:00:00</wp:post_date>
+    <wp:post_date_gmt>2026-10-06 10:00:00</wp:post_date_gmt>
+    <wp:comment_status>closed</wp:comment_status>
+    <wp:ping_status>closed</wp:ping_status>
+    <wp:post_name>name-mismatch</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type>post</wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Date of Birth Mismatch in Online Application</title>
+    <link>https://error-decoder.in/errors/dob-mismatch/</link>
+    <pubDate>Tue, 06 Oct 2026 10:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <category domain="category" nicename="identity-details"><![CDATA[Identity details]]></category>
+    <category domain="post_tag" nicename="aadhaar"><![CDATA[Aadhaar]]></category>
+<category domain="post_tag" nicename="pan"><![CDATA[PAN]]></category>
+<category domain="post_tag" nicename="driving-licence"><![CDATA[Driving Licence]]></category>
+    <guid isPermaLink="false">https://error-decoder.in/?p=102</guid>
+    <description></description>
+    <content:encoded><![CDATA[<!-- wp:paragraph -->
+<p><strong>Quick Answer:</strong> Indicates that the Date of Birth (DOB) entered does not match the digitized date on the verifying database, or only the birth year (e.g., 01/01/YYYY) is recorded on older legacy records.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Where It Appears</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong>Stage:</strong> e-KYC validation or licence renewal authentication</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Possible Causes</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul><li>Legacy Aadhaar cards issued prior to 2017 often only contain the birth year, causing DD/MM mismatches</li><li>Different date recorded on school matriculation certificate vs municipal birth certificate</li><li>US date format (MM/DD/YYYY) entered instead of standard Indian format (DD/MM/YYYY)</li></ul>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Step-by-Step Resolution</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true} -->
+<ol><li>Gather a mandatory birth proof: Birth Certificate issued by Municipal Registrar or Class 10/Matriculation Certificate.</li><li>Book an appointment at an authorized Aadhaar Seva Kendra for biometric DOB correction (UIDAI limits online DOB updates).</li><li>Once updated, download the fresh e-Aadhaar with digital signature.</li><li>Retry the portal application after 48 hours of UIDAI database synchronization.</li></ol>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Official Helpline</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Helpline: <strong>UIDAI 1947</strong> | <a href="https://uidai.gov.in">Visit Official Portal</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+    <excerpt:encoded><![CDATA[Indicates that the Date of Birth (DOB) entered does not match the digitized date on the verifying database, or only the birth year (e.g., 01/01/YYYY) is recorded on older legacy records.]]></excerpt:encoded>
+    <wp:post_id>102</wp:post_id>
+    <wp:post_date>2026-10-06 10:00:00</wp:post_date>
+    <wp:post_date_gmt>2026-10-06 10:00:00</wp:post_date_gmt>
+    <wp:comment_status>closed</wp:comment_status>
+    <wp:ping_status>closed</wp:ping_status>
+    <wp:post_name>dob-mismatch</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type>post</wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Mobile Number Does Not Match Application Record</title>
+    <link>https://error-decoder.in/errors/mobile-number-mismatch/</link>
+    <pubDate>Tue, 06 Oct 2026 10:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <category domain="category" nicename="identity-details"><![CDATA[Identity details]]></category>
+    <category domain="post_tag" nicename="aadhaar"><![CDATA[Aadhaar]]></category>
+<category domain="post_tag" nicename="passport"><![CDATA[Passport]]></category>
+    <guid isPermaLink="false">https://error-decoder.in/?p=103</guid>
+    <description></description>
+    <content:encoded><![CDATA[<!-- wp:paragraph -->
+<p><strong>Quick Answer:</strong> Triggered when the mobile number you currently hold is different from the number originally linked to your Aadhaar/Passport profile during enrolment, preventing one-time password verification.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Where It Appears</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong>Stage:</strong> SMS OTP login or profile verification</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Possible Causes</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul><li>Old phone number deactivated by telecom provider due to inactivity</li><li>Family member&apos;s mobile number was used during initial enrollment years ago</li><li>Typo in the 10-digit number entry field</li></ul>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Step-by-Step Resolution</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true} -->
+<ol><li>Mobile number update in Aadhaar CANNOT be done purely online; biometric verification is mandatory.</li><li>Visit your nearest Post Office Aadhaar Center or Bank Branch with your physical Aadhaar card.</li><li>Complete biometric authentication and pay the nominal ₹50 UIDAI fee.</li><li>Receive the URN (Update Request Number) and track status. Processing normally takes 24 to 72 hours.</li></ol>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Official Helpline</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Helpline: <strong>UIDAI 1947</strong> | <a href="https://myaadhaar.uidai.gov.in">Visit Official Portal</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+    <excerpt:encoded><![CDATA[Triggered when the mobile number you currently hold is different from the number originally linked to your Aadhaar/Passport profile during enrolment, preventing one-time password verification.]]></excerpt:encoded>
+    <wp:post_id>103</wp:post_id>
+    <wp:post_date>2026-10-06 10:00:00</wp:post_date>
+    <wp:post_date_gmt>2026-10-06 10:00:00</wp:post_date_gmt>
+    <wp:comment_status>closed</wp:comment_status>
+    <wp:ping_status>closed</wp:ping_status>
+    <wp:post_name>mobile-number-mismatch</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type>post</wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Document Rejected in Online Application</title>
+    <link>https://error-decoder.in/errors/document-rejected/</link>
+    <pubDate>Tue, 06 Oct 2026 10:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <category domain="category" nicename="documents"><![CDATA[Documents]]></category>
+    <category domain="post_tag" nicename="passport"><![CDATA[Passport]]></category>
+<category domain="post_tag" nicename="driving-licence"><![CDATA[Driving Licence]]></category>
+<category domain="post_tag" nicename="pan"><![CDATA[PAN]]></category>
+    <guid isPermaLink="false">https://error-decoder.in/?p=104</guid>
+    <description></description>
+    <content:encoded><![CDATA[<!-- wp:paragraph -->
+<p><strong>Quick Answer:</strong> Occurs when an uploaded document fails automated OCR scrutiny or manual verification due to blurriness, missing pages, wrong document category, or lack of self-attestation.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Where It Appears</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong>Stage:</strong> Document Scrutiny / Verification Stage</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Possible Causes</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul><li>Document scanned in low resolution (&lt; 200 DPI) making text unreadable</li><li>Missing self-attestation signature where required by portal guidelines</li><li>Document uploaded under incorrect category (e.g., uploading electricity bill under Age Proof instead of Address Proof)</li><li>Watermark or camera glare cutting off official seals or serial numbers</li></ul>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Step-by-Step Resolution</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true} -->
+<ol><li>Login to the respective portal (e.g. Parivahan or Passport Seva) and navigate to &apos;Upload Pending Documents&apos;.</li><li>Scan the original colored physical document at 200 to 300 DPI in PDF format.</li><li>If self-attestation is required, sign across the photocopy, write &apos;Self Attested&apos;, and scan.</li><li>Ensure file size is within limits (typically 20 KB - 500 KB) and re-upload.</li></ol>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Official Helpline</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Helpline: <strong>Passport Seva 1800-258-1800 | Sarathi 0120-2459169</strong> | <a href="https://passportindia.gov.in">Visit Official Portal</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+    <excerpt:encoded><![CDATA[Occurs when an uploaded document fails automated OCR scrutiny or manual verification due to blurriness, missing pages, wrong document category, or lack of self-attestation.]]></excerpt:encoded>
+    <wp:post_id>104</wp:post_id>
+    <wp:post_date>2026-10-06 10:00:00</wp:post_date>
+    <wp:post_date_gmt>2026-10-06 10:00:00</wp:post_date_gmt>
+    <wp:comment_status>closed</wp:comment_status>
+    <wp:ping_status>closed</wp:ping_status>
+    <wp:post_name>document-rejected</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type>post</wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>File Upload Failed / Server Refused Document</title>
+    <link>https://error-decoder.in/errors/file-upload-failed/</link>
+    <pubDate>Tue, 06 Oct 2026 10:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <category domain="category" nicename="documents"><![CDATA[Documents]]></category>
+    <category domain="post_tag" nicename="passport"><![CDATA[Passport]]></category>
+<category domain="post_tag" nicename="driving-licence"><![CDATA[Driving Licence]]></category>
+    <guid isPermaLink="false">https://error-decoder.in/?p=105</guid>
+    <description></description>
+    <content:encoded><![CDATA[<!-- wp:paragraph -->
+<p><strong>Quick Answer:</strong> A technical error where the portal refuses to ingest the file, almost always caused by strict file naming constraints, non-standard PDF formats, or file size limits.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Where It Appears</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong>Stage:</strong> Document upload page before submission</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Possible Causes</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul><li>Special characters, symbols, or spaces in file name (e.g., &apos;my_passport(1).pdf&apos; instead of &apos;passport.pdf&apos;)</li><li>File size exceeds maximum threshold (often 200 KB or 500 KB limit)</li><li>Password-protected or encrypted PDF (e.g., downloaded e-Aadhaar with password)</li><li>Unrecognized file extension (e.g., .HEIC from iPhones instead of standard .JPEG or .PDF)</li></ul>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Step-by-Step Resolution</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true} -->
+<ol><li>Rename the file cleanly: use simple lowercase names like `addressproof.pdf`.</li><li>Remove passwords from PDFs: Print to PDF or export as an unencrypted file.</li><li>Compress the file using standard offline tools or print-to-PDF to bring it under 200 KB without losing legibility.</li><li>Clear browser cache, switch to Google Chrome or Mozilla Firefox, and re-attempt upload.</li></ol>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Official Helpline</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Helpline: <strong>Parivahan 0120-2459169</strong> | <a href="https://sarathi.parivahan.gov.in">Visit Official Portal</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+    <excerpt:encoded><![CDATA[A technical error where the portal refuses to ingest the file, almost always caused by strict file naming constraints, non-standard PDF formats, or file size limits.]]></excerpt:encoded>
+    <wp:post_id>105</wp:post_id>
+    <wp:post_date>2026-10-06 10:00:00</wp:post_date>
+    <wp:post_date_gmt>2026-10-06 10:00:00</wp:post_date_gmt>
+    <wp:comment_status>closed</wp:comment_status>
+    <wp:ping_status>closed</wp:ping_status>
+    <wp:post_name>file-upload-failed</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type>post</wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Photograph or Signature Rejected by Portal</title>
+    <link>https://error-decoder.in/errors/photo-signature-rejected/</link>
+    <pubDate>Tue, 06 Oct 2026 10:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <category domain="category" nicename="documents"><![CDATA[Documents]]></category>
+    <category domain="post_tag" nicename="passport"><![CDATA[Passport]]></category>
+<category domain="post_tag" nicename="driving-licence"><![CDATA[Driving Licence]]></category>
+    <guid isPermaLink="false">https://error-decoder.in/?p=106</guid>
+    <description></description>
+    <content:encoded><![CDATA[<!-- wp:paragraph -->
+<p><strong>Quick Answer:</strong> Occurs when your passport photo or signature image fails strict automated pixel dimension, aspect ratio, or background color algorithms.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Where It Appears</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong>Stage:</strong> Biometric / Photo upload stage</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Possible Causes</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul><li>Photo has colored or patterned background instead of plain white or off-white</li><li>Face covers less than 70-80% of the photograph area</li><li>Signature scanned in low contrast or in blue ink when portal demands black ink on white paper</li><li>Pixel dimensions outside mandated limits (e.g., Parivahan requires 35mm x 45mm, ~420x540 pixels)</li></ul>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Step-by-Step Resolution</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true} -->
+<ol><li>Crop the photograph to 35mm x 45mm with your face occupying 75% of the frame.</li><li>Sign clearly using a black gel or ballpoint pen on plain white paper and crop tightly.</li><li>Use image editing software to resize image dimensions strictly to the portal&apos;s stated pixels (e.g., width: 200px, height: 260px).</li><li>Save strictly as .JPEG or .JPG under 50 KB.</li></ol>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Official Helpline</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Helpline: <strong>Passport Seva 1800-258-1800</strong> | <a href="https://passportindia.gov.in">Visit Official Portal</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+    <excerpt:encoded><![CDATA[Occurs when your passport photo or signature image fails strict automated pixel dimension, aspect ratio, or background color algorithms.]]></excerpt:encoded>
+    <wp:post_id>106</wp:post_id>
+    <wp:post_date>2026-10-06 10:00:00</wp:post_date>
+    <wp:post_date_gmt>2026-10-06 10:00:00</wp:post_date_gmt>
+    <wp:comment_status>closed</wp:comment_status>
+    <wp:ping_status>closed</wp:ping_status>
+    <wp:post_name>photo-signature-rejected</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type>post</wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Record Not Found on Government Portal</title>
+    <link>https://error-decoder.in/errors/record-not-found/</link>
+    <pubDate>Tue, 06 Oct 2026 10:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <category domain="category" nicename="records"><![CDATA[Records]]></category>
+    <category domain="post_tag" nicename="driving-licence"><![CDATA[Driving Licence]]></category>
+<category domain="post_tag" nicename="pan"><![CDATA[PAN]]></category>
+    <guid isPermaLink="false">https://error-decoder.in/?p=107</guid>
+    <description></description>
+    <content:encoded><![CDATA[<!-- wp:paragraph -->
+<p><strong>Quick Answer:</strong> Indicates that the entered application number, licence number, or acknowledgement does not exist in the centralized national database, often due to legacy manual paper records or state database synchronization lags.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Where It Appears</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong>Stage:</strong> Status check, DL renewal, or PAN verification</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Possible Causes</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul><li>Old driving licence (issued before Sarathi computerization) was never backlogged by the local RTO</li><li>Application submitted in a different state or RTO jurisdiction than the one selected on the login page</li><li>Typo in the state code or series format (e.g. &apos;DL-04&apos; vs &apos;DL04&apos;)</li><li>Application was only submitted within the last 2 hours and batch database indexing has not run</li></ul>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Step-by-Step Resolution</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true} -->
+<ol><li>For old Driving Licences: Apply for &apos;Backlog Entry&apos; at your local RTO or through the Parivahan portal under &apos;Services on DL&apos;.</li><li>Check your receipt / SMS for the exact Application Number and Date of Birth.</li><li>Wait 24 hours if the application was submitted on a weekend or public holiday.</li><li>If the issue persists, visit your issuing RTO with the original paper booklet/card to verify digitization.</li></ol>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Official Helpline</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Helpline: <strong>Sarathi 0120-2459169</strong> | <a href="https://sarathi.parivahan.gov.in">Visit Official Portal</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+    <excerpt:encoded><![CDATA[Indicates that the entered application number, licence number, or acknowledgement does not exist in the centralized national database, often due to legacy manual paper records or state database synchronization lags.]]></excerpt:encoded>
+    <wp:post_id>107</wp:post_id>
+    <wp:post_date>2026-10-06 10:00:00</wp:post_date>
+    <wp:post_date_gmt>2026-10-06 10:00:00</wp:post_date_gmt>
+    <wp:comment_status>closed</wp:comment_status>
+    <wp:ping_status>closed</wp:ping_status>
+    <wp:post_name>record-not-found</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type>post</wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Duplicate Application / Record Already Exists</title>
+    <link>https://error-decoder.in/errors/duplicate-application/</link>
+    <pubDate>Tue, 06 Oct 2026 10:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <category domain="category" nicename="records"><![CDATA[Records]]></category>
+    <category domain="post_tag" nicename="driving-licence"><![CDATA[Driving Licence]]></category>
+<category domain="post_tag" nicename="passport"><![CDATA[Passport]]></category>
+    <guid isPermaLink="false">https://error-decoder.in/?p=108</guid>
+    <description></description>
+    <content:encoded><![CDATA[<!-- wp:paragraph -->
+<p><strong>Quick Answer:</strong> Appears when you attempt to create a new application while an existing active application with the same demographic details or phone number is already pending in the portal&apos;s system.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Where It Appears</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong>Stage:</strong> Initial form submission or appointment booking</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Possible Causes</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul><li>A previous incomplete application was initiated and not cancelled</li><li>Browser timed out previously, but the backend successfully generated an Application Reference Number (ARN)</li><li>Applying for a duplicate document when the original application is still active</li></ul>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Step-by-Step Resolution</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true} -->
+<ol><li>Log into Passport Seva or Sarathi and click on &apos;View Saved/Submitted Applications&apos;.</li><li>Locate the older ARN and select &apos;Continue Application&apos; or &apos;Pay and Schedule Appointment&apos;.</li><li>If you genuinely made mistakes in the older application, use the official &apos;Cancel Application&apos; button or wait until the appointment slot lapses.</li><li>Never fill out a brand-new application form until the older one is either processed or cancelled.</li></ol>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Official Helpline</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Helpline: <strong>Passport Seva 1800-258-1800</strong> | <a href="https://passportindia.gov.in">Visit Official Portal</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+    <excerpt:encoded><![CDATA[Appears when you attempt to create a new application while an existing active application with the same demographic details or phone number is already pending in the portal&apos;s system.]]></excerpt:encoded>
+    <wp:post_id>108</wp:post_id>
+    <wp:post_date>2026-10-06 10:00:00</wp:post_date>
+    <wp:post_date_gmt>2026-10-06 10:00:00</wp:post_date_gmt>
+    <wp:comment_status>closed</wp:comment_status>
+    <wp:ping_status>closed</wp:ping_status>
+    <wp:post_name>duplicate-application</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type>post</wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>OTP Not Received from Government Website</title>
+    <link>https://error-decoder.in/errors/otp-not-received/</link>
+    <pubDate>Tue, 06 Oct 2026 10:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <category domain="category" nicename="authentication"><![CDATA[Authentication]]></category>
+    <category domain="post_tag" nicename="aadhaar"><![CDATA[Aadhaar]]></category>
+<category domain="post_tag" nicename="pan"><![CDATA[PAN]]></category>
+<category domain="post_tag" nicename="passport"><![CDATA[Passport]]></category>
+    <guid isPermaLink="false">https://error-decoder.in/?p=109</guid>
+    <description></description>
+    <content:encoded><![CDATA[<!-- wp:paragraph -->
+<p><strong>Quick Answer:</strong> A common bottleneck caused by telecom gateway congestion, National Do Not Disturb (DND) routing filters, server throttling, or an out-of-sync registered mobile number.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Where It Appears</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong>Stage:</strong> Login, e-Sign, or transaction authentication</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Possible Causes</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul><li>Telecom operator SMS routing delay during peak working hours (10:00 AM – 2:00 PM)</li><li>Strict DND (Do Not Disturb) settings blocking transactional SMS headers (e.g., VM-UIDAI, AX-GOV)</li><li>Low mobile network signal or roaming carrier latency</li><li>UIDAI rate-limiting: requesting too many OTPs in rapid succession</li></ul>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Step-by-Step Resolution</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true} -->
+<ol><li>Wait for the on-screen countdown timer (usually 60–120 seconds) to expire before pressing &apos;Resend&apos;.</li><li>Restart your mobile device or toggle Airplane Mode ON/OFF to re-register with the nearest cell tower.</li><li>If using Aadhaar, try generating a **Time-based OTP (TOTP)** via the official mAadhaar smartphone app (TOTP changes every 30 seconds and does not rely on SMS delivery).</li><li>Attempt authentication during off-peak hours (before 9:00 AM or after 8:00 PM).</li></ol>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Official Helpline</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Helpline: <strong>UIDAI 1947</strong> | <a href="https://uidai.gov.in">Visit Official Portal</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+    <excerpt:encoded><![CDATA[A common bottleneck caused by telecom gateway congestion, National Do Not Disturb (DND) routing filters, server throttling, or an out-of-sync registered mobile number.]]></excerpt:encoded>
+    <wp:post_id>109</wp:post_id>
+    <wp:post_date>2026-10-06 10:00:00</wp:post_date>
+    <wp:post_date_gmt>2026-10-06 10:00:00</wp:post_date_gmt>
+    <wp:comment_status>closed</wp:comment_status>
+    <wp:ping_status>closed</wp:ping_status>
+    <wp:post_name>otp-not-received</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type>post</wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>OTP Expired or Invalid OTP Entered</title>
+    <link>https://error-decoder.in/errors/otp-expired-invalid/</link>
+    <pubDate>Tue, 06 Oct 2026 10:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <category domain="category" nicename="authentication"><![CDATA[Authentication]]></category>
+    <category domain="post_tag" nicename="aadhaar"><![CDATA[Aadhaar]]></category>
+<category domain="post_tag" nicename="pan"><![CDATA[PAN]]></category>
+    <guid isPermaLink="false">https://error-decoder.in/?p=110</guid>
+    <description></description>
+    <content:encoded><![CDATA[<!-- wp:paragraph -->
+<p><strong>Quick Answer:</strong> Occurs when the submitted OTP has exceeded its short server validity window, or when an earlier OTP from multiple requests was entered instead of the newest one.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Where It Appears</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong>Stage:</strong> Aadhaar e-KYC or Income tax e-filing verification</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Possible Causes</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul><li>Multiple OTPs generated in rapid succession; user entered the older SMS instead of the most recent one</li><li>Local device clock drift: Computer or smartphone time differs from Indian Standard Time (IST)</li><li>SMS was delayed by telecom provider and arrived after the 5-minute validity window</li></ul>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Step-by-Step Resolution</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true} -->
+<ol><li>Clear all old OTP SMS messages from the government sender to prevent confusion.</li><li>Synchronize your computer/phone clock with network time.</li><li>Click &apos;Request New OTP&apos; once, wait patiently for the SMS, and enter the latest OTP received.</li><li>Ensure you type digits directly without leading or trailing spaces.</li></ol>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Official Helpline</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Helpline: <strong>Income Tax 1800-180-1961 | UIDAI 1947</strong> | <a href="https://incometax.gov.in">Visit Official Portal</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+    <excerpt:encoded><![CDATA[Occurs when the submitted OTP has exceeded its short server validity window, or when an earlier OTP from multiple requests was entered instead of the newest one.]]></excerpt:encoded>
+    <wp:post_id>110</wp:post_id>
+    <wp:post_date>2026-10-06 10:00:00</wp:post_date>
+    <wp:post_date_gmt>2026-10-06 10:00:00</wp:post_date_gmt>
+    <wp:comment_status>closed</wp:comment_status>
+    <wp:ping_status>closed</wp:ping_status>
+    <wp:post_name>otp-expired-invalid</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type>post</wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Payment Successful but Status Still Pending</title>
+    <link>https://error-decoder.in/errors/payment-successful-application-pending/</link>
+    <pubDate>Tue, 06 Oct 2026 10:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <category domain="category" nicename="payment"><![CDATA[Payment]]></category>
+    <category domain="post_tag" nicename="passport"><![CDATA[Passport]]></category>
+<category domain="post_tag" nicename="driving-licence"><![CDATA[Driving Licence]]></category>
+<category domain="post_tag" nicename="pan"><![CDATA[PAN]]></category>
+    <guid isPermaLink="false">https://error-decoder.in/?p=111</guid>
+    <description></description>
+    <content:encoded><![CDATA[<!-- wp:paragraph -->
+<p><strong>Quick Answer:</strong> A very frequent payment gateway issue where bank funds are deducted from your account, but the government portal has not yet received or reconciled the confirmation webhook from Bharatkosh, SBI ePay, or the aggregator.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Where It Appears</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong>Stage:</strong> Challan / Fee payment confirmation stage</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Possible Causes</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul><li>Asynchronous batch reconciliation delay between payment aggregator and treasury backend</li><li>Network drop immediately after entering 3D secure bank OTP before the redirect finished</li><li>Aggregator server timeout during transaction token callback</li></ul>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Step-by-Step Resolution</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true} -->
+<ol><li>**DO NOT PAY AGAIN IMMEDIATELY**: Wait at least 24 to 48 business hours for automated reconciliation.</li><li>Log back into the portal (e.g. Passport Seva or Parivahan) and navigate to &apos;Payment Status&apos; or &apos;Verify Payment&apos;.</li><li>Click the official &apos;Track Payment Status&apos; or &apos;Re-verify Payment&apos; button. In over 80% of cases, this pulls the updated bank token and confirms the payment.</li><li>If status remains pending after 48 hours, raise a ticket on the portal with your Bank Reference Number and Transaction ID.</li></ol>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Official Helpline</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Helpline: <strong>Bharatkosh Support | Passport Seva 1800-258-1800</strong> | <a href="https://bharatkosh.gov.in">Visit Official Portal</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+    <excerpt:encoded><![CDATA[A very frequent payment gateway issue where bank funds are deducted from your account, but the government portal has not yet received or reconciled the confirmation webhook from Bharatkosh, SBI ePay, or the aggregator.]]></excerpt:encoded>
+    <wp:post_id>111</wp:post_id>
+    <wp:post_date>2026-10-06 10:00:00</wp:post_date>
+    <wp:post_date_gmt>2026-10-06 10:00:00</wp:post_date_gmt>
+    <wp:comment_status>closed</wp:comment_status>
+    <wp:ping_status>closed</wp:ping_status>
+    <wp:post_name>payment-successful-application-pending</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type>post</wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Amount Debited but Payment Failed on Portal</title>
+    <link>https://error-decoder.in/errors/payment-failed-amount-debited/</link>
+    <pubDate>Tue, 06 Oct 2026 10:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <category domain="category" nicename="payment"><![CDATA[Payment]]></category>
+    <category domain="post_tag" nicename="passport"><![CDATA[Passport]]></category>
+<category domain="post_tag" nicename="driving-licence"><![CDATA[Driving Licence]]></category>
+    <guid isPermaLink="false">https://error-decoder.in/?p=112</guid>
+    <description></description>
+    <content:encoded><![CDATA[<!-- wp:paragraph -->
+<p><strong>Quick Answer:</strong> The payment gateway registered the session as failed or timed out, yet the issuing bank authorized the debit. The money sits in an intermediary escrow account pending auto-reversal.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Where It Appears</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong>Stage:</strong> Payment gateway redirect stage</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Possible Causes</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul><li>Interrupted redirect from bank gateway back to the merchant portal</li><li>Session timeout on the government site while 2FA authentication was being processed</li><li>Failure of payment gateway to issue a receipt token within the 180-second timeout</li></ul>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Step-by-Step Resolution</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true} -->
+<ol><li>Per Reserve Bank of India (RBI) turnaround time (TAT) guidelines, failed e-commerce/merchant transactions auto-reverse within T+5 business days.</li><li>Log into your bank account after 24 hours to check for an automated reversal credit.</li><li>If not refunded within 5 working days, lodge a chargeback / transaction dispute with your issuing bank quoting the UPI UTR or Card Reference Number.</li><li>Only once the reversal is confirmed or you receive written confirmation of failure should you initiate a fresh payment on the portal.</li></ol>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Official Helpline</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Helpline: <strong>National Payments Corporation of India (NPCI) / Bharatkosh</strong> | <a href="https://bharatkosh.gov.in">Visit Official Portal</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+    <excerpt:encoded><![CDATA[The payment gateway registered the session as failed or timed out, yet the issuing bank authorized the debit. The money sits in an intermediary escrow account pending auto-reversal.]]></excerpt:encoded>
+    <wp:post_id>112</wp:post_id>
+    <wp:post_date>2026-10-06 10:00:00</wp:post_date>
+    <wp:post_date_gmt>2026-10-06 10:00:00</wp:post_date_gmt>
+    <wp:comment_status>closed</wp:comment_status>
+    <wp:ping_status>closed</wp:ping_status>
+    <wp:post_name>payment-failed-amount-debited</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type>post</wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Application Under Process Meaning &amp; Realistic Timeline</title>
+    <link>https://error-decoder.in/errors/application-under-process/</link>
+    <pubDate>Tue, 06 Oct 2026 10:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <category domain="category" nicename="status"><![CDATA[Status]]></category>
+    <category domain="post_tag" nicename="passport"><![CDATA[Passport]]></category>
+<category domain="post_tag" nicename="pan"><![CDATA[PAN]]></category>
+<category domain="post_tag" nicename="driving-licence"><![CDATA[Driving Licence]]></category>
+    <guid isPermaLink="false">https://error-decoder.in/?p=113</guid>
+    <description></description>
+    <content:encoded><![CDATA[<!-- wp:paragraph -->
+<p><strong>Quick Answer:</strong> Indicates that your application has cleared initial computer validation and is currently undergoing internal statutory scrutiny, background checks, or physical dispatch queue.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Where It Appears</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong>Stage:</strong> Post-submission processing stage</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Possible Causes</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul><li>Passport: Application pending verification report from District Police Headquarters</li><li>Driving Licence: Waiting for RTO Motor Vehicle Inspector (MVI) approval after driving test</li><li>PAN: Demographic matching with NSDL backend verification team</li><li>High regional application backlogs during festival or peak vacation seasons</li></ul>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Step-by-Step Resolution</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true} -->
+<ol><li>Check official turnaround benchmarks: Passport normal processing is typically 15–20 days; Tatkaal is 3–5 days; PAN card is 10–15 days.</li><li>For Passport police verification: Ensure you are available at your residence and keep original documents ready when the local police station contacts you.</li><li>If processing exceeds the Citizen&apos;s Charter timeline by more than 30 days, register a grievance via CPGRAMS (pgportal.gov.in).</li><li>Avoid visiting regional offices in person without a scheduled inquiry appointment.</li></ol>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Official Helpline</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Helpline: <strong>CPGRAMS Portal (pgportal.gov.in) | Passport Seva 1800-258-1800</strong> | <a href="https://pgportal.gov.in">Visit Official Portal</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+    <excerpt:encoded><![CDATA[Indicates that your application has cleared initial computer validation and is currently undergoing internal statutory scrutiny, background checks, or physical dispatch queue.]]></excerpt:encoded>
+    <wp:post_id>113</wp:post_id>
+    <wp:post_date>2026-10-06 10:00:00</wp:post_date>
+    <wp:post_date_gmt>2026-10-06 10:00:00</wp:post_date_gmt>
+    <wp:comment_status>closed</wp:comment_status>
+    <wp:ping_status>closed</wp:ping_status>
+    <wp:post_name>application-under-process</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type>post</wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Government Portal Unavailable or Server Error 500/503</title>
+    <link>https://error-decoder.in/errors/portal-server-error/</link>
+    <pubDate>Tue, 06 Oct 2026 10:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <category domain="category" nicename="availability"><![CDATA[Availability]]></category>
+    <category domain="post_tag" nicename="passport"><![CDATA[Passport]]></category>
+<category domain="post_tag" nicename="aadhaar"><![CDATA[Aadhaar]]></category>
+<category domain="post_tag" nicename="driving-licence"><![CDATA[Driving Licence]]></category>
+<category domain="post_tag" nicename="pan"><![CDATA[PAN]]></category>
+    <guid isPermaLink="false">https://error-decoder.in/?p=114</guid>
+    <description></description>
+    <content:encoded><![CDATA[<!-- wp:paragraph -->
+<p><strong>Quick Answer:</strong> Occurs when portal servers are overwhelmed by concurrent visitor traffic, undergoing scheduled maintenance, or experiencing database gateway connection failures.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Where It Appears</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong>Stage:</strong> Any stage, especially during peak daytime hours or deadline days</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Possible Causes</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul><li>Extreme server load during application deadline dates or appointment slot opening windows (e.g., 11:00 AM Passport slots)</li><li>Scheduled server maintenance typically conducted over weekends or late nights (11:00 PM – 5:00 AM)</li><li>Stale browser cache holding outdated CDN assets or broken session tokens</li></ul>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Step-by-Step Resolution</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true} -->
+<ol><li>Hard refresh your browser by pressing `Ctrl + F5` (Windows) or `Cmd + Shift + R` (Mac).</li><li>Open an Incognito / Private Browsing window to rule out conflicting browser extensions.</li><li>Switch DNS to Public Resolvers (Google DNS `8.8.8.8` or Cloudflare `1.1.1.1`) if your local ISP DNS is failing.</li><li>Wait 1 to 2 hours and retry during off-peak times (early morning or late evening).</li></ol>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Official Helpline</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Helpline: <strong>National Informatics Centre (NIC) Support</strong> | <a href="https://nic.in">Visit Official Portal</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+    <excerpt:encoded><![CDATA[Occurs when portal servers are overwhelmed by concurrent visitor traffic, undergoing scheduled maintenance, or experiencing database gateway connection failures.]]></excerpt:encoded>
+    <wp:post_id>114</wp:post_id>
+    <wp:post_date>2026-10-06 10:00:00</wp:post_date>
+    <wp:post_date_gmt>2026-10-06 10:00:00</wp:post_date_gmt>
+    <wp:comment_status>closed</wp:comment_status>
+    <wp:ping_status>closed</wp:ping_status>
+    <wp:post_name>portal-server-error</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type>post</wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Session Expired While Filling Online Application</title>
+    <link>https://error-decoder.in/errors/session-expired/</link>
+    <pubDate>Tue, 06 Oct 2026 10:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <category domain="category" nicename="session"><![CDATA[Session]]></category>
+    <category domain="post_tag" nicename="passport"><![CDATA[Passport]]></category>
+<category domain="post_tag" nicename="aadhaar"><![CDATA[Aadhaar]]></category>
+<category domain="post_tag" nicename="driving-licence"><![CDATA[Driving Licence]]></category>
+<category domain="post_tag" nicename="pan"><![CDATA[PAN]]></category>
+    <guid isPermaLink="false">https://error-decoder.in/?p=115</guid>
+    <description></description>
+    <content:encoded><![CDATA[<!-- wp:paragraph -->
+<p><strong>Quick Answer:</strong> Triggered by built-in government security timers when a form page is kept idle for more than 10 to 15 minutes, or when navigation occurs across multiple browser tabs simultaneously.</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Where It Appears</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p><strong>Stage:</strong> Lengthy multi-page application forms</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2>Possible Causes</h2>
+<!-- /wp:heading -->
+<!-- wp:list -->
+<ul><li>Taking longer than the allocated inactivity window (usually 10–15 mins) to type details or upload files</li><li>Opening the same portal in multiple tabs, causing the session cookie to be overwritten</li><li>Using browser &apos;Back&apos; or &apos;Forward&apos; buttons instead of on-screen portal navigation buttons</li><li>Unstable internet connection that drops packet transmission intermittently</li></ul>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Step-by-Step Resolution</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"ordered":true} -->
+<ol><li>Close all open tabs related to the portal and clear browser cookies for that domain.</li><li>Prepare all details (addresses, parents&apos; names, ID numbers) in a local text editor first.</li><li>Log back in, click &apos;Save as Draft&apos; after completing every individual step or tab.</li><li>Only use the portal&apos;s internal &apos;Next&apos; and &apos;Previous&apos; buttons rather than the browser navigation buttons.</li></ol>
+<!-- /wp:list -->
+<!-- wp:heading -->
+<h2>Official Helpline</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Helpline: <strong>Relevant portal technical desk</strong> | <a href="https://india.gov.in">Visit Official Portal</a></p>
+<!-- /wp:paragraph -->]]></content:encoded>
+    <excerpt:encoded><![CDATA[Triggered by built-in government security timers when a form page is kept idle for more than 10 to 15 minutes, or when navigation occurs across multiple browser tabs simultaneously.]]></excerpt:encoded>
+    <wp:post_id>115</wp:post_id>
+    <wp:post_date>2026-10-06 10:00:00</wp:post_date>
+    <wp:post_date_gmt>2026-10-06 10:00:00</wp:post_date_gmt>
+    <wp:comment_status>closed</wp:comment_status>
+    <wp:ping_status>closed</wp:ping_status>
+    <wp:post_name>session-expired</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_parent>0</wp:post_parent>
+    <wp:menu_order>0</wp:menu_order>
+    <wp:post_type>post</wp:post_type>
+    <wp:is_sticky>0</wp:is_sticky>
+  </item>
+  <item>
+    <title>Passport Seva Portal</title>
+    <link>https://error-decoder.in/services/passport/</link>
+    <pubDate>Tue, 06 Oct 2026 09:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <guid isPermaLink="false">https://error-decoder.in/?p=116</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Troubleshoot common application, payment challan, appointment booking, and police verification status errors on the Passport Seva Kendra (PSK/POPSK) portal.</p><p>Official Helpline: 1800-258-1800</p>]]></content:encoded>
+    <wp:post_id>116</wp:post_id>
+    <wp:post_date>2026-10-06 09:00:00</wp:post_date>
+    <wp:post_name>passport</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_type>page</wp:post_type>
+  </item>
+  <item>
+    <title>UIDAI myAadhaar Portal</title>
+    <link>https://error-decoder.in/services/aadhaar/</link>
+    <pubDate>Tue, 06 Oct 2026 09:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <guid isPermaLink="false">https://error-decoder.in/?p=117</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Decodes Aadhaar demographic updates, document re-validation, mobile number linkage discrepancies, and biometric authentication timeouts.</p><p>Official Helpline: 1947</p>]]></content:encoded>
+    <wp:post_id>117</wp:post_id>
+    <wp:post_date>2026-10-06 09:00:00</wp:post_date>
+    <wp:post_name>aadhaar</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_type>page</wp:post_type>
+  </item>
+  <item>
+    <title>Parivahan Sarathi</title>
+    <link>https://error-decoder.in/services/driving-licence/</link>
+    <pubDate>Tue, 06 Oct 2026 09:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <guid isPermaLink="false">https://error-decoder.in/?p=118</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Resolves Learner&apos;s Licence (LL), Driving Licence (DL) renewal, vehicle fitness, and legacy paper-licence digitization errors across State RTOs.</p><p>Official Helpline: 0120-2459169</p>]]></content:encoded>
+    <wp:post_id>118</wp:post_id>
+    <wp:post_date>2026-10-06 09:00:00</wp:post_date>
+    <wp:post_name>driving-licence</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_type>page</wp:post_type>
+  </item>
+  <item>
+    <title>Income Tax / NSDL Protean PAN</title>
+    <link>https://error-decoder.in/services/pan/</link>
+    <pubDate>Tue, 06 Oct 2026 09:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <guid isPermaLink="false">https://error-decoder.in/?p=119</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Guides for resolving PAN-Aadhaar linkage mismatch, Form 49A corrections, e-KYC signature mismatches, and status tracking delays.</p><p>Official Helpline: 1800-180-1961</p>]]></content:encoded>
+    <wp:post_id>119</wp:post_id>
+    <wp:post_date>2026-10-06 09:00:00</wp:post_date>
+    <wp:post_name>pan</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_type>page</wp:post_type>
+  </item>
+  <item>
+    <title>About Digital India Error Decoder</title>
+    <link>https://error-decoder.in/about/</link>
+    <pubDate>Tue, 06 Oct 2026 08:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <guid isPermaLink="false">https://error-decoder.in/?p=120</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Independent citizen utility project created to demystify cryptic government portal error messages and provide safe, verifiable troubleshooting advice.</p>]]></content:encoded>
+    <wp:post_id>120</wp:post_id>
+    <wp:post_date>2026-10-06 08:00:00</wp:post_date>
+    <wp:post_name>about</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_type>page</wp:post_type>
+  </item>
+  <item>
+    <title>Editorial Policy &amp; Verification Standards</title>
+    <link>https://error-decoder.in/editorial-policy/</link>
+    <pubDate>Tue, 06 Oct 2026 08:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <guid isPermaLink="false">https://error-decoder.in/?p=121</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Our commitment to 100% verified government sources, strict separation of advice from official rules, and date-stamped revision histories.</p>]]></content:encoded>
+    <wp:post_id>121</wp:post_id>
+    <wp:post_date>2026-10-06 08:00:00</wp:post_date>
+    <wp:post_name>editorial-policy</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_type>page</wp:post_type>
+  </item>
+  <item>
+    <title>Privacy Policy</title>
+    <link>https://error-decoder.in/privacy-policy/</link>
+    <pubDate>Tue, 06 Oct 2026 08:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <guid isPermaLink="false">https://error-decoder.in/?p=122</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Our zero-data collection guarantee: no Aadhaar, PAN, OTP, application numbers, or payments are ever requested or stored.</p>]]></content:encoded>
+    <wp:post_id>122</wp:post_id>
+    <wp:post_date>2026-10-06 08:00:00</wp:post_date>
+    <wp:post_name>privacy-policy</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_type>page</wp:post_type>
+  </item>
+  <item>
+    <title>Statutory Disclaimer</title>
+    <link>https://error-decoder.in/disclaimer/</link>
+    <pubDate>Tue, 06 Oct 2026 08:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <guid isPermaLink="false">https://error-decoder.in/?p=123</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Digital India Error Decoder is an independent initiative not affiliated with, endorsed by, or operated by the Government of India or any statutory department.</p>]]></content:encoded>
+    <wp:post_id>123</wp:post_id>
+    <wp:post_date>2026-10-06 08:00:00</wp:post_date>
+    <wp:post_name>disclaimer</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_type>page</wp:post_type>
+  </item>
+  <item>
+    <title>Contact &amp; Correction Feedback</title>
+    <link>https://error-decoder.in/contact/</link>
+    <pubDate>Tue, 06 Oct 2026 08:00:00 +0000</pubDate>
+    <dc:creator><![CDATA[decoder_admin]]></dc:creator>
+    <guid isPermaLink="false">https://error-decoder.in/?p=124</guid>
+    <description></description>
+    <content:encoded><![CDATA[<p>Report outdated portal workflows, request coverage for new error codes, or reach the research team.</p>]]></content:encoded>
+    <wp:post_id>124</wp:post_id>
+    <wp:post_date>2026-10-06 08:00:00</wp:post_date>
+    <wp:post_name>contact</wp:post_name>
+    <wp:status>publish</wp:status>
+    <wp:post_type>page</wp:post_type>
+  </item>
+</channel>
+</rss>
