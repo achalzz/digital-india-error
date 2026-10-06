@@ -3,19 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
   <title>Digital India Error Decoder — Understand the Error. Know What To Do Next.</title>
-  <meta name="description" content="An independent, plain-language troubleshooting directory explaining common errors on Indian digital public portals like Passport Seva, Parivahan, Aadhaar, and PAN.">
+  <meta name="description" content="Free, plain-language troubleshooting for common errors on Passport Seva, Aadhaar, Parivahan, and PAN portals. Verified causes, safe steps, official helplines.">
   <link rel="canonical" href="https://error-decoder.in/">
 
-  <!-- Open Graph / Meta -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://error-decoder.in/">
-  <meta property="og:title" content="Digital India Error Decoder — Plain Language Portal Help">
-  <meta property="og:description" content="Understand government portal errors, find verified causes, and follow safe, reversible steps to resolve issues without risk of duplicate payment.">
-  <meta property="og:site_name" content="Digital India Error Decoder">
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://error-decoder.in/">
+  <meta property="og:title"       content="Digital India Error Decoder — Plain Language Portal Help">
+  <meta property="og:description" content="Decode cryptic government portal errors. Find verified causes and safe, reversible resolution steps.">
+  <meta property="og:site_name"   content="Digital India Error Decoder">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#6366f1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Fuse.js fuzzy search — loaded before app.js -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+
+  <!-- GA4 — Privacy-first, no cookies, hash-based SPA tracking -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE_WITH_YOUR_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-REPLACE_WITH_YOUR_ID', {
+      anonymize_ip: true,
+      cookie_flags: 'SameSite=None;Secure',
+      send_page_view: false  /* Manual tracking per hash route in app.js */
+    });
+  </script>
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -27,7 +52,8 @@
         "@id": "https://error-decoder.in/#website",
         "url": "https://error-decoder.in/",
         "name": "Digital India Error Decoder",
-        "description": "Plain language troubleshooting search engine for Indian digital public services.",
+        "inLanguage": ["en-IN", "hi-IN"],
+        "description": "Plain-language troubleshooting search engine for Indian digital public services.",
         "potentialAction": {
           "@type": "SearchAction",
           "target": "https://error-decoder.in/?q={search_term_string}",
@@ -39,174 +65,277 @@
         "@id": "https://error-decoder.in/#organization",
         "name": "Digital India Error Decoder Initiative",
         "url": "https://error-decoder.in/",
-        "logo": "https://error-decoder.in/assets/logo.png",
-        "sameAs": []
+        "description": "Independent citizen utility — not affiliated with the Government of India"
       }
     ]
   }
   </script>
 </head>
+
 <body>
 
-  <!-- Trust Boundary & Non-Affiliation Banner -->
-  <div class="trust-banner" id="trust-banner">
+  <!-- Skip to main content (accessibility) -->
+  <a href="#app-main" class="skip-link">Skip to main content</a>
+
+  <!-- ARIA Live Region for screen readers (search results announcements) -->
+  <div
+    id="search-live-region"
+    aria-live="polite"
+    aria-atomic="true"
+    class="sr-only"
+    role="status"
+  ></div>
+
+  <!-- ============================================================
+       TRUST BANNER — row 1
+       ============================================================ -->
+  <div class="trust-banner" role="banner" aria-label="Independence notice">
     <div class="container">
-      🛡️ <strong>Independent Citizen Utility:</strong> Not affiliated with the Government of India. We never ask for Aadhaar, PAN, OTP, or payments.
+      🛡️ <strong>Independent Citizen Utility:</strong>
+      Not affiliated with the Government of India. We never ask for Aadhaar, PAN, OTP, or payments.
     </div>
   </div>
 
-  <!-- Header & Navigation -->
+  <!-- ============================================================
+       SITE HEADER — row 2, sticky
+       ============================================================ -->
   <header class="site-header" id="site-header">
     <div class="container nav-wrap">
-      <a href="#/" class="brand" id="brand-link" aria-label="Digital India Error Decoder Home">
-        <div class="brand-icon">ED</div>
+
+      <!-- Brand -->
+      <a href="#/" class="brand" id="brand-link" aria-label="Digital India Error Decoder — Home">
+        <div class="brand-icon" aria-hidden="true">ED</div>
         <div class="brand-text">
-          <h1>Error Decoder</h1>
-          <span>Digital India Help Engine</span>
+          <span class="brand-title">Error Decoder</span>
+          <span class="brand-sub">Digital India Help Engine</span>
         </div>
       </a>
 
-      <ul class="nav-links" id="main-navigation">
-        <li><a href="#/" class="nav-link active" id="nav-directory">Directory</a></li>
-        <li><a href="#/services/passport" class="nav-link" id="nav-passport">Passport</a></li>
-        <li><a href="#/services/aadhaar" class="nav-link" id="nav-aadhaar">Aadhaar</a></li>
-        <li><a href="#/services/driving-licence" class="nav-link" id="nav-parivahan">Driving Licence</a></li>
-        <li><a href="#/services/pan" class="nav-link" id="nav-pan">PAN</a></li>
-        <li><a href="#/guides/safe-troubleshooting" class="nav-link" id="nav-guide">Safe Troubleshooting</a></li>
-      </ul>
+      <!-- Desktop Nav Links -->
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" id="main-navigation" role="menubar">
+          <li role="none"><a href="#/" class="nav-link" role="menuitem" id="nav-directory">Directory</a></li>
+          <li role="none"><a href="#/services/passport" class="nav-link" role="menuitem">Passport</a></li>
+          <li role="none"><a href="#/services/aadhaar" class="nav-link" role="menuitem">Aadhaar</a></li>
+          <li role="none"><a href="#/services/driving-licence" class="nav-link" role="menuitem">Driving Licence</a></li>
+          <li role="none"><a href="#/services/pan" class="nav-link" role="menuitem">PAN</a></li>
+          <li role="none"><a href="#/guides/safe-troubleshooting" class="nav-link" role="menuitem">Safe Guide</a></li>
+        </ul>
+      </nav>
 
+      <!-- Actions: Language, Theme, Hamburger -->
       <div class="nav-actions">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode" title="Switch Theme">
-          <span id="theme-icon">☀️</span>
+        <button
+          class="lang-toggle"
+          id="lang-toggle"
+          aria-label="Switch to Hindi"
+          title="Switch language"
+        >🇮🇳 हिन्दी</button>
+
+        <button
+          class="icon-btn"
+          id="theme-toggle"
+          aria-label="Toggle dark / light theme"
+          title="Switch theme"
+        >
+          <span id="theme-icon" aria-hidden="true">☀️</span>
         </button>
+
+        <button
+          class="icon-btn hamburger"
+          id="hamburger"
+          aria-label="Open navigation menu"
+          aria-controls="mobile-nav"
+          aria-expanded="false"
+        >☰</button>
       </div>
     </div>
   </header>
 
-  <!-- Route Views Container -->
+  <!-- Mobile Navigation Overlay -->
+  <div
+    id="mobile-nav"
+    class="mobile-nav"
+    role="dialog"
+    aria-label="Mobile navigation"
+    aria-modal="true"
+    aria-hidden="true"
+  >
+    <button class="icon-btn mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation">✕</button>
+    <a href="#/" class="nav-link" onclick="closeMobileMenu()">Directory</a>
+    <a href="#/services/passport" class="nav-link" onclick="closeMobileMenu()">Passport Seva</a>
+    <a href="#/services/aadhaar" class="nav-link" onclick="closeMobileMenu()">UIDAI Aadhaar</a>
+    <a href="#/services/driving-licence" class="nav-link" onclick="closeMobileMenu()">Driving Licence</a>
+    <a href="#/services/pan" class="nav-link" onclick="closeMobileMenu()">PAN</a>
+    <a href="#/guides/safe-troubleshooting" class="nav-link" onclick="closeMobileMenu()">Safe Troubleshooting</a>
+    <a href="#/about" class="nav-link" onclick="closeMobileMenu()">About</a>
+  </div>
+
+  <!-- ============================================================
+       APP MAIN — row 3
+       ============================================================ -->
   <main id="app-main">
 
-    <!-- 1. Home / Directory View -->
-    <section id="view-home" class="route-view active">
+    <!-- 1. HOME / DIRECTORY VIEW -->
+    <section id="view-home" class="route-view" aria-label="Error directory home">
       <div class="container">
-        
-        <!-- Hero Section -->
+
+        <!-- Hero -->
         <div class="hero-section" id="hero-section">
-          <div class="hero-pill">
-            <span>⚡ 100% Free • Independent • Verified Instructions</span>
+          <div class="hero-pill" role="note">
+            ⚡ 100% Free · Independent · Verified Instructions
           </div>
-          <h2 class="hero-title">
+
+          <h1 class="hero-title">
             Understand the error.<br>
-            <span>Know what to do next.</span>
-          </h2>
+            <span class="gradient-text">Know what to do next.</span>
+          </h1>
+
           <p class="hero-subtitle">
-            Cryptic errors on Passport, Sarathi, Aadhaar, or PAN portals? Decode the meaning, verify safe checks, and resolve issues without risk of duplicate fees.
+            Cryptic errors on Passport Seva, Aadhaar, Parivahan, or PAN portals?
+            Decode the meaning, verify safe checks, and resolve issues without risk of duplicate fees or scams.
           </p>
 
-          <!-- Search Engine Box -->
+          <!-- Search Engine -->
           <div class="search-wrapper" id="search-wrapper">
             <div class="search-input-box">
-              <span class="search-icon">🔍</span>
-              <input 
-                type="text" 
-                id="search-input" 
-                class="search-input" 
-                placeholder="Search error message, code, or portal (e.g. 'Payment Pending', 'OTP', 'Name Mismatch')..."
+              <span class="search-icon" aria-hidden="true">🔍</span>
+              <input
+                type="search"
+                id="search-input"
+                class="search-input"
+                placeholder="Search error or symptom (e.g. 'Payment Pending', 'OTP', 'Name Mismatch')..."
                 autocomplete="off"
+                autocorrect="off"
+                spellcheck="false"
                 aria-label="Search error directory"
+                aria-controls="errors-grid"
+                aria-autocomplete="list"
               >
-              <span class="search-badge" id="search-badge">Instant</span>
+              <span class="search-badge" aria-hidden="true">Fuzzy</span>
             </div>
 
-            <!-- Quick Query Suggestions -->
-            <div class="quick-queries" id="quick-queries">
-              <span>Try searching:</span>
-              <button class="query-chip" data-query="payment pending">Payment Pending</button>
-              <button class="query-chip" data-query="otp not received">OTP Delayed</button>
-              <button class="query-chip" data-query="name mismatch">Name Mismatch</button>
-              <button class="query-chip" data-query="record not found">Record Not Found</button>
-              <button class="query-chip" data-query="document rejected">Document Rejected</button>
+            <!-- Portal Status Banner -->
+            <div
+              id="portal-status-banner"
+              role="alert"
+              aria-live="assertive"
+            ></div>
+
+            <!-- Quick Chips -->
+            <div class="quick-queries" role="group" aria-label="Quick search suggestions">
+              <span aria-hidden="true">Try:</span>
+              <button class="query-chip" data-query="payment pending" tabindex="0">Payment Pending</button>
+              <button class="query-chip" data-query="otp not received" tabindex="0">OTP Delayed</button>
+              <button class="query-chip" data-query="name mismatch" tabindex="0">Name Mismatch</button>
+              <button class="query-chip" data-query="record not found" tabindex="0">Record Not Found</button>
+              <button class="query-chip" data-query="document rejected" tabindex="0">Document Rejected</button>
             </div>
           </div>
         </div>
 
-        <!-- Service Portals Hub Section -->
+        <!-- Service Hubs Grid -->
         <div class="services-section" id="services-section">
-          <h2 class="section-title">Major Public Service Hubs</h2>
-          <p class="section-subtitle">Select an official portal to view categorized troubleshooting guides, verified helplines, and turnaround times.</p>
-          <div class="services-grid" id="services-grid">
-            <!-- Dynamically populated by app.js -->
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Official Service Hubs</h2>
+              <p class="section-subtitle">Select a portal to browse its specific error guides and verified helplines.</p>
+            </div>
+          </div>
+          <div class="services-grid" id="services-grid" role="list" aria-label="Government service portals">
+            <!-- Populated by app.js -->
           </div>
         </div>
 
-        <!-- Error Directory Section -->
+        <!-- Error Directory -->
         <div class="directory-section" id="directory-section">
-          <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:1rem; flex-wrap:wrap; gap:1rem;">
+          <div class="section-header">
             <div>
               <h2 class="section-title">Browse Verified Error Guides</h2>
-              <p class="section-subtitle" style="margin-bottom:0;">Filter by technical category or search keywords above.</p>
+              <p class="section-subtitle">Filter by error category or use the search box above.</p>
             </div>
-            <span id="results-count" style="font-size:0.85rem; color:var(--accent-primary); font-weight:600;">15 Verified Guides</span>
+            <span
+              id="results-count"
+              class="results-count"
+              aria-live="polite"
+              aria-atomic="true"
+            >15 Verified Guides</span>
           </div>
 
           <!-- Category Filter Bar -->
-          <div class="filter-bar" id="category-filters" role="tablist">
-            <button class="filter-btn active" data-category="All">All Categories</button>
-            <button class="filter-btn" data-category="Identity details">Identity Details</button>
-            <button class="filter-btn" data-category="Documents">Documents</button>
-            <button class="filter-btn" data-category="Records">Records</button>
-            <button class="filter-btn" data-category="Authentication">Authentication / OTP</button>
-            <button class="filter-btn" data-category="Payment">Payment & Fees</button>
-            <button class="filter-btn" data-category="Status">Application Status</button>
-            <button class="filter-btn" data-category="Availability">Server & Availability</button>
-            <button class="filter-btn" data-category="Session">Session & Timeout</button>
+          <div
+            class="filter-bar"
+            id="category-filters"
+            role="tablist"
+            aria-label="Filter errors by category"
+          >
+            <button class="filter-btn active" data-category="All"
+              role="tab" tabindex="0" aria-selected="true">All Categories</button>
+            <button class="filter-btn" data-category="Identity details"
+              role="tab" tabindex="0" aria-selected="false">Identity Details</button>
+            <button class="filter-btn" data-category="Documents"
+              role="tab" tabindex="0" aria-selected="false">Documents</button>
+            <button class="filter-btn" data-category="Records"
+              role="tab" tabindex="0" aria-selected="false">Records</button>
+            <button class="filter-btn" data-category="Authentication"
+              role="tab" tabindex="0" aria-selected="false">Authentication / OTP</button>
+            <button class="filter-btn" data-category="Payment"
+              role="tab" tabindex="0" aria-selected="false">Payment & Fees</button>
+            <button class="filter-btn" data-category="Status"
+              role="tab" tabindex="0" aria-selected="false">Application Status</button>
+            <button class="filter-btn" data-category="Availability"
+              role="tab" tabindex="0" aria-selected="false">Server & Availability</button>
+            <button class="filter-btn" data-category="Session"
+              role="tab" tabindex="0" aria-selected="false">Session & Timeout</button>
           </div>
 
-          <!-- Errors Grid -->
-          <div class="errors-grid" id="errors-grid">
-            <!-- Dynamically populated by app.js -->
+          <!-- Error Cards Grid -->
+          <div
+            id="errors-grid"
+            class="errors-grid"
+            role="list"
+            aria-label="Error guides list"
+            aria-live="polite"
+          >
+            <!-- Populated by app.js -->
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- 2. Guide Detail View -->
-    <section id="view-guide" class="route-view view-container">
-      <!-- Populated dynamically by app.js -->
-    </section>
+    <!-- 2. GUIDE DETAIL VIEW -->
+    <section id="view-guide" class="route-view" aria-label="Error guide detail"></section>
 
-    <!-- 3. Service Hub View -->
-    <section id="view-service-hub" class="route-view view-container">
-      <!-- Populated dynamically by app.js -->
-    </section>
+    <!-- 3. SERVICE HUB VIEW -->
+    <section id="view-service-hub" class="route-view" aria-label="Service hub"></section>
 
-    <!-- 4. General Safe Troubleshooting View -->
-    <section id="view-troubleshooting" class="route-view view-container">
-      <!-- Populated dynamically by app.js -->
-    </section>
+    <!-- 4. GENERAL TROUBLESHOOTING VIEW -->
+    <section id="view-troubleshooting" class="route-view" aria-label="Safe troubleshooting guide"></section>
 
-    <!-- 5. Static Governance Pages View (About, Policy, Contact, Disclaimer) -->
-    <section id="view-static" class="route-view view-container">
-      <!-- Populated dynamically by app.js -->
-    </section>
+    <!-- 5. STATIC PAGES (About, Policy, Contact, Disclaimer) -->
+    <section id="view-static" class="route-view" aria-label="Information page"></section>
 
   </main>
 
-  <!-- Site Footer -->
-  <footer class="site-footer" id="site-footer">
+  <!-- ============================================================
+       SITE FOOTER — row 4
+       ============================================================ -->
+  <footer class="site-footer" id="site-footer" aria-label="Site footer">
     <div class="container">
       <div class="footer-grid">
+
         <div class="footer-col">
-          <div class="brand" style="margin-bottom:1rem;">
-            <div class="brand-icon">ED</div>
+          <div class="brand" style="margin-block-end:var(--space-3);">
+            <div class="brand-icon" aria-hidden="true">ED</div>
             <div class="brand-text">
-              <span style="font-weight:700; font-size:1.1rem; color:var(--text-primary);">Error Decoder</span>
-              <span>Digital India Public Help</span>
+              <span class="brand-title">Error Decoder</span>
+              <span class="brand-sub">Digital India</span>
             </div>
           </div>
-          <p style="color:var(--text-secondary); font-size:0.85rem; line-height:1.6; max-width:320px;">
-            An independent educational resource providing clear, plain-language troubleshooting steps for Indian public digital services.
+          <p class="footer-desc">
+            An independent educational resource providing plain-language troubleshooting
+            for Indian public digital services.
           </p>
         </div>
 
@@ -221,7 +350,7 @@
         </div>
 
         <div class="footer-col">
-          <h4>Help & Guides</h4>
+          <h4>Guides & Help</h4>
           <ul>
             <li><a href="#/guides/safe-troubleshooting">Safe Troubleshooting</a></li>
             <li><a href="#/" onclick="filterByCategory('Payment')">Payment Discrepancies</a></li>
@@ -237,23 +366,21 @@
             <li><a href="#/editorial-policy">Editorial Standards</a></li>
             <li><a href="#/privacy-policy">Zero Data Privacy</a></li>
             <li><a href="#/disclaimer">Statutory Disclaimer</a></li>
-            <li><a href="#/contact">Report Correction</a></li>
+            <li><a href="#/contact">Report a Correction</a></li>
           </ul>
         </div>
+
       </div>
 
       <div class="footer-bottom">
-        <div>
-          © 2026 Digital India Error Decoder • Independent Open Educational Initiative.
-        </div>
-        <div style="font-size:0.75rem;">
-          Not affiliated with the Government of India or UIDAI/MEA/MoRTH/Income Tax.
-        </div>
+        <span>© 2026 Digital India Error Decoder — Independent Open Educational Initiative.</span>
+        <span>Not affiliated with the Government of India or UIDAI / MEA / MoRTH / Income Tax.</span>
       </div>
     </div>
   </footer>
 
-  <!-- Application Logic -->
+  <!-- Application Logic (after DOM ready) -->
   <script src="app.js"></script>
+
 </body>
 </html>

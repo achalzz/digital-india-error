@@ -1,0 +1,33 @@
+{
+  "updated": "2026-10-06",
+  "portals": [
+    {
+      "id": "passport",
+      "name": "Passport Seva Portal",
+      "url": "https://passportindia.gov.in",
+      "status": "operational",
+      "note": ""
+    },
+    {
+      "id": "aadhaar",
+      "name": "UIDAI myAadhaar Portal",
+      "url": "https://myaadhaar.uidai.gov.in",
+      "status": "operational",
+      "note": ""
+    },
+    {
+      "id": "driving-licence",
+      "name": "Parivahan Sarathi",
+      "url": "https://sarathi.parivahan.gov.in",
+      "status": "operational",
+      "note": ""
+    },
+    {
+      "id": "pan",
+      "name": "Income Tax / NSDL PAN Portal",
+      "url": "https://incometax.gov.in",
+      "status": "operational",
+      "note": ""
+    }
+  ]
+}
