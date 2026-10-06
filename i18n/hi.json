@@ -1,0 +1,81 @@
+{
+  "lang": "hi",
+  "name": "हिन्दी",
+  "nav": {
+    "directory": "गाइड डायरेक्टरी",
+    "passport": "पासपोर्ट",
+    "aadhaar": "आधार",
+    "parivahan": "ड्राइविंग लाइसेंस",
+    "pan": "पैन",
+    "guide": "सुरक्षित समाधान"
+  },
+  "hero": {
+    "pill": "✅ स्वतंत्र • निःशुल्क • सत्यापित निर्देश",
+    "title": "त्रुटि समझें।\nआगे क्या करें, जानें।",
+    "subtitle": "पासपोर्ट, आधार, परिवहन या पैन पोर्टल पर कोई अजीब त्रुटि? आधिकारिक जानकारी के साथ सुरक्षित, चरण-दर-चरण समाधान खोजें।",
+    "search_placeholder": "त्रुटि लिखें (जैसे: 'OTP नहीं आया', 'पैसा कट गया', 'नाम मेल नहीं')...",
+    "chips": ["पेमेंट पेंडिंग", "OTP नहीं आया", "नाम मेल नहीं", "रिकॉर्ड नहीं मिला", "डॉक्यूमेंट रिजेक्ट"]
+  },
+  "trust_banner": "🛡️ यह एक स्वतंत्र शैक्षिक सहायता साइट है। हम आपसे आधार नंबर, पैन, OTP या कोई भी व्यक्तिगत जानकारी नहीं मांगते।",
+  "guides": {
+    "otp-not-received": {
+      "title": "सरकारी वेबसाइट पर OTP नहीं आया — कारण और समाधान",
+      "quickAnswer": "यह समस्या अक्सर मोबाइल नेटवर्क में देरी, DND (Do Not Disturb) सेटिंग या पुराने मोबाइल नंबर के कारण होती है।",
+      "steps": [
+        "OTP भेजने के लिए countdown timer (60-120 सेकंड) खत्म होने का इंतजार करें, फिर 'Resend' दबाएं।",
+        "फोन को Airplane Mode ON/OFF करें या रीस्टार्ट करें।",
+        "आधार के लिए: official mAadhaar app से TOTP use करें — SMS का इंतजार नहीं करना पड़ेगा।",
+        "सुबह जल्दी (9 बजे से पहले) या शाम को (8 बजे के बाद) try करें।"
+      ],
+      "warning": "5 बार से ज्यादा OTP request न करें — portal 24 घंटे के लिए lock हो सकता है।",
+      "officialHelpline": "UIDAI: 1947"
+    },
+    "payment-successful-application-pending": {
+      "title": "पेमेंट हो गया लेकिन एप्लीकेशन अभी भी पेंडिंग है",
+      "quickAnswer": "बैंक से पैसा कटने के बाद सरकारी पोर्टल को इसकी जानकारी मिलने में 24 से 48 घंटे लग सकते हैं। यह एक सामान्य बैंकिंग प्रक्रिया है।",
+      "steps": [
+        "तुरंत दोबारा पेमेंट न करें — 24 से 48 घंटे प्रतीक्षा करें।",
+        "Portal में login करें और 'Verify Payment' या 'Track Payment Status' बटन पर क्लिक करें।",
+        "अगर 48 घंटे बाद भी pending है, तो अपना Bank Reference Number लेकर portal पर ticket दर्ज करें।"
+      ],
+      "warning": "दोबारा पेमेंट करने से दो बार पैसा कट सकता है। पोर्टल तुरंत वापसी की गारंटी नहीं देता।",
+      "officialHelpline": "Bharatkosh Support | Passport Seva: 1800-258-1800"
+    },
+    "name-mismatch": {
+      "title": "ऑनलाइन एप्लीकेशन में नाम मेल नहीं खाता",
+      "quickAnswer": "यह तब होता है जब आपके किसी ID document (जैसे आधार) में लिखा नाम दूसरे document (जैसे PAN) से अलग है — अक्षर की गलती, initials या maiden name के कारण।",
+      "steps": [
+        "अपने आधार कार्ड और PAN card पर हर अक्षर ध्यान से मिलाएं।",
+        "तय करें कि 'Master Document' कौन सा है — आमतौर पर Class 10 Certificate या Passport।",
+        "अगर आधार में गलती है: myaadhaar.uidai.gov.in पर Demographic Update करें।",
+        "अगर PAN में गलती है: Protean (NSDL) या UTIITSL पर 'Correction in PAN Data' apply करें।"
+      ],
+      "warning": "एक से ज्यादा PAN बनाना Income Tax Act की धारा 272B के तहत गैरकानूनी है — ₹10,000 तक जुर्माना हो सकता है।",
+      "officialHelpline": "UIDAI: 1947 | Income Tax: 1800-180-1961"
+    },
+    "session-expired": {
+      "title": "ऑनलाइन फॉर्म भरते समय Session Expired हो गया",
+      "quickAnswer": "सरकारी पोर्टल 10 से 15 मिनट की निष्क्रियता के बाद security के लिए session automatically बंद कर देते हैं।",
+      "steps": [
+        "पोर्टल के सभी tabs बंद करें और browser cookies clear करें।",
+        "फॉर्म भरने से पहले सभी जानकारी (पता, माता-पिता का नाम, ID number) एक notepad में तैयार कर लें।",
+        "दोबारा login करें और हर step के बाद 'Save as Draft' जरूर करें।",
+        "Browser के Back/Forward button की जगह portal के अपने 'Next'/'Previous' button use करें।"
+      ],
+      "warning": "Session expire होने पर unsaved form data server से delete हो जाता है — यह citizen data protection के लिए है।",
+      "officialHelpline": "संबंधित portal का technical helpline"
+    },
+    "record-not-found": {
+      "title": "सरकारी पोर्टल पर रिकॉर्ड नहीं मिला",
+      "quickAnswer": "यह तब होता है जब आपका application number या license number centralized database में नहीं है — पुराने paper records के digitization में देरी के कारण।",
+      "steps": [
+        "अपने physical driving licence पर नंबर का exact format देखें (जैसे DL-04 या DL04)।",
+        "Parivahan portal पर सही State चुनकर search करें।",
+        "पुराने paper licence के लिए: Parivahan portal पर 'Backlog Entry' या local RTO में जाएं।",
+        "Weekend/छुट्टी पर submit की गई application के लिए 24 घंटे wait करें।"
+      ],
+      "warning": "अगर आपके पास पहले से valid driving licence है तो नया Learner's Licence apply न करें — Motor Vehicles Act में duplicate record बनाना prohibited है।",
+      "officialHelpline": "Sarathi: 0120-2459169"
+    }
+  }
+}
