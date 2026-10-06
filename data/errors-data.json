@@ -1,0 +1,565 @@
+{
+  "site": {
+    "name": "Digital India Error Decoder",
+    "tagline": "Understand the error. Find the reason. Know what to do next.",
+    "url": "https://error-decoder.in",
+    "description": "An independent, plain-language troubleshooting directory explaining common errors on Indian digital public platforms (Passport Seva, Parivahan Sarathi, UIDAI Aadhaar, NSDL/Protean PAN).",
+    "trustNotice": "Digital India Error Decoder is an independent educational initiative and is not affiliated with, endorsed by, or operated by the Government of India or any statutory portal. We never ask for Aadhaar numbers, PAN, OTPs, application numbers, or payments."
+  },
+  "services": [
+    {
+      "id": "passport",
+      "slug": "passport",
+      "name": "Passport Seva Portal",
+      "authority": "Ministry of External Affairs (CPV Division)",
+      "url": "https://passportindia.gov.in",
+      "helpline": "1800-258-1800",
+      "description": "Troubleshoot common application, payment challan, appointment booking, and police verification status errors on the Passport Seva Kendra (PSK/POPSK) portal.",
+      "commonIssues": ["Duplicate ARN generated", "Fee payment pending after bank debit", "File processing stalled at Police Verification", "Document upload dimension failure"]
+    },
+    {
+      "id": "aadhaar",
+      "slug": "aadhaar",
+      "name": "UIDAI myAadhaar Portal",
+      "authority": "Unique Identification Authority of India",
+      "url": "https://myaadhaar.uidai.gov.in",
+      "helpline": "1947",
+      "description": "Decodes Aadhaar demographic updates, document re-validation, mobile number linkage discrepancies, and biometric authentication timeouts.",
+      "commonIssues": ["OTP not received on registered mobile", "Name and DOB discrepancy with PAN", "Document re-verification rejected", "Authentication timeout error 500"]
+    },
+    {
+      "id": "driving-licence",
+      "slug": "driving-licence",
+      "name": "Parivahan Sarathi",
+      "authority": "Ministry of Road Transport and Highways (MoRTH)",
+      "url": "https://sarathi.parivahan.gov.in",
+      "helpline": "0120-2459169",
+      "description": "Resolves Learner's Licence (LL), Driving Licence (DL) renewal, vehicle fitness, and legacy paper-licence digitization errors across State RTOs.",
+      "commonIssues": ["Record not found in National Register", "LL test slot booking failed", "Payment debited but receipt not generated", "Slot expired or pending scrutiny"]
+    },
+    {
+      "id": "pan",
+      "slug": "pan",
+      "name": "Income Tax / NSDL Protean PAN",
+      "authority": "Income Tax Department & Protean eGov / UTIITSL",
+      "url": "https://incometax.gov.in",
+      "helpline": "1800-180-1961",
+      "description": "Guides for resolving PAN-Aadhaar linkage mismatch, Form 49A corrections, e-KYC signature mismatches, and status tracking delays.",
+      "commonIssues": ["Name mismatch between PAN and Aadhaar", "Invalid father's name format", "Payment acknowledgement missing", "e-Sign OTP failed"]
+    }
+  ],
+  "categories": [
+    "Identity details",
+    "Documents",
+    "Records",
+    "Authentication",
+    "Payment",
+    "Status",
+    "Availability",
+    "Session"
+  ],
+  "errors": [
+    {
+      "id": "ERR-01",
+      "slug": "name-mismatch",
+      "title": "Name Mismatch in Online Application",
+      "category": "Identity details",
+      "services": ["Aadhaar", "PAN", "Passport"],
+      "searchIntent": "name mismatch in online application how to fix",
+      "quickAnswer": "Occurs when your submitted name string does not character-for-character match the backend database of the verifying authority (e.g. UIDAI database vs Income Tax CBDT record), often due to initials, expanded middle names, or maiden names.",
+      "stage": "Aadhaar e-KYC verification, PAN-Aadhaar linking, or Passport demographic check",
+      "causes": [
+        "Initials used on one document (e.g., 'K. Sharma') while expanded on another ('Kumar Sharma')",
+        "Transposed first and last names in portal forms",
+        "Maiden name retained after marriage without updating official gazette or marriage certificate",
+        "Honorific prefixes (Mr./Ms./Dr.) inadvertently entered into the primary name field"
+      ],
+      "checks": [
+        "Check spelling on your physical Aadhaar card and PAN card letter-by-letter.",
+        "Verify whether middle name was omitted in one portal.",
+        "Confirm no trailing space was added at the end of the text input box."
+      ],
+      "steps": [
+        "Determine the 'Master Anchor' document: Usually, your Aadhaar must reflect the exact spelling on your Class 10 Certificate or Passport.",
+        "If Aadhaar has the error, initiate a demographic update online at myaadhaar.uidai.gov.in using a valid POI (Proof of Identity) document.",
+        "If PAN has the error, apply for 'Changes or Correction in existing PAN Data' via Protean (NSDL) or UTIITSL.",
+        "Wait for the corrected document to generate before re-attempting the linking or application submission."
+      ],
+      "warning": "Do not create a new PAN or second Aadhaar. Having more than one PAN is illegal under Section 272B of the Income Tax Act with penalties up to ₹10,000.",
+      "avoid": [
+        "Never pay third-party agents claiming to bypass biometric or database name checks.",
+        "Do not repeatedly submit mismatched applications, which can trigger system flags."
+      ],
+      "officialHelpline": "UIDAI 1947 | Income Tax 1800-180-1961",
+      "officialUrl": "https://myaadhaar.uidai.gov.in",
+      "lastReviewed": "2026-10-06"
+    },
+    {
+      "id": "ERR-02",
+      "slug": "dob-mismatch",
+      "title": "Date of Birth Mismatch in Online Application",
+      "category": "Identity details",
+      "services": ["Aadhaar", "PAN", "Driving Licence"],
+      "searchIntent": "date of birth mismatch in application",
+      "quickAnswer": "Indicates that the Date of Birth (DOB) entered does not match the digitized date on the verifying database, or only the birth year (e.g., 01/01/YYYY) is recorded on older legacy records.",
+      "stage": "e-KYC validation or licence renewal authentication",
+      "causes": [
+        "Legacy Aadhaar cards issued prior to 2017 often only contain the birth year, causing DD/MM mismatches",
+        "Different date recorded on school matriculation certificate vs municipal birth certificate",
+        "US date format (MM/DD/YYYY) entered instead of standard Indian format (DD/MM/YYYY)"
+      ],
+      "checks": [
+        "Inspect your e-Aadhaar PDF to see if DOB says 'Declared' or 'Verified'.",
+        "Check date format required by portal input mask."
+      ],
+      "steps": [
+        "Gather a mandatory birth proof: Birth Certificate issued by Municipal Registrar or Class 10/Matriculation Certificate.",
+        "Book an appointment at an authorized Aadhaar Seva Kendra for biometric DOB correction (UIDAI limits online DOB updates).",
+        "Once updated, download the fresh e-Aadhaar with digital signature.",
+        "Retry the portal application after 48 hours of UIDAI database synchronization."
+      ],
+      "warning": "UIDAI permits Date of Birth correction only ONCE in a citizen's lifetime. Further changes require exception handling at a UIDAI Regional Office.",
+      "avoid": [
+        "Do not submit notarized affidavits without official birth certificates, as portals routinely reject them.",
+        "Never submit altered or digitally edited birth certificates."
+      ],
+      "officialHelpline": "UIDAI 1947",
+      "officialUrl": "https://uidai.gov.in",
+      "lastReviewed": "2026-10-06"
+    },
+    {
+      "id": "ERR-03",
+      "slug": "mobile-number-mismatch",
+      "title": "Mobile Number Does Not Match Application Record",
+      "category": "Identity details",
+      "services": ["Aadhaar", "Passport"],
+      "searchIntent": "mobile number does not match application",
+      "quickAnswer": "Triggered when the mobile number you currently hold is different from the number originally linked to your Aadhaar/Passport profile during enrolment, preventing one-time password verification.",
+      "stage": "SMS OTP login or profile verification",
+      "causes": [
+        "Old phone number deactivated by telecom provider due to inactivity",
+        "Family member's mobile number was used during initial enrollment years ago",
+        "Typo in the 10-digit number entry field"
+      ],
+      "checks": [
+        "Use UIDAI's 'Verify Mobile/Email' tool at myaadhaar.uidai.gov.in to check which number is on file without viewing full private numbers.",
+        "Confirm your SIM is active and can receive National SMS headers."
+      ],
+      "steps": [
+        "Mobile number update in Aadhaar CANNOT be done purely online; biometric verification is mandatory.",
+        "Visit your nearest Post Office Aadhaar Center or Bank Branch with your physical Aadhaar card.",
+        "Complete biometric authentication and pay the nominal ₹50 UIDAI fee.",
+        "Receive the URN (Update Request Number) and track status. Processing normally takes 24 to 72 hours."
+      ],
+      "warning": "Never share OTPs with operators claiming to update your mobile number over WhatsApp or phone calls. Mobile linking always requires physical biometrics.",
+      "avoid": [
+        "Do not repeatedly guess mobile numbers on portals to prevent temporary account lockout."
+      ],
+      "officialHelpline": "UIDAI 1947",
+      "officialUrl": "https://myaadhaar.uidai.gov.in",
+      "lastReviewed": "2026-10-06"
+    },
+    {
+      "id": "ERR-04",
+      "slug": "document-rejected",
+      "title": "Document Rejected in Online Application",
+      "category": "Documents",
+      "services": ["Passport", "Driving Licence", "PAN"],
+      "searchIntent": "document rejected in online application what to do",
+      "quickAnswer": "Occurs when an uploaded document fails automated OCR scrutiny or manual verification due to blurriness, missing pages, wrong document category, or lack of self-attestation.",
+      "stage": "Document Scrutiny / Verification Stage",
+      "causes": [
+        "Document scanned in low resolution (< 200 DPI) making text unreadable",
+        "Missing self-attestation signature where required by portal guidelines",
+        "Document uploaded under incorrect category (e.g., uploading electricity bill under Age Proof instead of Address Proof)",
+        "Watermark or camera glare cutting off official seals or serial numbers"
+      ],
+      "checks": [
+        "Check portal status dashboard for specific remarks from the verification officer.",
+        "Inspect the uploaded PDF on a desktop screen to verify all corners and text are legible."
+      ],
+      "steps": [
+        "Login to the respective portal (e.g. Parivahan or Passport Seva) and navigate to 'Upload Pending Documents'.",
+        "Scan the original colored physical document at 200 to 300 DPI in PDF format.",
+        "If self-attestation is required, sign across the photocopy, write 'Self Attested', and scan.",
+        "Ensure file size is within limits (typically 20 KB - 500 KB) and re-upload."
+      ],
+      "warning": "Uploading falsified, tampered, or expired utility bills (older than 3 months) can lead to permanent rejection or legal scrutiny.",
+      "avoid": [
+        "Avoid using mobile phone camera snapshots with table shadows or cropped corners."
+      ],
+      "officialHelpline": "Passport Seva 1800-258-1800 | Sarathi 0120-2459169",
+      "officialUrl": "https://passportindia.gov.in",
+      "lastReviewed": "2026-10-06"
+    },
+    {
+      "id": "ERR-05",
+      "slug": "file-upload-failed",
+      "title": "File Upload Failed / Server Refused Document",
+      "category": "Documents",
+      "services": ["Passport", "Driving Licence"],
+      "searchIntent": "government portal document upload failed",
+      "quickAnswer": "A technical error where the portal refuses to ingest the file, almost always caused by strict file naming constraints, non-standard PDF formats, or file size limits.",
+      "stage": "Document upload page before submission",
+      "causes": [
+        "Special characters, symbols, or spaces in file name (e.g., 'my_passport(1).pdf' instead of 'passport.pdf')",
+        "File size exceeds maximum threshold (often 200 KB or 500 KB limit)",
+        "Password-protected or encrypted PDF (e.g., downloaded e-Aadhaar with password)",
+        "Unrecognized file extension (e.g., .HEIC from iPhones instead of standard .JPEG or .PDF)"
+      ],
+      "checks": [
+        "Confirm the file name contains only alphanumeric letters: `document.pdf`.",
+        "Check that the PDF opens without asking for any password.",
+        "Inspect file size in File Explorer / Finder properties."
+      ],
+      "steps": [
+        "Rename the file cleanly: use simple lowercase names like `addressproof.pdf`.",
+        "Remove passwords from PDFs: Print to PDF or export as an unencrypted file.",
+        "Compress the file using standard offline tools or print-to-PDF to bring it under 200 KB without losing legibility.",
+        "Clear browser cache, switch to Google Chrome or Mozilla Firefox, and re-attempt upload."
+      ],
+      "warning": "Do not upload sensitive personal documents to untrusted, ad-supported free online compression websites.",
+      "avoid": [
+        "Do not upload .webp, .heic, or raw image formats unless explicitly listed on the portal."
+      ],
+      "officialHelpline": "Parivahan 0120-2459169",
+      "officialUrl": "https://sarathi.parivahan.gov.in",
+      "lastReviewed": "2026-10-06"
+    },
+    {
+      "id": "ERR-06",
+      "slug": "photo-signature-rejected",
+      "title": "Photograph or Signature Rejected by Portal",
+      "category": "Documents",
+      "services": ["Passport", "Driving Licence"],
+      "searchIntent": "photo signature rejected online application",
+      "quickAnswer": "Occurs when your passport photo or signature image fails strict automated pixel dimension, aspect ratio, or background color algorithms.",
+      "stage": "Biometric / Photo upload stage",
+      "causes": [
+        "Photo has colored or patterned background instead of plain white or off-white",
+        "Face covers less than 70-80% of the photograph area",
+        "Signature scanned in low contrast or in blue ink when portal demands black ink on white paper",
+        "Pixel dimensions outside mandated limits (e.g., Parivahan requires 35mm x 45mm, ~420x540 pixels)"
+      ],
+      "checks": [
+        "Verify background is pure white without wall textures or shadows.",
+        "Ensure signature is sharp, centered, and signed on blank white printer paper (not ruled notebook paper)."
+      ],
+      "steps": [
+        "Crop the photograph to 35mm x 45mm with your face occupying 75% of the frame.",
+        "Sign clearly using a black gel or ballpoint pen on plain white paper and crop tightly.",
+        "Use image editing software to resize image dimensions strictly to the portal's stated pixels (e.g., width: 200px, height: 260px).",
+        "Save strictly as .JPEG or .JPG under 50 KB."
+      ],
+      "warning": "Selfies or casual outdoor photographs are rejected immediately during administrative scrutiny.",
+      "avoid": [
+        "Avoid using beauty filters, flash reflections on glasses, or red-eye artifacts."
+      ],
+      "officialHelpline": "Passport Seva 1800-258-1800",
+      "officialUrl": "https://passportindia.gov.in",
+      "lastReviewed": "2026-10-06"
+    },
+    {
+      "id": "ERR-07",
+      "slug": "record-not-found",
+      "title": "Record Not Found on Government Portal",
+      "category": "Records",
+      "services": ["Driving Licence", "PAN"],
+      "searchIntent": "record not found on government portal",
+      "quickAnswer": "Indicates that the entered application number, licence number, or acknowledgement does not exist in the centralized national database, often due to legacy manual paper records or state database synchronization lags.",
+      "stage": "Status check, DL renewal, or PAN verification",
+      "causes": [
+        "Old driving licence (issued before Sarathi computerization) was never backlogged by the local RTO",
+        "Application submitted in a different state or RTO jurisdiction than the one selected on the login page",
+        "Typo in the state code or series format (e.g. 'DL-04' vs 'DL04')",
+        "Application was only submitted within the last 2 hours and batch database indexing has not run"
+      ],
+      "checks": [
+        "Verify the exact spacing format on your physical driving licence card.",
+        "Confirm you selected the correct State on the Parivahan home screen before searching."
+      ],
+      "steps": [
+        "For old Driving Licences: Apply for 'Backlog Entry' at your local RTO or through the Parivahan portal under 'Services on DL'.",
+        "Check your receipt / SMS for the exact Application Number and Date of Birth.",
+        "Wait 24 hours if the application was submitted on a weekend or public holiday.",
+        "If the issue persists, visit your issuing RTO with the original paper booklet/card to verify digitization."
+      ],
+      "warning": "Do not apply for a fresh Learner's Licence if you already possess a valid old licence, as this creates duplicate driving records prohibited under the Motor Vehicles Act.",
+      "avoid": [
+        "Do not consult touts outside RTO offices offering to 'pull up' lost records without official file tracking."
+      ],
+      "officialHelpline": "Sarathi 0120-2459169",
+      "officialUrl": "https://sarathi.parivahan.gov.in",
+      "lastReviewed": "2026-10-06"
+    },
+    {
+      "id": "ERR-08",
+      "slug": "duplicate-application",
+      "title": "Duplicate Application / Record Already Exists",
+      "category": "Records",
+      "services": ["Driving Licence", "Passport"],
+      "searchIntent": "duplicate application error government portal",
+      "quickAnswer": "Appears when you attempt to create a new application while an existing active application with the same demographic details or phone number is already pending in the portal's system.",
+      "stage": "Initial form submission or appointment booking",
+      "causes": [
+        "A previous incomplete application was initiated and not cancelled",
+        "Browser timed out previously, but the backend successfully generated an Application Reference Number (ARN)",
+        "Applying for a duplicate document when the original application is still active"
+      ],
+      "checks": [
+        "Check your registered email and SMS inbox for an earlier ARN or Application Number.",
+        "Login to the portal dashboard and look at the 'Submitted Applications' tab."
+      ],
+      "steps": [
+        "Log into Passport Seva or Sarathi and click on 'View Saved/Submitted Applications'.",
+        "Locate the older ARN and select 'Continue Application' or 'Pay and Schedule Appointment'.",
+        "If you genuinely made mistakes in the older application, use the official 'Cancel Application' button or wait until the appointment slot lapses.",
+        "Never fill out a brand-new application form until the older one is either processed or cancelled."
+      ],
+      "warning": "Creating duplicate passport applications with differing information can lead to show-cause notices from the Regional Passport Office (RPO).",
+      "avoid": [
+        "Do not create multiple accounts with different email IDs to bypass application limits."
+      ],
+      "officialHelpline": "Passport Seva 1800-258-1800",
+      "officialUrl": "https://passportindia.gov.in",
+      "lastReviewed": "2026-10-06"
+    },
+    {
+      "id": "ERR-09",
+      "slug": "otp-not-received",
+      "title": "OTP Not Received from Government Website",
+      "category": "Authentication",
+      "services": ["Aadhaar", "PAN", "Passport"],
+      "searchIntent": "OTP not received government website",
+      "quickAnswer": "A common bottleneck caused by telecom gateway congestion, National Do Not Disturb (DND) routing filters, server throttling, or an out-of-sync registered mobile number.",
+      "stage": "Login, e-Sign, or transaction authentication",
+      "causes": [
+        "Telecom operator SMS routing delay during peak working hours (10:00 AM – 2:00 PM)",
+        "Strict DND (Do Not Disturb) settings blocking transactional SMS headers (e.g., VM-UIDAI, AX-GOV)",
+        "Low mobile network signal or roaming carrier latency",
+        "UIDAI rate-limiting: requesting too many OTPs in rapid succession"
+      ],
+      "checks": [
+        "Verify your phone has active signal and can receive normal incoming SMS.",
+        "Check spam/blocked folder in your phone's SMS app.",
+        "Confirm you are checking the SIM card that is actually linked to the government ID."
+      ],
+      "steps": [
+        "Wait for the on-screen countdown timer (usually 60–120 seconds) to expire before pressing 'Resend'.",
+        "Restart your mobile device or toggle Airplane Mode ON/OFF to re-register with the nearest cell tower.",
+        "If using Aadhaar, try generating a **Time-based OTP (TOTP)** via the official mAadhaar smartphone app (TOTP changes every 30 seconds and does not rely on SMS delivery).",
+        "Attempt authentication during off-peak hours (before 9:00 AM or after 8:00 PM)."
+      ],
+      "warning": "Portal OTPs are typically valid for only 5 to 10 minutes. Entering delayed OTPs after expiration will result in failure.",
+      "avoid": [
+        "Do not repeatedly click 'Resend OTP' 5+ times; portals will lock your profile for 24 hours."
+      ],
+      "officialHelpline": "UIDAI 1947",
+      "officialUrl": "https://uidai.gov.in",
+      "lastReviewed": "2026-10-06"
+    },
+    {
+      "id": "ERR-10",
+      "slug": "otp-expired-invalid",
+      "title": "OTP Expired or Invalid OTP Entered",
+      "category": "Authentication",
+      "services": ["Aadhaar", "PAN"],
+      "searchIntent": "invalid OTP while applying online",
+      "quickAnswer": "Occurs when the submitted OTP has exceeded its short server validity window, or when an earlier OTP from multiple requests was entered instead of the newest one.",
+      "stage": "Aadhaar e-KYC or Income tax e-filing verification",
+      "causes": [
+        "Multiple OTPs generated in rapid succession; user entered the older SMS instead of the most recent one",
+        "Local device clock drift: Computer or smartphone time differs from Indian Standard Time (IST)",
+        "SMS was delayed by telecom provider and arrived after the 5-minute validity window"
+      ],
+      "checks": [
+        "Check your device settings: Ensure 'Date & Time' is set to 'Automatic (Network-provided time)' and timezone is GMT+5:30.",
+        "Check the timestamp of the received SMS."
+      ],
+      "steps": [
+        "Clear all old OTP SMS messages from the government sender to prevent confusion.",
+        "Synchronize your computer/phone clock with network time.",
+        "Click 'Request New OTP' once, wait patiently for the SMS, and enter the latest OTP received.",
+        "Ensure you type digits directly without leading or trailing spaces."
+      ],
+      "warning": "Entering 3 consecutive invalid OTPs will freeze the transaction session for 30 to 60 minutes.",
+      "avoid": [
+        "Do not copy-paste OTPs with formatting symbols or characters."
+      ],
+      "officialHelpline": "Income Tax 1800-180-1961 | UIDAI 1947",
+      "officialUrl": "https://incometax.gov.in",
+      "lastReviewed": "2026-10-06"
+    },
+    {
+      "id": "ERR-11",
+      "slug": "payment-successful-application-pending",
+      "title": "Payment Successful but Status Still Pending",
+      "category": "Payment",
+      "services": ["Passport", "Driving Licence", "PAN"],
+      "searchIntent": "payment successful application pending",
+      "quickAnswer": "A very frequent payment gateway issue where bank funds are deducted from your account, but the government portal has not yet received or reconciled the confirmation webhook from Bharatkosh, SBI ePay, or the aggregator.",
+      "stage": "Challan / Fee payment confirmation stage",
+      "causes": [
+        "Asynchronous batch reconciliation delay between payment aggregator and treasury backend",
+        "Network drop immediately after entering 3D secure bank OTP before the redirect finished",
+        "Aggregator server timeout during transaction token callback"
+      ],
+      "checks": [
+        "Verify that funds were genuinely debited from your bank balance / passbook.",
+        "Check your email and SMS for a Transaction ID (Txn ID) or Bank Reference Number."
+      ],
+      "steps": [
+        "**DO NOT PAY AGAIN IMMEDIATELY**: Wait at least 24 to 48 business hours for automated reconciliation.",
+        "Log back into the portal (e.g. Passport Seva or Parivahan) and navigate to 'Payment Status' or 'Verify Payment'.",
+        "Click the official 'Track Payment Status' or 'Re-verify Payment' button. In over 80% of cases, this pulls the updated bank token and confirms the payment.",
+        "If status remains pending after 48 hours, raise a ticket on the portal with your Bank Reference Number and Transaction ID."
+      ],
+      "warning": "Making a second payment immediately may result in double deduction. Portals do not guarantee instant refunds for duplicate citizen payments.",
+      "avoid": [
+        "Do not close your browser tab or hit the back button while the payment gateway is redirecting."
+      ],
+      "officialHelpline": "Bharatkosh Support | Passport Seva 1800-258-1800",
+      "officialUrl": "https://bharatkosh.gov.in",
+      "lastReviewed": "2026-10-06"
+    },
+    {
+      "id": "ERR-12",
+      "slug": "payment-failed-amount-debited",
+      "title": "Amount Debited but Payment Failed on Portal",
+      "category": "Payment",
+      "services": ["Passport", "Driving Licence"],
+      "searchIntent": "amount debited payment failed government portal",
+      "quickAnswer": "The payment gateway registered the session as failed or timed out, yet the issuing bank authorized the debit. The money sits in an intermediary escrow account pending auto-reversal.",
+      "stage": "Payment gateway redirect stage",
+      "causes": [
+        "Interrupted redirect from bank gateway back to the merchant portal",
+        "Session timeout on the government site while 2FA authentication was being processed",
+        "Failure of payment gateway to issue a receipt token within the 180-second timeout"
+      ],
+      "checks": [
+        "Confirm whether the bank SMS marked the transaction as a merchant debit or a temporary authorization hold."
+      ],
+      "steps": [
+        "Per Reserve Bank of India (RBI) turnaround time (TAT) guidelines, failed e-commerce/merchant transactions auto-reverse within T+5 business days.",
+        "Log into your bank account after 24 hours to check for an automated reversal credit.",
+        "If not refunded within 5 working days, lodge a chargeback / transaction dispute with your issuing bank quoting the UPI UTR or Card Reference Number.",
+        "Only once the reversal is confirmed or you receive written confirmation of failure should you initiate a fresh payment on the portal."
+      ],
+      "warning": "Government portals do not manually disburse refunds for failed gateway attempts; reversals are handled automatically via the payment gateway banking rails.",
+      "avoid": [
+        "Do not call unverified customer care numbers found on Google Maps or social media claiming to issue instant refunds."
+      ],
+      "officialHelpline": "National Payments Corporation of India (NPCI) / Bharatkosh",
+      "officialUrl": "https://bharatkosh.gov.in",
+      "lastReviewed": "2026-10-06"
+    },
+    {
+      "id": "ERR-13",
+      "slug": "application-under-process",
+      "title": "Application Under Process Meaning & Realistic Timeline",
+      "category": "Status",
+      "services": ["Passport", "PAN", "Driving Licence"],
+      "searchIntent": "application under process meaning how long",
+      "quickAnswer": "Indicates that your application has cleared initial computer validation and is currently undergoing internal statutory scrutiny, background checks, or physical dispatch queue.",
+      "stage": "Post-submission processing stage",
+      "causes": [
+        "Passport: Application pending verification report from District Police Headquarters",
+        "Driving Licence: Waiting for RTO Motor Vehicle Inspector (MVI) approval after driving test",
+        "PAN: Demographic matching with NSDL backend verification team",
+        "High regional application backlogs during festival or peak vacation seasons"
+      ],
+      "checks": [
+        "Read the specific sub-status in the portal tracking tab (e.g. 'Police Verification Report Submitted', 'Pending Printing')."
+      ],
+      "steps": [
+        "Check official turnaround benchmarks: Passport normal processing is typically 15–20 days; Tatkaal is 3–5 days; PAN card is 10–15 days.",
+        "For Passport police verification: Ensure you are available at your residence and keep original documents ready when the local police station contacts you.",
+        "If processing exceeds the Citizen's Charter timeline by more than 30 days, register a grievance via CPGRAMS (pgportal.gov.in).",
+        "Avoid visiting regional offices in person without a scheduled inquiry appointment."
+      ],
+      "warning": "'Under process' is a normal operational state and does NOT mean your application is rejected or lost.",
+      "avoid": [
+        "Do not pay unauthorized middlemen who claim they can 'speed up' government administrative files."
+      ],
+      "officialHelpline": "CPGRAMS Portal (pgportal.gov.in) | Passport Seva 1800-258-1800",
+      "officialUrl": "https://pgportal.gov.in",
+      "lastReviewed": "2026-10-06"
+    },
+    {
+      "id": "ERR-14",
+      "slug": "portal-server-error",
+      "title": "Government Portal Unavailable or Server Error 500/503",
+      "category": "Availability",
+      "services": ["Passport", "Aadhaar", "Driving Licence", "PAN"],
+      "searchIntent": "government portal server error what to do",
+      "quickAnswer": "Occurs when portal servers are overwhelmed by concurrent visitor traffic, undergoing scheduled maintenance, or experiencing database gateway connection failures.",
+      "stage": "Any stage, especially during peak daytime hours or deadline days",
+      "causes": [
+        "Extreme server load during application deadline dates or appointment slot opening windows (e.g., 11:00 AM Passport slots)",
+        "Scheduled server maintenance typically conducted over weekends or late nights (11:00 PM – 5:00 AM)",
+        "Stale browser cache holding outdated CDN assets or broken session tokens"
+      ],
+      "checks": [
+        "Check official department Twitter/X handles (@UIDAI, @passportsevamea) for scheduled maintenance announcements.",
+        "Test whether the website loads on mobile mobile data instead of local Wi-Fi to rule out ISP DNS routing issues."
+      ],
+      "steps": [
+        "Hard refresh your browser by pressing `Ctrl + F5` (Windows) or `Cmd + Shift + R` (Mac).",
+        "Open an Incognito / Private Browsing window to rule out conflicting browser extensions.",
+        "Switch DNS to Public Resolvers (Google DNS `8.8.8.8` or Cloudflare `1.1.1.1`) if your local ISP DNS is failing.",
+        "Wait 1 to 2 hours and retry during off-peak times (early morning or late evening)."
+      ],
+      "warning": "Do not use aggressive auto-refresh browser plugins, which can trigger automatic Cloudflare or NIC firewall IP bans.",
+      "avoid": [
+        "Never enter sensitive data on third-party mirror sites that imitate official portals during downtimes."
+      ],
+      "officialHelpline": "National Informatics Centre (NIC) Support",
+      "officialUrl": "https://nic.in",
+      "lastReviewed": "2026-10-06"
+    },
+    {
+      "id": "ERR-15",
+      "slug": "session-expired",
+      "title": "Session Expired While Filling Online Application",
+      "category": "Session",
+      "services": ["Passport", "Aadhaar", "Driving Licence", "PAN"],
+      "searchIntent": "session expired while filling online application",
+      "quickAnswer": "Triggered by built-in government security timers when a form page is kept idle for more than 10 to 15 minutes, or when navigation occurs across multiple browser tabs simultaneously.",
+      "stage": "Lengthy multi-page application forms",
+      "causes": [
+        "Taking longer than the allocated inactivity window (usually 10–15 mins) to type details or upload files",
+        "Opening the same portal in multiple tabs, causing the session cookie to be overwritten",
+        "Using browser 'Back' or 'Forward' buttons instead of on-screen portal navigation buttons",
+        "Unstable internet connection that drops packet transmission intermittently"
+      ],
+      "checks": [
+        "Ensure all document scans and text details are prepared offline before starting the form."
+      ],
+      "steps": [
+        "Close all open tabs related to the portal and clear browser cookies for that domain.",
+        "Prepare all details (addresses, parents' names, ID numbers) in a local text editor first.",
+        "Log back in, click 'Save as Draft' after completing every individual step or tab.",
+        "Only use the portal's internal 'Next' and 'Previous' buttons rather than the browser navigation buttons."
+      ],
+      "warning": "Once a session expires, unsaved form fields are wiped from server memory for citizen data protection reasons.",
+      "avoid": [
+        "Never fill lengthy government application forms over public unsecured Wi-Fi connections."
+      ],
+      "officialHelpline": "Relevant portal technical desk",
+      "officialUrl": "https://india.gov.in",
+      "lastReviewed": "2026-10-06"
+    }
+  ],
+  "generalTroubleshooting": {
+    "title": "Safe Troubleshooting Before Contacting Portal Support",
+    "slug": "safe-troubleshooting-before-contacting-support",
+    "summary": "Essential, non-destructive diagnostic checks every citizen should perform before lodging official grievances or assuming a technical error.",
+    "rules": [
+      "Rule 1: Always check device date & time synchronization with Indian Standard Time (IST).",
+      "Rule 2: Prepare compressed documents and verify PDF encryption status before opening the application window.",
+      "Rule 3: Recognize the 24-48 hour banking reconciliation window for payment status updates.",
+      "Rule 4: Avoid multi-tab browsing and aggressive page auto-refreshers.",
+      "Rule 5: Zero-trust toward unofficial customer support numbers or social media brokers."
+    ]
+  }
+}

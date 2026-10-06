@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://error-decoder.in/sitemap.xml
