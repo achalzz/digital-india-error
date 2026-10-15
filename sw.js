@@ -3,8 +3,8 @@
  * Strategy: Cache-First for static assets, Network-First for data
  */
 
-const CACHE_NAME    = 'ied-v1';
-const DATA_CACHE    = 'ied-data-v1';
+const CACHE_NAME    = 'ied-v10';
+const DATA_CACHE    = 'ied-data-v2';
 const OFFLINE_URL   = '/';
 
 // Static assets to precache on install
