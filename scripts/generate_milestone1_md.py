@@ -19,7 +19,7 @@ md_content = """# CSET489 Mini-Project – Milestone I Report
 | **Team Name** | Team Error Decoder (GovTech SEO Group) |
 | **Project / Website Title** | Digital India Error Decoder |
 | **Niche (one line)** | Citizen-facing GovTech error troubleshooting and procedural navigation for Indian public digital platforms (Passport Seva, Parivahan Sarathi, UIDAI Aadhaar, Income Tax PAN). |
-| **Live Website URL** | `https://digital-india-errors.netlify.app` |
+| **Live Website URL** | `https://digital-india-error.netlify.app/` |
 | **Domain Registrar** | Netlify Edge DNS (Custom Domain Ready) |
 | **VPS Provider** | Netlify High-Performance Edge CDN (Automated CI/CD & SSL) |
 | **Submission Date (DD-MM-YYYY)** | 15-10-2026 |
