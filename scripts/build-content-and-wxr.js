@@ -38,8 +38,9 @@ author: "Digital India Error Decoder Research Team"
 
 > **Editorial Standard Reminder**:
 > - Never request personal identifiers (Aadhaar, PAN, OTP, application numbers, bank info).
-> - Cite official portals and check dates.
+> - Cite the exact official instruction, notice, or Citizen's Charter section supporting each portal-specific claim.
 > - Clearly separate general network/browser troubleshooting from portal-specific guidance.
+> - Label unsupported or conflicting claims "Needs verification"; a review date alone is not proof of verification.
 
 ---
 
@@ -51,7 +52,8 @@ author: "Digital India Error Decoder Research Team"
 ## Where It Appears
 - **Service / Portal**: ${err.services.join(', ')}
 - **Stage of Application**: ${err.stage}
-- **Last Verified**: ${err.lastReviewed}
+- **Recorded Review Date**: ${err.lastReviewed}
+- **Source Status**: Needs source review; claim-level references are not recorded in the project data.
 
 ---
 
@@ -119,7 +121,7 @@ url: "${srv.url}"
 # ${srv.name} — Public Portal Error Directory
 
 - **Statutory Authority**: ${srv.authority}
-- **Verified Official Helpline**: ${srv.helpline}
+- **Official Helpline listed in project data**: ${srv.helpline}
 - **Official Portal URL**: [${srv.url}](${srv.url})
 
 ## Overview
@@ -149,17 +151,17 @@ slug: "safe-troubleshooting-before-contacting-support"
 
 Essential, non-destructive diagnostic checks every citizen should perform before lodging official grievances or assuming a portal system failure.
 
-## 1. Verify Device Clock Synchronization (IST)
-Government portal authentication gateways (such as OTPs, 2FA, and Aadhaar e-Sign) strictly enforce cryptographic time-window validation. If your computer or smartphone clock deviates by more than 90 seconds from Indian Standard Time (IST), OTPs will be rejected as expired upon entry.
+## 1. Check Device Date and Time
+An incorrect device clock can interfere with time-based authentication. Enable automatic date and time, then request a fresh OTP if the portal allows it. Follow the portal's own retry and lockout instructions.
 
-## 2. Clean Document Formatting & Password Removal
-Over 40% of document upload rejections are due to password-protected e-Aadhaar PDFs or file names containing spaces and punctuation. Downloaded Aadhaar cards have a default 8-character password. Government ingestion servers cannot decrypt password-protected files. Always use "Print to PDF" to generate an unencrypted, cleanly named copy under 200 KB.
+## 2. Check Document Requirements
+Portals may limit file type, size, dimensions, or password protection. Check the instructions for the exact application before editing a document. e-Aadhaar PDFs may be password protected; follow UIDAI instructions and avoid uploading identity documents to unknown conversion sites.
 
-## 3. Respect the 24–48 Hour Banking Reconciliation Window
-When money is deducted via UPI, NetBanking, or Debit Card but the portal indicates "Payment Failed" or "Pending Challan", treasury aggregators (Bharatkosh, SBI ePay) require nightly batch reconciliations. Never pay twice in panic. In 80% of cases, logging back in after 24 hours and clicking "Re-verify Payment" confirms the transaction.
+## 3. Check Payment Status Before Paying Again
+If money was debited but the application still shows pending, check the official portal's payment-status or receipt page and your bank statement. Do not pay again until the portal or bank confirms the first transaction failed. Follow the reconciliation window shown by the portal or payment provider.
 
-## 4. Single-Tab Isolated Browsing
-Government session cookies are tied to a single active session token. Opening multiple tabs for the same portal will scramble state parameters, resulting in an immediate "Session Expired" error.
+## 4. Keep the Session Stable
+Some portals limit how many active sessions or tabs can be used at once. If a session expires, return through the official portal and check whether a draft or application was saved before restarting.
 
 ## 5. Maintain Zero Trust Against Unofficial Intermediaries
 Never share SMS OTPs, Aadhaar numbers, or banking credentials with third-party agents found on social media, Telegram, or unofficial search ads claiming to "expedite" your application.
@@ -170,10 +172,10 @@ console.log('✓ Generated Safe Troubleshooting Guide');
 // 4. Generate Governance Pages
 const pages = [
   { slug: 'about', title: 'About Digital India Error Decoder', content: 'Independent citizen utility project created to demystify cryptic government portal error messages and provide safe, verifiable troubleshooting advice.' },
-  { slug: 'editorial-policy', title: 'Editorial Policy & Verification Standards', content: 'Our commitment to 100% verified government sources, strict separation of advice from official rules, and date-stamped revision histories.' },
-  { slug: 'privacy-policy', title: 'Privacy Policy', content: 'Our zero-data collection guarantee: no Aadhaar, PAN, OTP, application numbers, or payments are ever requested or stored.' },
+  { slug: 'editorial-policy', title: 'Editorial Policy & Verification Standards', content: 'Portal-specific claims should cite a relevant official source, not just a portal homepage. Recorded review dates are not proof of independent verification; source and reviewer records are not yet complete for every guide.' },
+  { slug: 'privacy-policy', title: 'Privacy & Data Use', content: 'This static build does not configure analytics or feedback submission. Production privacy details depend on the selected host and enabled services.' },
   { slug: 'disclaimer', title: 'Statutory Disclaimer', content: 'Digital India Error Decoder is an independent initiative not affiliated with, endorsed by, or operated by the Government of India or any statutory department.' },
-  { slug: 'contact', title: 'Contact & Correction Feedback', content: 'Report outdated portal workflows, request coverage for new error codes, or reach the research team.' }
+  { slug: 'contact', title: 'Correction Submissions', content: 'Correction submissions are not available in this build because no feedback service or contact address is configured.' }
 ];
 
 pages.forEach(p => {

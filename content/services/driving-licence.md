@@ -9,7 +9,7 @@ url: "https://sarathi.parivahan.gov.in"
 # Parivahan Sarathi — Public Portal Error Directory
 
 - **Statutory Authority**: Ministry of Road Transport and Highways (MoRTH)
-- **Verified Official Helpline**: 0120-2459169
+- **Official Helpline listed in project data**: 0120-2459169
 - **Official Portal URL**: [https://sarathi.parivahan.gov.in](https://sarathi.parivahan.gov.in)
 
 ## Overview

@@ -9,7 +9,7 @@ url: "https://incometax.gov.in"
 # Income Tax / NSDL Protean PAN — Public Portal Error Directory
 
 - **Statutory Authority**: Income Tax Department & Protean eGov / UTIITSL
-- **Verified Official Helpline**: 1800-180-1961
+- **Official Helpline listed in project data**: 1800-180-1961
 - **Official Portal URL**: [https://incometax.gov.in](https://incometax.gov.in)
 
 ## Overview

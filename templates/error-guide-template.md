@@ -2,8 +2,9 @@
 
 > **Editorial Standard Reminder**:
 > - Never request personal identifiers (Aadhaar, PAN, OTP, application numbers, bank info).
-> - Cite official portals and check dates.
+> - Cite the exact official instruction, notice, or Citizen's Charter section supporting each portal-specific claim.
 > - Clearly separate general network/browser troubleshooting from portal-specific guidance.
+> - Label unsupported or conflicting claims "Needs verification"; do not display a review date as proof of verification.
 > - Include standard trust & non-affiliation disclaimer.
 
 ---
@@ -18,8 +19,15 @@
 ## Where It Appears
 - **Service / Portal**: [e.g., UIDAI self-service portal, Parivahan Sarathi, NSDL/Protean PAN portal, Passport Seva]
 - **Stage of Application**: [e.g., During final payment submission, file upload stage, Aadhaar OTP authentication]
-- **Last Verified on Portal**: [YYYY-MM-DD]
+- **Review Status**: [Needs verification / Source checked]
+- **Recorded Review Date**: [YYYY-MM-DD]
 - **Status / Reproducibility**: [Confirmed active issue / Intermittent server behavior]
+
+## Sources
+- **Claim supported**: [Exact statement or section supported]
+- **Official source**: [Direct URL to the relevant official page or document]
+- **Section / page**: [Heading, page number, or paragraph]
+- **Checked on**: [YYYY-MM-DD]
 
 ---
 

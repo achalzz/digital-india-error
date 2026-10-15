@@ -1,6 +1,6 @@
 # Backup & Disaster Recovery Procedure
 
-This document defines the automated backup routine, off-site retention schedule, and verified restore procedure for the **Digital India Error Decoder** WordPress site.
+This document is a proposed backup and restore procedure for a future **Digital India Error Decoder** WordPress deployment. No automated job, configured remote destination, or completed restore drill is evidenced in this repository.
 
 ---
 
@@ -56,10 +56,10 @@ crontab -e
 
 ---
 
-## 2. Tested Disaster Recovery & Restore Drill
+## 2. Restore Drill Checklist (Not Yet Verified)
 
 > [!IMPORTANT]
-> A backup is only as good as its tested restore. Conduct this restore verification on a test environment or staging directory before final submission.
+> A backup is only as good as its tested restore. Run this checklist on a staging environment and record the date, environment, and outcome before describing recovery as tested.
 
 ### Step-by-Step Restoration:
 

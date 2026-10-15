@@ -1,8 +1,8 @@
 ---
-title: "Contact & Correction Feedback"
+title: "Correction Submissions"
 slug: "contact"
 ---
 
-# Contact & Correction Feedback
+# Correction Submissions
 
-Report outdated portal workflows, request coverage for new error codes, or reach the research team.
+Correction submissions are not available in this build because no feedback service or contact address is configured.

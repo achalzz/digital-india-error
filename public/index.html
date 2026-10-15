@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO -->
   <title>Digital India Error Decoder — Understand the Error. Know What To Do Next.</title>
-  <meta name="description" content="Free, plain-language troubleshooting for common errors on Passport Seva, Aadhaar, Parivahan, and PAN portals. Verified causes, safe steps, official helplines.">
+  <meta name="description" content="Plain-language troubleshooting for Aadhaar, PAN, Passport Seva, and Parivahan errors. Find safe next steps and official support contacts.">
   <link rel="canonical" href="https://error-decoder.in/">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://error-decoder.in/">
   <meta property="og:title"       content="Digital India Error Decoder — Plain Language Portal Help">
-  <meta property="og:description" content="Decode cryptic government portal errors. Find verified causes and safe, reversible resolution steps.">
+  <meta property="og:description" content="Decode government portal errors and find safe next steps and official support contacts.">
   <meta property="og:site_name"   content="Digital India Error Decoder">
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#6366f1">
+  <meta name="theme-color" content="#f8fafc">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -28,19 +28,6 @@
 
   <!-- Fuse.js fuzzy search — loaded before app.js -->
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
-
-  <!-- GA4 — Privacy-first, no cookies, hash-based SPA tracking -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE_WITH_YOUR_ID"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-REPLACE_WITH_YOUR_ID', {
-      anonymize_ip: true,
-      cookie_flags: 'SameSite=None;Secure',
-      send_page_view: false  /* Manual tracking per hash route in app.js */
-    });
-  </script>
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -91,8 +78,9 @@
        ============================================================ -->
   <div class="trust-banner" role="banner" aria-label="Independence notice">
     <div class="container">
-      🛡️ <strong>Independent Citizen Utility:</strong>
-      Not affiliated with the Government of India. We never ask for Aadhaar, PAN, OTP, or payments.
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline-block;vertical-align:-2px;margin-right:4px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      <strong>Independent Citizen Utility:</strong>
+      Not affiliated with the Government of India. We never request Aadhaar, PAN, OTP, or payments.
     </div>
   </div>
 
@@ -103,7 +91,7 @@
     <div class="container nav-wrap">
 
       <!-- Brand -->
-      <a href="#/" class="brand" id="brand-link" aria-label="Digital India Error Decoder — Home">
+      <a href="/" class="brand" id="brand-link" aria-label="Digital India Error Decoder — Home">
         <div class="brand-icon" aria-hidden="true">ED</div>
         <div class="brand-text">
           <span class="brand-title">Error Decoder</span>
@@ -114,12 +102,12 @@
       <!-- Desktop Nav Links -->
       <nav aria-label="Main navigation">
         <ul class="nav-links" id="main-navigation" role="menubar">
-          <li role="none"><a href="#/" class="nav-link" role="menuitem" id="nav-directory">Directory</a></li>
-          <li role="none"><a href="#/services/passport" class="nav-link" role="menuitem">Passport</a></li>
-          <li role="none"><a href="#/services/aadhaar" class="nav-link" role="menuitem">Aadhaar</a></li>
-          <li role="none"><a href="#/services/driving-licence" class="nav-link" role="menuitem">Driving Licence</a></li>
-          <li role="none"><a href="#/services/pan" class="nav-link" role="menuitem">PAN</a></li>
-          <li role="none"><a href="#/guides/safe-troubleshooting" class="nav-link" role="menuitem">Safe Guide</a></li>
+          <li role="none"><a href="/" class="nav-link" role="menuitem" id="nav-directory">Directory</a></li>
+          <li role="none"><a href="/services/passport/" class="nav-link" role="menuitem">Passport</a></li>
+          <li role="none"><a href="/services/aadhaar/" class="nav-link" role="menuitem">Aadhaar</a></li>
+          <li role="none"><a href="/services/driving-licence/" class="nav-link" role="menuitem">Driving Licence</a></li>
+          <li role="none"><a href="/services/pan/" class="nav-link" role="menuitem">PAN</a></li>
+          <li role="none"><a href="/guides/safe-troubleshooting-before-contacting-support/" class="nav-link" role="menuitem">Safe Guide</a></li>
         </ul>
       </nav>
 
@@ -128,9 +116,9 @@
         <button
           class="lang-toggle"
           id="lang-toggle"
-          aria-label="Switch to Hindi"
+          aria-label="Switch language"
           title="Switch language"
-        >🇮🇳 हिन्दी</button>
+        >हिन्दी</button>
 
         <button
           class="icon-btn"
@@ -138,7 +126,9 @@
           aria-label="Toggle dark / light theme"
           title="Switch theme"
         >
-          <span id="theme-icon" aria-hidden="true">☀️</span>
+          <span id="theme-icon" aria-hidden="true">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </span>
         </button>
 
         <button
@@ -147,7 +137,9 @@
           aria-label="Open navigation menu"
           aria-controls="mobile-nav"
           aria-expanded="false"
-        >☰</button>
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
       </div>
     </div>
   </header>
@@ -162,13 +154,13 @@
     aria-hidden="true"
   >
     <button class="icon-btn mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation">✕</button>
-    <a href="#/" class="nav-link" onclick="closeMobileMenu()">Directory</a>
-    <a href="#/services/passport" class="nav-link" onclick="closeMobileMenu()">Passport Seva</a>
-    <a href="#/services/aadhaar" class="nav-link" onclick="closeMobileMenu()">UIDAI Aadhaar</a>
-    <a href="#/services/driving-licence" class="nav-link" onclick="closeMobileMenu()">Driving Licence</a>
-    <a href="#/services/pan" class="nav-link" onclick="closeMobileMenu()">PAN</a>
-    <a href="#/guides/safe-troubleshooting" class="nav-link" onclick="closeMobileMenu()">Safe Troubleshooting</a>
-    <a href="#/about" class="nav-link" onclick="closeMobileMenu()">About</a>
+    <a href="/" class="nav-link" onclick="closeMobileMenu()">Directory</a>
+    <a href="/services/passport/" class="nav-link" onclick="closeMobileMenu()">Passport Seva</a>
+    <a href="/services/aadhaar/" class="nav-link" onclick="closeMobileMenu()">UIDAI Aadhaar</a>
+    <a href="/services/driving-licence/" class="nav-link" onclick="closeMobileMenu()">Driving Licence</a>
+    <a href="/services/pan/" class="nav-link" onclick="closeMobileMenu()">PAN</a>
+    <a href="/guides/safe-troubleshooting-before-contacting-support/" class="nav-link" onclick="closeMobileMenu()">Safe Troubleshooting</a>
+    <a href="/about/" class="nav-link" onclick="closeMobileMenu()">About</a>
   </div>
 
   <!-- ============================================================
@@ -183,28 +175,30 @@
         <!-- Hero -->
         <div class="hero-section" id="hero-section">
           <div class="hero-pill" role="note">
-            ⚡ 100% Free · Independent · Verified Instructions
+            Independent Citizen Troubleshooting Utility
           </div>
 
           <h1 class="hero-title">
             Understand the error.<br>
-            <span class="gradient-text">Know what to do next.</span>
+            <span class="hero-highlight">Know what to do next.</span>
           </h1>
 
           <p class="hero-subtitle">
-            Cryptic errors on Passport Seva, Aadhaar, Parivahan, or PAN portals?
-            Decode the meaning, verify safe checks, and resolve issues without risk of duplicate fees or scams.
+            Plain-language diagnostic guides for Passport Seva, Aadhaar, Parivahan, and PAN portals.
+            Verify safe checks and resolve issues with official helplines.
           </p>
 
           <!-- Search Engine -->
           <div class="search-wrapper" id="search-wrapper">
             <div class="search-input-box">
-              <span class="search-icon" aria-hidden="true">🔍</span>
+              <span class="search-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </span>
               <input
                 type="search"
                 id="search-input"
                 class="search-input"
-                placeholder="Search error or symptom (e.g. 'Payment Pending', 'OTP', 'Name Mismatch')..."
+                placeholder="Search error code or symptom (e.g. 'Payment Pending', 'OTP', 'Name Mismatch')..."
                 autocomplete="off"
                 autocorrect="off"
                 spellcheck="false"
@@ -212,19 +206,19 @@
                 aria-controls="errors-grid"
                 aria-autocomplete="list"
               >
-              <span class="search-badge" aria-hidden="true">Fuzzy</span>
+              <kbd class="search-kbd" aria-hidden="true">/</kbd>
             </div>
 
             <!-- Portal Status Banner -->
             <div
               id="portal-status-banner"
-              role="alert"
-              aria-live="assertive"
+              role="status"
+              aria-live="polite"
             ></div>
 
             <!-- Quick Chips -->
             <div class="quick-queries" role="group" aria-label="Quick search suggestions">
-              <span aria-hidden="true">Try:</span>
+              <span style="color:var(--text-muted);font-weight:500;">Popular searches:</span>
               <button class="query-chip" data-query="payment pending" tabindex="0">Payment Pending</button>
               <button class="query-chip" data-query="otp not received" tabindex="0">OTP Delayed</button>
               <button class="query-chip" data-query="name mismatch" tabindex="0">Name Mismatch</button>
@@ -239,7 +233,7 @@
           <div class="section-header">
             <div>
               <h2 class="section-title">Official Service Hubs</h2>
-              <p class="section-subtitle">Select a portal to browse its specific error guides and verified helplines.</p>
+              <p class="section-subtitle">Select a portal to browse related troubleshooting guides and official support contacts.</p>
             </div>
           </div>
           <div class="services-grid" id="services-grid" role="list" aria-label="Government service portals">
@@ -251,7 +245,7 @@
         <div class="directory-section" id="directory-section">
           <div class="section-header">
             <div>
-              <h2 class="section-title">Browse Verified Error Guides</h2>
+              <h2 class="section-title">Browse Error Guides</h2>
               <p class="section-subtitle">Filter by error category or use the search box above.</p>
             </div>
             <span
@@ -259,7 +253,7 @@
               class="results-count"
               aria-live="polite"
               aria-atomic="true"
-            >15 Verified Guides</span>
+            >15 Guides</span>
           </div>
 
           <!-- Category Filter Bar -->
@@ -342,31 +336,31 @@
         <div class="footer-col">
           <h4>Service Portals</h4>
           <ul>
-            <li><a href="#/services/passport">Passport Seva</a></li>
-            <li><a href="#/services/aadhaar">UIDAI myAadhaar</a></li>
-            <li><a href="#/services/driving-licence">Parivahan Sarathi</a></li>
-            <li><a href="#/services/pan">NSDL / Protean PAN</a></li>
+            <li><a href="/services/passport/">Passport Seva</a></li>
+            <li><a href="/services/aadhaar/">UIDAI myAadhaar</a></li>
+            <li><a href="/services/driving-licence/">Parivahan Sarathi</a></li>
+            <li><a href="/services/pan/">NSDL / Protean PAN</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Guides & Help</h4>
           <ul>
-            <li><a href="#/guides/safe-troubleshooting">Safe Troubleshooting</a></li>
-            <li><a href="#/" onclick="filterByCategory('Payment')">Payment Discrepancies</a></li>
-            <li><a href="#/" onclick="filterByCategory('Authentication')">OTP Issues</a></li>
-            <li><a href="#/" onclick="filterByCategory('Documents')">Document Uploads</a></li>
+            <li><a href="/guides/safe-troubleshooting-before-contacting-support/">Safe Troubleshooting</a></li>
+            <li><a href="/" onclick="filterByCategory('Payment')">Payment Discrepancies</a></li>
+            <li><a href="/" onclick="filterByCategory('Authentication')">OTP Issues</a></li>
+            <li><a href="/" onclick="filterByCategory('Documents')">Document Uploads</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Trust & Policies</h4>
           <ul>
-            <li><a href="#/about">About Initiative</a></li>
-            <li><a href="#/editorial-policy">Editorial Standards</a></li>
-            <li><a href="#/privacy-policy">Zero Data Privacy</a></li>
-            <li><a href="#/disclaimer">Statutory Disclaimer</a></li>
-            <li><a href="#/contact">Report a Correction</a></li>
+            <li><a href="/about/">About Initiative</a></li>
+            <li><a href="/editorial-policy/">Editorial Standards</a></li>
+            <li><a href="/privacy-policy/">Privacy &amp; Data Use</a></li>
+            <li><a href="/disclaimer/">Statutory Disclaimer</a></li>
+            <li><a href="/contact/">Correction Submissions</a></li>
           </ul>
         </div>
 

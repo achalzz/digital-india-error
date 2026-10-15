@@ -1,8 +1,8 @@
 ---
-title: "Privacy Policy"
+title: "Privacy & Data Use"
 slug: "privacy-policy"
 ---
 
-# Privacy Policy
+# Privacy & Data Use
 
-Our zero-data collection guarantee: no Aadhaar, PAN, OTP, application numbers, or payments are ever requested or stored.
+This static build does not configure analytics or feedback submission. Production privacy details depend on the selected host and enabled services.

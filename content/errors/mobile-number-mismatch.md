@@ -13,8 +13,9 @@ author: "Digital India Error Decoder Research Team"
 
 > **Editorial Standard Reminder**:
 > - Never request personal identifiers (Aadhaar, PAN, OTP, application numbers, bank info).
-> - Cite official portals and check dates.
+> - Cite the exact official instruction, notice, or Citizen's Charter section supporting each portal-specific claim.
 > - Clearly separate general network/browser troubleshooting from portal-specific guidance.
+> - Label unsupported or conflicting claims "Needs verification"; a review date alone is not proof of verification.
 
 ---
 
@@ -26,7 +27,8 @@ author: "Digital India Error Decoder Research Team"
 ## Where It Appears
 - **Service / Portal**: Aadhaar, Passport
 - **Stage of Application**: SMS OTP login or profile verification
-- **Last Verified**: 2026-10-06
+- **Recorded Review Date**: 2026-10-06
+- **Source Status**: Needs source review; claim-level references are not recorded in the project data.
 
 ---
 

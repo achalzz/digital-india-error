@@ -409,9 +409,9 @@
         "Check your email and SMS for a Transaction ID (Txn ID) or Bank Reference Number."
       ],
       "steps": [
-        "**DO NOT PAY AGAIN IMMEDIATELY**: Wait at least 24 to 48 business hours for automated reconciliation.",
+        "Do not pay again until the portal or bank confirms the first transaction failed. Follow the reconciliation timeframe shown by the portal or payment provider.",
         "Log back into the portal (e.g. Passport Seva or Parivahan) and navigate to 'Payment Status' or 'Verify Payment'.",
-        "Click the official 'Track Payment Status' or 'Re-verify Payment' button. In over 80% of cases, this pulls the updated bank token and confirms the payment.",
+        "Use the official payment-status or re-verification option if available. If the status remains unclear, contact the portal or bank using its published support route before making another payment.",
         "If status remains pending after 48 hours, raise a ticket on the portal with your Bank Reference Number and Transaction ID."
       ],
       "warning": "Making a second payment immediately may result in double deduction. Portals do not guarantee instant refunds for duplicate citizen payments.",

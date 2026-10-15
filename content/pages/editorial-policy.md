@@ -5,4 +5,4 @@ slug: "editorial-policy"
 
 # Editorial Policy & Verification Standards
 
-Our commitment to 100% verified government sources, strict separation of advice from official rules, and date-stamped revision histories.
+Portal-specific claims should cite a relevant official source, not just a portal homepage. Recorded review dates are not proof of independent verification; source and reviewer records are not yet complete for every guide.

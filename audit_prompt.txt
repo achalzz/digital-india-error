@@ -1,0 +1,135 @@
+<USER_REQUEST>
+Absolutely. Here’s a 50-point “De-Vibe-Code” UI Audit Checklist you can use before submitting a college project, portfolio project, or interview project.
+🎨 1. Visual Design — 10 points
+- [ ] Remove unnecessary gradients.
+- [ ] Avoid gradient text unless it has a real branding purpose.
+- [ ] Use 2–3 core colors maximum.
+- [ ] Use a consistent neutral background.
+- [ ] Don't make every element rounded.
+- [ ] Standardize border radius: e.g. 6px / 8px / 12px.
+- [ ] Remove excessive box-shadow.
+- [ ] Don't use glassmorphism on every card.
+- [ ] Use one consistent icon library.
+- [ ] Remove decorative icons that convey no information.
+Vibe-coded warning: gradient + glass + glow + rounded-2xl + shadow-xl everywhere.
+📐 2. Layout & Spacing — 8 points
+- [ ] Establish a spacing system: 4 / 8 / 12 / 16 / 24 / 32 / 48.
+- [ ] Align major elements to a consistent grid.
+- [ ] Keep content widths intentional.
+- [ ] Don't randomly center everything.
+- [ ] Maintain consistent card padding.
+- [ ] Keep sidebar/header dimensions consistent.
+- [ ] Avoid unnecessary empty sections.
+- [ ] Check the design at 1366px, 1440px and mobile widths.
+Professional test: Hide the colors and look only at alignment. If things don't line up, fix them.
+🔤 3. Typography — 7 points
+- [ ] Use one primary font family.
+- [ ] Establish a clear type scale.
+- [ ] Don't use huge 64–80px headings everywhere.
+- [ ] Keep body text around 14–16px.
+- [ ] Avoid excessive bold text.
+- [ ] Keep line lengths readable.
+- [ ] Use typography to establish hierarchy rather than colors and shadows.
+Example:
+Page title        28–32px / 600
+Section title     18–20px / 600
+Body              14–16px / 400
+Metadata          12–13px / 400
+
+🧩 4. Components — 8 points
+- [ ] Buttons have a clear hierarchy.
+- [ ] One primary CTA per major section.
+- [ ] Don't make every button huge.
+- [ ] Inputs have proper labels.
+- [ ] Forms have validation states.
+- [ ] Cards have a genuine purpose.
+- [ ] Tables handle empty/loading/error states.
+- [ ] Modals aren't being used for things that could be inline.
+🚩 Major red flag
+✨ AI Generate
+🚀 Get Started
+💡 Explore
+⚡ Analyze
+🎯 Optimize
+
+Five glowing CTAs on one screen = vibe-coded immediately.
+🧠 5. Product Thinking — 7 points
+This is where you can make the biggest difference.
+- [ ] Every screen has a clear purpose.
+- [ ] Every element answers a user need.
+- [ ] Remove features that aren't actually implemented.
+- [ ] Remove fake statistics.
+- [ ] Remove placeholder text.
+- [ ] Use domain-specific terminology.
+- [ ] Show meaningful real-world states.
+Instead of:
+AI-powered intelligent analytics
+
+Use:
+Average processing time: 2.4 min
+↓ 18% from last month
+
+Specificity makes a project feel engineered.
+⚙️ 6. Interaction & UX — 5 points
+- [ ] Buttons show hover states.
+- [ ] Inputs show focus states.
+- [ ] Loading states exist.
+- [ ] Errors are handled.
+- [ ] Success actions are confirmed.
+- [ ] Disabled states are visually clear.
+- [ ] Don't animate everything.
+Use animation only when it communicates something:
+Loading → progress
+Save → confirmation
+Navigation → transition
+Not:
+"Everything moves because we can."
+
+📱 7. Responsive Design — 5 points
+Check:
+- [ ] Desktop
+- [ ] Laptop
+- [ ] Tablet
+- [ ] Mobile
+- [ ] Sidebar collapse
+- [ ] Tables
+- [ ] Charts
+- [ ] Modals
+- [ ] Navigation
+- [ ] Long text
+A project that looks perfect only at 1440×900 is another classic vibe-code indicator.
+🔥 The 10 Biggest Vibe-Code Killers
+If you're short on time, fix these first:
+Priority	Remove/Fix
+🔴 1	Excessive gradients
+🔴 2	Excessive rounded cards
+🔴 3	Generic AI/SaaS copy
+🔴 4	Fake statistics
+🔴 5	Too many CTAs
+🔴 6	Excessive animations
+🔴 7	Random spacing
+🔴 8	Huge unnecessary headings
+🔴 9	Decorative icons
+🔴 10	Features that don't actually work
+
+
+The golden rule
+Vibe-coded design:
+"Look how many cool things I can put on this screen."
+
+Professional design:
+"Here is exactly what the user needs, and nothing else."
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-10-06T15:34:38+05:30.
+
+The user's current state is as follows:
+Active Document: c:\Users\achal\Mini Project Search engine\digital india error decoder\templates\error-guide-template.md (LANGUAGE_MARKDOWN)
+Cursor is on line: 1
+Other open documents:
+- c:\Users\achal\Mini Project Search engine\digital india error decoder\data\editorial-and-keywords.csv (LANGUAGE_UNSPECIFIED)
+- c:\Users\achal\Mini Project Search engine\digital india error decoder\templates\error-guide-template.md (LANGUAGE_MARKDOWN)
+Browser State:
+  Page 4AE2D78D6361BB1026A76406E07F6D80 (Digital India Error Decoder — Understand the Error. Know What To Do Next.) - http://localhost:8080/#/ [ACTIVE]
+    Viewport: 1536x730, Page Height: 3143
+</ADDITIONAL_METADATA>

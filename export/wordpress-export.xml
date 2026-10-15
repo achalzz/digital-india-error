@@ -550,7 +550,7 @@
 <h2>Step-by-Step Resolution</h2>
 <!-- /wp:heading -->
 <!-- wp:list {"ordered":true} -->
-<ol><li>**DO NOT PAY AGAIN IMMEDIATELY**: Wait at least 24 to 48 business hours for automated reconciliation.</li><li>Log back into the portal (e.g. Passport Seva or Parivahan) and navigate to &apos;Payment Status&apos; or &apos;Verify Payment&apos;.</li><li>Click the official &apos;Track Payment Status&apos; or &apos;Re-verify Payment&apos; button. In over 80% of cases, this pulls the updated bank token and confirms the payment.</li><li>If status remains pending after 48 hours, raise a ticket on the portal with your Bank Reference Number and Transaction ID.</li></ol>
+<ol><li>Do not pay again until the portal or bank confirms the first transaction failed. Follow the reconciliation timeframe shown by the portal or payment provider.</li><li>Log back into the portal (e.g. Passport Seva or Parivahan) and navigate to &apos;Payment Status&apos; or &apos;Verify Payment&apos;.</li><li>Use the official payment-status or re-verification option if available. If the status remains unclear, contact the portal or bank using its published support route before making another payment.</li><li>If status remains pending after 48 hours, raise a ticket on the portal with your Bank Reference Number and Transaction ID.</li></ol>
 <!-- /wp:list -->
 <!-- wp:heading -->
 <h2>Official Helpline</h2>
@@ -853,7 +853,7 @@
     <dc:creator><![CDATA[decoder_admin]]></dc:creator>
     <guid isPermaLink="false">https://error-decoder.in/?p=121</guid>
     <description></description>
-    <content:encoded><![CDATA[<p>Our commitment to 100% verified government sources, strict separation of advice from official rules, and date-stamped revision histories.</p>]]></content:encoded>
+    <content:encoded><![CDATA[<p>Portal-specific claims should cite a relevant official source, not just a portal homepage. Recorded review dates are not proof of independent verification; source and reviewer records are not yet complete for every guide.</p>]]></content:encoded>
     <wp:post_id>121</wp:post_id>
     <wp:post_date>2026-10-06 08:00:00</wp:post_date>
     <wp:post_name>editorial-policy</wp:post_name>
@@ -861,13 +861,13 @@
     <wp:post_type>page</wp:post_type>
   </item>
   <item>
-    <title>Privacy Policy</title>
+    <title>Privacy &amp; Data Use</title>
     <link>https://error-decoder.in/privacy-policy/</link>
     <pubDate>Tue, 06 Oct 2026 08:00:00 +0000</pubDate>
     <dc:creator><![CDATA[decoder_admin]]></dc:creator>
     <guid isPermaLink="false">https://error-decoder.in/?p=122</guid>
     <description></description>
-    <content:encoded><![CDATA[<p>Our zero-data collection guarantee: no Aadhaar, PAN, OTP, application numbers, or payments are ever requested or stored.</p>]]></content:encoded>
+    <content:encoded><![CDATA[<p>This static build does not configure analytics or feedback submission. Production privacy details depend on the selected host and enabled services.</p>]]></content:encoded>
     <wp:post_id>122</wp:post_id>
     <wp:post_date>2026-10-06 08:00:00</wp:post_date>
     <wp:post_name>privacy-policy</wp:post_name>
@@ -889,13 +889,13 @@
     <wp:post_type>page</wp:post_type>
   </item>
   <item>
-    <title>Contact &amp; Correction Feedback</title>
+    <title>Correction Submissions</title>
     <link>https://error-decoder.in/contact/</link>
     <pubDate>Tue, 06 Oct 2026 08:00:00 +0000</pubDate>
     <dc:creator><![CDATA[decoder_admin]]></dc:creator>
     <guid isPermaLink="false">https://error-decoder.in/?p=124</guid>
     <description></description>
-    <content:encoded><![CDATA[<p>Report outdated portal workflows, request coverage for new error codes, or reach the research team.</p>]]></content:encoded>
+    <content:encoded><![CDATA[<p>Correction submissions are not available in this build because no feedback service or contact address is configured.</p>]]></content:encoded>
     <wp:post_id>124</wp:post_id>
     <wp:post_date>2026-10-06 08:00:00</wp:post_date>
     <wp:post_name>contact</wp:post_name>

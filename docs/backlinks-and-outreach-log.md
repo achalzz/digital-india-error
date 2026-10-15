@@ -26,7 +26,7 @@
 > 
 > Many people, especially first-time applicants and students, encounter ambiguous errors like "Session Expired", "Record Not Found", or "Payment Successful, Status Pending", and risk being misled by unofficial agents or repeating unnecessary payments.
 > 
-> Our site provides safe, reversible checks, verified official support contacts, and strict non-affiliation disclaimers (we never collect any personal details).
+> This static build provides general troubleshooting and official support links. It does not configure analytics or feedback submission, and it never asks users for identity or application details. Hosting providers may still process request metadata in server logs.
 > 
 > If you find this resource valuable for your community or students, we would be honored if you could list it under your digital literacy / citizen resource links.
 > 

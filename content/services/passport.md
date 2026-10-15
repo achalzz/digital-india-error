@@ -9,7 +9,7 @@ url: "https://passportindia.gov.in"
 # Passport Seva Portal — Public Portal Error Directory
 
 - **Statutory Authority**: Ministry of External Affairs (CPV Division)
-- **Verified Official Helpline**: 1800-258-1800
+- **Official Helpline listed in project data**: 1800-258-1800
 - **Official Portal URL**: [https://passportindia.gov.in](https://passportindia.gov.in)
 
 ## Overview

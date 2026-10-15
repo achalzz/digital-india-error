@@ -9,7 +9,7 @@ url: "https://myaadhaar.uidai.gov.in"
 # UIDAI myAadhaar Portal — Public Portal Error Directory
 
 - **Statutory Authority**: Unique Identification Authority of India
-- **Verified Official Helpline**: 1947
+- **Official Helpline listed in project data**: 1947
 - **Official Portal URL**: [https://myaadhaar.uidai.gov.in](https://myaadhaar.uidai.gov.in)
 
 ## Overview

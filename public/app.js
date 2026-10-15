@@ -5,13 +5,13 @@
  *  1. Service hub matching bug fixed (case-insensitive exact tag match)
  *  2. Fuzzy search via Fuse.js (loaded from CDN)
  *  3. Synonym mapping for natural-language and Hinglish searches
- *  4. GA4 privacy-first tracking (hash-based SPA page views)
+ *  4. Route-specific metadata and structured data
  *  5. ARIA live region updates for screen readers
  *  6. Full keyboard navigation (tabindex, role, keydown Enter/Space)
  *  7. Portal status banner from portal-status.json
  *  8. Content staleness badge (>60 days since lastReviewed)
  *  9. Hindi / English language switcher
- * 10. Real Formspree form submission
+ * 10. Contact route explains that feedback is not configured
  * 11. PWA service worker registration
  * 12. Mobile hamburger menu
  * 13. CPGRAMS ministry-specific links on each guide
@@ -104,6 +104,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   initLang();
   registerSW();
   await Promise.all([loadData(), checkPortalStatus()]);
+  const initialQuery = new URLSearchParams(window.location.search).get('q');
+  if (initialQuery && window.location.pathname === '/' && (!window.location.hash || ['#', '#/'].includes(window.location.hash))) {
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+      searchInput.value = initialQuery;
+      applyFiltersAndSearch(initialQuery);
+    }
+  }
   setupEventListeners();
   handleRouting();
 });
@@ -186,19 +194,23 @@ function initFuse() {
 }
 
 /* ================================================================
-   PORTAL STATUS MONITORING
+   MANUALLY MAINTAINED PORTAL STATUS SNAPSHOT
    ================================================================ */
 async function checkPortalStatus() {
   try {
     const res    = await fetch('portal-status.json');
     const data   = await res.json();
     const issues = data.portals.filter(p => p.status !== 'operational');
-    if (issues.length > 0) {
-      const banner = document.getElementById('portal-status-banner');
-      if (banner) {
-        banner.textContent = `⚠️ Reported Issues: ${issues.map(p => `${p.name}${p.note ? ' — ' + p.note : ''}`).join(' | ')}`;
-        banner.classList.add('visible');
-      }
+    const banner = document.getElementById('portal-status-banner');
+    if (banner) {
+      const updatedAt = data.updated ? Date.parse(`${data.updated}T00:00:00Z`) : NaN;
+      const isStale = !Number.isFinite(updatedAt) || Date.now() - updatedAt > 48 * 60 * 60 * 1000;
+      const summary = issues.length
+        ? `Recorded issues: ${issues.map(p => `${p.name}${p.note ? ` (${p.note})` : ''}`).join('; ')}.`
+        : 'The saved file lists all portals as operational.';
+      const ageNote = isStale ? ' This snapshot may be outdated.' : '';
+      banner.textContent = `Manual status snapshot dated ${data.updated || 'unknown'}: ${summary}${ageNote} This is not a live check; confirm directly with the official portal.`;
+      banner.classList.add('visible');
     }
   } catch { /* Non-critical — silent fail */ }
 }
@@ -207,7 +219,7 @@ async function checkPortalStatus() {
    THEME
    ================================================================ */
 function initTheme() {
-  const saved = localStorage.getItem('ied_theme') || 'dark';
+  const saved = localStorage.getItem('ied_theme') || 'light';
   applyTheme(saved);
   document.getElementById('theme-toggle')?.addEventListener('click', () => {
     const current = document.documentElement.getAttribute('data-theme') || 'dark';
@@ -286,17 +298,6 @@ function closeMobileMenu() {
 }
 
 /* ================================================================
-   GA4 — PRIVACY-FIRST SPA TRACKING
-   ================================================================ */
-function trackPageView(path) {
-  if (typeof gtag !== 'function') return;
-  gtag('event', 'page_view', {
-    page_path:  path,
-    page_title: document.title
-  });
-}
-
-/* ================================================================
    EVENT LISTENERS
    ================================================================ */
 function setupEventListeners() {
@@ -345,7 +346,19 @@ function setupEventListeners() {
     });
   });
 
-  // Hash router
+  document.addEventListener('click', event => {
+    const link = event.target.closest?.('a[href^="/"]');
+    if (!link || event.defaultPrevented || link.target || link.hasAttribute('download')) return;
+
+    const destination = new URL(link.href, window.location.href);
+    if (destination.origin !== window.location.origin) return;
+    event.preventDefault();
+    if (destination.pathname === window.location.pathname && destination.search === window.location.search) return;
+
+    navigate(`${destination.pathname}${destination.search}`);
+  });
+
+  window.addEventListener('popstate', handleRouting);
   window.addEventListener('hashchange', handleRouting);
 }
 
@@ -366,10 +379,8 @@ function setActiveFilter(activeBtn) {
    ROUTER
    ================================================================ */
 function handleRouting() {
-  const hash = window.location.hash || '#/';
+  const hash = getRouteFromLocation();
   hideAllViews();
-
-  trackPageView(hash);
 
   if (hash.startsWith('#/errors/')) {
     const slug = hash.replace('#/errors/', '').replace(/\/$/, '');
@@ -383,6 +394,140 @@ function handleRouting() {
     showStaticPage(hash.replace('#/', ''));
   } else {
     showHomeView();
+  }
+
+  updateRouteMetadata(hash);
+}
+
+function getRouteFromLocation() {
+  if (window.location.hash.startsWith('#/')) return window.location.hash;
+
+  const pathname = decodeURIComponent(window.location.pathname).replace(/\/+$/, '') || '/';
+  if (pathname === '/' || pathname === '/index.html' || pathname === '/errors') return '#/';
+  if (pathname === '/guides/safe-troubleshooting-before-contacting-support') {
+    return '#/guides/safe-troubleshooting';
+  }
+  if (/^\/(errors|services)\/[^/]+$/.test(pathname)) return `#${pathname}`;
+  if (/^\/(about|editorial-policy|privacy-policy|disclaimer|contact)$/.test(pathname)) {
+    return `#${pathname}`;
+  }
+  return '#/';
+}
+
+function updateRouteMetadata(hash) {
+  const route = hash.replace(/^#/, '').replace(/\/+$/, '') || '/';
+  let canonicalPath = route === '/' ? '/' : `${route}/`;
+  let title = 'Error Decoder India | Safe Help for Government Portals';
+  let description = 'Plain-language troubleshooting for Aadhaar, PAN, Passport Seva, and Parivahan errors. Find safe next steps and official support contacts.';
+  const errorMatch = route.match(/^\/errors\/([^/]+)$/);
+  const serviceMatch = route.match(/^\/services\/([^/]+)$/);
+  const staticMatch = route.match(/^\/(about|editorial-policy|privacy-policy|disclaimer|contact)$/);
+
+  if (errorMatch) {
+    const error = appData?.errors.find(item => item.slug === errorMatch[1]);
+    if (error) {
+      title = `${error.title} | Error Decoder`;
+      description = `Understand ${error.title.toLowerCase()} and review safe next steps and official support contacts.`;
+      canonicalPath = `/errors/${error.slug}/`;
+    } else {
+      canonicalPath = '/';
+    }
+  } else if (serviceMatch) {
+    const service = appData?.services.find(item => item.slug === serviceMatch[1]);
+    if (service) {
+      title = `${service.name} Errors & Help | Error Decoder`;
+      description = `Troubleshooting guides for ${service.name}: find related portal errors, safe checks, and official support contacts.`;
+      canonicalPath = `/services/${service.slug}/`;
+    } else {
+      canonicalPath = '/';
+    }
+  } else if (route === '/guides/safe-troubleshooting') {
+    title = 'Safe Government Portal Troubleshooting | Error Decoder';
+    description = 'Non-destructive checks for portal errors, payment delays, document uploads, and account security.';
+    canonicalPath = '/guides/safe-troubleshooting-before-contacting-support/';
+  } else if (staticMatch) {
+    const pages = {
+      about: ['About Digital India Error Decoder', 'About this independent educational resource for understanding Indian public-service portal errors.'],
+      'editorial-policy': ['Editorial Policy & Verification Standards', 'How this project handles sources, review dates, corrections, and portal-specific guidance.'],
+      'privacy-policy': ['Privacy & Data Use', 'What this static build does and does not send, and what to consider before deployment.'],
+      disclaimer: ['Disclaimer | Error Decoder', 'This independent educational project is not affiliated with government departments or statutory portals.'],
+      contact: ['Correction Submissions', 'Correction submissions are unavailable in this build because no feedback service is configured.']
+    };
+    [title, description] = pages[staticMatch[1]];
+    canonicalPath = `/${staticMatch[1]}/`;
+  } else if (route !== '/') {
+    canonicalPath = '/';
+  }
+
+  const canonical = document.querySelector('link[rel="canonical"]');
+  const descriptionMeta = document.querySelector('meta[name="description"]');
+  const openGraphTitle = document.querySelector('meta[property="og:title"]');
+  const openGraphDescription = document.querySelector('meta[property="og:description"]');
+  const openGraphUrl = document.querySelector('meta[property="og:url"]');
+  const origin = canonical ? new URL(canonical.href).origin : window.location.origin;
+  const canonicalUrl = new URL(canonicalPath, `${origin}/`).href;
+  const conciseDescription = description.replace(/\s+/g, ' ').trim();
+
+  document.title = title;
+  if (descriptionMeta) descriptionMeta.setAttribute('content', conciseDescription);
+  if (canonical) canonical.setAttribute('href', canonicalUrl);
+  if (openGraphTitle) openGraphTitle.setAttribute('content', title);
+  if (openGraphDescription) openGraphDescription.setAttribute('content', conciseDescription);
+  if (openGraphUrl) openGraphUrl.setAttribute('content', canonicalUrl);
+
+  const error = errorMatch && appData?.errors.find(item => item.slug === errorMatch[1]);
+  const service = serviceMatch && appData?.services.find(item => item.slug === serviceMatch[1]);
+  let pageSchema = null;
+  let breadcrumbNames = ['Home'];
+
+  if (error) {
+    pageSchema = {
+      '@type': 'TechArticle',
+      headline: title,
+      description: conciseDescription,
+      mainEntityOfPage: canonicalUrl,
+      articleSection: error.category
+    };
+    breadcrumbNames.push(error.category, error.title);
+  } else if (service) {
+    pageSchema = {
+      '@type': 'CollectionPage',
+      name: title,
+      description: conciseDescription,
+      url: canonicalUrl
+    };
+    breadcrumbNames.push('Services', service.name);
+  } else if (route === '/guides/safe-troubleshooting') {
+    pageSchema = {
+      '@type': 'Article',
+      headline: title,
+      description: conciseDescription,
+      mainEntityOfPage: canonicalUrl
+    };
+    breadcrumbNames.push('Guides', 'Safe Troubleshooting');
+  }
+
+  const routeSchema = document.getElementById('route-structured-data');
+  if (pageSchema) {
+    const breadcrumbs = {
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbNames.map((name, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name,
+        ...(index === breadcrumbNames.length - 1 ? { item: canonicalUrl } : {})
+      }))
+    };
+    const schemaScript = routeSchema || document.createElement('script');
+    schemaScript.id = 'route-structured-data';
+    schemaScript.type = 'application/ld+json';
+    schemaScript.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [pageSchema, breadcrumbs]
+    }).replace(/</g, '\\u003c');
+    if (!routeSchema) document.head.appendChild(schemaScript);
+  } else {
+    routeSchema?.remove();
   }
 }
 
@@ -423,13 +568,10 @@ function renderServiceCards() {
   if (!container || !appData?.services) return;
 
   container.innerHTML = appData.services.map(srv => `
-    <div
+    <a
+      href="/services/${srv.slug}/"
       class="service-card"
-      role="button"
-      tabindex="0"
       aria-label="View ${srv.name} error guides"
-      onclick="navigate('#/services/${srv.slug}')"
-      onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();navigate('#/services/${srv.slug}')}"
     >
       <div class="service-card-header">
         <div class="service-badge-icon ${srv.slug}" aria-hidden="true">
@@ -445,7 +587,7 @@ function renderServiceCards() {
         <span class="service-helpline">📞 ${srv.helpline}</span>
         <span class="card-cta" aria-hidden="true">Guides →</span>
       </div>
-    </div>
+    </a>
   `).join('');
 }
 
@@ -500,7 +642,7 @@ function renderErrorGrid(errors) {
   if (!container) return;
 
   if (countBadge) {
-    countBadge.textContent = `${errors.length} Verified Guide${errors.length !== 1 ? 's' : ''}`;
+    countBadge.textContent = `${errors.length} Guide${errors.length !== 1 ? 's' : ''}`;
   }
 
   if (errors.length === 0) {
@@ -528,13 +670,10 @@ function renderErrorGrid(errors) {
     const answer  = hiGuide?.quickAnswer || err.quickAnswer;
 
     return `
-      <article
+      <a
+        href="/errors/${err.slug}/"
         class="error-card"
-        role="button"
-        tabindex="0"
         aria-label="Read guide: ${escHtml(err.title)}"
-        onclick="navigate('#/errors/${err.slug}')"
-        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();navigate('#/errors/${err.slug}')}"
       >
         <div>
           <div class="error-card-top">
@@ -549,12 +688,12 @@ function renderErrorGrid(errors) {
         </div>
         <div class="error-card-footer">
           <span class="error-date">
-            Verified: ${err.lastReviewed}
+            Review date: ${err.lastReviewed}
             ${staleHtml}
           </span>
           <span class="action-read" aria-hidden="true">Resolve →</span>
         </div>
-      </article>`;
+      </a>`;
   }).join('');
 }
 
@@ -593,7 +732,7 @@ function showGuideDetail(slug) {
   const staleNote = daysDiff > 60
     ? `<div class="callout callout-warning" style="margin-block:var(--space-4) 0;">
         <strong>⚠️ Review Notice:</strong>
-        This guide was last verified ${daysDiff} days ago. Portal workflows change frequently — 
+                This guide's recorded review date is ${daysDiff} days ago. Portal workflows change frequently —
         always cross-check with the official portal before following any steps.
        </div>` : '';
 
@@ -603,19 +742,16 @@ function showGuideDetail(slug) {
   view.innerHTML = `
     <div class="container view-container">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="#/">Home</a>
+        <a href="/">Home</a>
         <span aria-hidden="true">/</span>
-        <a href="#/" onclick="filterByCategory('${escHtml(err.category)}')">
+        <a href="/" onclick="filterByCategory('${escHtml(err.category)}')">
           ${escHtml(err.category)}
         </a>
         <span aria-hidden="true">/</span>
         <span aria-current="page">${escHtml(err.title)}</span>
       </nav>
 
-      <article class="guide-article" itemscope itemtype="https://schema.org/TechArticle">
-        <meta itemprop="dateModified" content="${err.lastReviewed}">
-        <meta itemprop="author" content="Digital India Error Decoder Research Team">
-
+      <article class="guide-article">
         <header class="guide-header">
           <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--space-2);flex-wrap:wrap;">
             <span class="badge-category ${getCategoryClass(err.category)}">${escHtml(err.category)}</span>
@@ -623,12 +759,16 @@ function showGuideDetail(slug) {
           </div>
           <h1 itemprop="headline">${escHtml(title)}</h1>
           <div class="guide-meta">
-            <span>📅 Reviewed: <time datetime="${err.lastReviewed}">${err.lastReviewed}</time></span>
+            <span>Recorded review date: <time datetime="${err.lastReviewed}">${err.lastReviewed}</time></span>
             <span>🏛️ ${err.services.join(', ')}</span>
             <span>🔍 <em>${escHtml(err.searchIntent)}</em></span>
           </div>
           ${staleNote}
         </header>
+
+        <div class="callout callout-warning" role="note">
+          <strong>Source check:</strong> Claim-level references are incomplete in this build. Confirm portal-specific requirements and timelines through the linked official portal before acting.
+        </div>
 
         <div class="callout callout-info" role="note">
           <strong>⚡ Quick Answer — What this error means:</strong>
@@ -748,9 +888,9 @@ function showServiceHub(slug) {
   view.innerHTML = `
     <div class="container view-container">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="#/">Home</a>
+        <a href="/">Home</a>
         <span aria-hidden="true">/</span>
-        <a href="#/">Services</a>
+        <a href="/">Services</a>
         <span aria-hidden="true">/</span>
         <span aria-current="page">${escHtml(srv.name)}</span>
       </nav>
@@ -782,7 +922,7 @@ function showServiceHub(slug) {
       <div class="section-header">
         <div>
           <h2 class="section-title">Guides for ${escHtml(srv.name)}</h2>
-          <p class="section-subtitle">${relatedErrors.length} verified error guide${relatedErrors.length !== 1 ? 's' : ''}</p>
+          <p class="section-subtitle">${relatedErrors.length} error guide${relatedErrors.length !== 1 ? 's' : ''}</p>
         </div>
       </div>
 
@@ -791,17 +931,14 @@ function showServiceHub(slug) {
           <span class="empty-state-icon" aria-hidden="true">📋</span>
           <h3>No guides yet for this service</h3>
           <p>We are actively researching and adding guides. Check back soon.</p>
-          <a href="#/" class="btn-secondary">← Browse All Guides</a>
+          <a href="/" class="btn-secondary">← Browse All Guides</a>
         </div>` : `
         <div class="errors-grid">
           ${relatedErrors.map(err => `
-            <article
+            <a
+              href="/errors/${err.slug}/"
               class="error-card"
-              role="button"
-              tabindex="0"
               aria-label="Read guide: ${escHtml(err.title)}"
-              onclick="navigate('#/errors/${err.slug}')"
-              onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();navigate('#/errors/${err.slug}')}"
             >
               <div>
                 <div class="error-card-top">
@@ -812,10 +949,10 @@ function showServiceHub(slug) {
                 <p class="quick-answer">${escHtml(err.quickAnswer)}</p>
               </div>
               <div class="error-card-footer">
-                <span class="error-date">Verified: ${err.lastReviewed}</span>
+                <span class="error-date">Review date: ${err.lastReviewed}</span>
                 <span class="action-read" aria-hidden="true">Read Guide →</span>
               </div>
-            </article>`).join('')}
+            </a>`).join('')}
         </div>`}
     </div>`;
 
@@ -833,7 +970,7 @@ function showGeneralTroubleshooting() {
   view.innerHTML = `
     <div class="container view-container">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="#/">Home</a> <span>/</span>
+        <a href="/">Home</a> <span>/</span>
         <span aria-current="page">Safe Troubleshooting</span>
       </nav>
       <article class="guide-article">
@@ -847,14 +984,14 @@ function showGeneralTroubleshooting() {
         </header>
 
         ${[
-          ['Verify Device Clock Synchronization (IST)',
-           'Government OTP and e-Sign gateways enforce strict 90-second cryptographic windows. If your device clock differs from Indian Standard Time (IST) by more than 90 seconds, OTPs will be rejected. Go to Settings → Date & Time → Enable "Set time automatically (network time)".'],
-          ['Clean Documents & Remove PDF Passwords',
-           'Over 40% of upload rejections are due to password-protected e-Aadhaar PDFs. Downloaded Aadhaar cards have an 8-character password. Government servers cannot decrypt them. Action: Open the PDF, select "Print to PDF", save as an unencrypted, plainly named file (e.g. addressproof.pdf) under 200 KB.'],
-          ['Respect the 24–48 Hour Banking Reconciliation Window',
-           'When UPI/NetBanking deducts money but the portal shows "Payment Failed", the treasury batch reconciliation runs overnight. Wait 24 to 48 hours, then click "Re-verify Payment" inside the portal. This resolves 80% of such cases without any second payment.'],
-          ['Use Single-Tab Isolated Browsing',
-           'Government portals store session state in a single active cookie. Opening multiple tabs for the same portal destroys the session token immediately and triggers a "Session Expired" error. Always work in a single private/incognito tab with pop-up blockers disabled.'],
+          ['Check Device Date and Time',
+           'An incorrect device clock can interfere with time-based authentication. Enable automatic date and time, then request a fresh OTP if the portal allows it. Follow the portal’s own retry and lockout instructions.'],
+          ['Check Document Requirements',
+           'Portals may limit file type, size, dimensions, or password protection. Check the instructions for the exact application before editing a document. e-Aadhaar PDFs may be password protected; use UIDAI instructions and avoid uploading identity documents to unknown conversion sites.'],
+          ['Check Payment Status Before Paying Again',
+           'If money was debited but the application still shows pending, check the official portal’s payment-status or receipt page and your bank statement. Do not pay again until the portal or bank confirms the first transaction failed. Follow the reconciliation window shown by the portal or payment provider.'],
+          ['Keep the Session Stable',
+           'Some portals limit how many active sessions or tabs can be used at once. If a session expires, return through the official portal and check whether a draft or application was saved before restarting.'],
           ['Zero Trust Toward Unofficial Intermediaries',
            'Never share SMS OTPs, Aadhaar numbers, or bank credentials with anyone claiming to "expedite" an application via phone, WhatsApp, or social media. Every legitimate government correction is performed through official portals with your own biometrics.']
         ].map(([h, p], i) => `
@@ -864,7 +1001,7 @@ function showGeneralTroubleshooting() {
           </div>`).join('')}
 
         <nav class="guide-footer-nav">
-          <a href="#/" class="btn-official">← Return to Directory</a>
+          <a href="/" class="btn-official">← Return to Directory</a>
         </nav>
       </article>
     </div>`;
@@ -895,35 +1032,23 @@ function showStaticPage(pageId) {
     'editorial-policy': {
       title: 'Editorial Policy & Verification Standards',
       body: `
-        <h2>1. Official Sources Only</h2>
-        <p>No error code, turnaround time, or portal procedure is published without verification against the official portal's User Manual, Citizen's Charter, or active help documentation.</p>
+        <h2>1. Source Records</h2>
+        <p>Portal-specific claims should link to the relevant official instruction, notice, or Citizen's Charter section. A general portal homepage is not evidence for every procedure or timeline. Source records and independent verification are not yet complete for all guides in this build.</p>
         <h2>2. Clear Distinction of Advice vs. Official Instructions</h2>
         <p>We clearly separate general browser/network troubleshooting advice from statutory government instructions, and explicitly label which is which in each guide.</p>
-        <h2>3. Date-Stamped Review Records</h2>
-        <p>Every article displays its "Last Reviewed" date. Articles unreviewed for more than 60 days are flagged with a visible "Review Due" badge while editorial review is pending.</p>
+        <h2>3. Review Dates</h2>
+        <p>Displayed dates are recorded review dates, not proof of independent verification. Review status should be confirmed against the cited source before acting on portal-specific instructions.</p>
         <h2>4. Correction Mechanism</h2>
-        <p>Readers who spot discrepancies can submit corrections via our <a href="#/contact" style="color:var(--accent);">Feedback Form</a>. We investigate every report within 7 working days.</p>
+        <p>This build has no configured feedback service. The contact page explains this limitation; correction links should not imply that a report has been submitted.</p>
         <h2>5. Non-Commercial Independence</h2>
         <p>We carry no advertising, affiliate links, sponsored content, or paid placements. We receive no commission for directing users to any official portal.</p>`
     },
     'privacy-policy': {
-      title: 'Privacy Policy — Zero Data Collection',
+      title: 'Privacy & Data Use',
       body: `
-        <p><strong>Last Updated: October 2026</strong></p>
-        <h2>Zero Sensitive Data Collection</h2>
-        <p>We do not collect, request, store, or process any sensitive personal identifiers, including:</p>
-        <ul>
-          <li>Aadhaar numbers or Virtual IDs</li>
-          <li>Permanent Account Numbers (PAN)</li>
-          <li>One-Time Passwords (OTPs)</li>
-          <li>Application Reference Numbers (ARNs)</li>
-          <li>Bank account or payment card details</li>
-          <li>Uploaded identity documents</li>
-        </ul>
-        <h2>Analytics</h2>
-        <p>We use Google Analytics 4 with IP anonymization and without cookies where technically feasible. We measure only aggregate page views and search query patterns — no personal profiling.</p>
-        <h2>Contact Form</h2>
-        <p>The correction feedback form is processed via Formspree. Submitted text is used solely for editorial review purposes and is not shared or sold.</p>`
+        <p>This static build does not configure analytics or a feedback submission service. Search terms stay in your browser and are not sent by this application.</p>
+        <p>The hosting provider may process request metadata such as IP addresses in server logs. A production privacy notice must name the actual host, its retention period, and any analytics or feedback processors before those services are enabled.</p>
+        <p>Do not enter application details or sensitive personal information into this site. For account-specific help, contact the relevant official portal.</p>`
     },
     'disclaimer': {
       title: 'Statutory Disclaimer',
@@ -935,50 +1060,18 @@ function showStaticPage(pageId) {
           Ministry of External Affairs, MoRTH, UIDAI, Income Tax Department, or any statutory authority.
         </div>
         <h2>Trademarks & Copyrights</h2>
-        <p>All official portal names (Passport Seva, Parivahan Sarathi, Aadhaar, PAN) and trademarks referenced here belong to their respective statutory owners and are used purely for identification and educational commentary.</p>
+        <p>All official portal names (Passport Seva, Parivahan Sarathi, Aadhaar, PAN) and trademarks referenced here belong to their respective statutory owners and are used for identification and educational commentary.</p>
         <h2>Limitation of Liability</h2>
         <p>Guidance on this site is for general educational information only. Portal rules and statutory guidelines change frequently. For official determinations, always refer directly to the verified government portal or authorized grievance cell.</p>
         <h2>No Legal or Financial Advice</h2>
         <p>Nothing on this website constitutes legal, financial, or official government advice. We recommend consulting an authorized CSC (Common Service Centre) operator or official helpline for case-specific guidance.</p>`
     },
     'contact': {
-      title: 'Contact & Correction Feedback',
+      title: 'Correction Submissions',
       body: `
-        <p>Found an outdated step, a new error code we don't cover, or a changed portal interface? Submit feedback below. We investigate all reports within 7 working days.</p>
-        <form
-          id="contact-form"
-          action="https://formspree.io/f/YOUR_FORM_ID"
-          method="POST"
-          style="margin-block-start:var(--space-6);"
-          onsubmit="handleContactSubmit(event)"
-        >
-          <div class="form-group">
-            <label class="form-label" for="contact-name">Your Name</label>
-            <input type="text" id="contact-name" name="name" class="form-input"
-              required placeholder="e.g. Rahul Verma">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="contact-email">Email Address</label>
-            <input type="email" id="contact-email" name="email" class="form-input"
-              required placeholder="e.g. rahul@example.com">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="contact-topic">Portal or Error Topic</label>
-            <input type="text" id="contact-topic" name="topic" class="form-input"
-              required placeholder="e.g. Parivahan LL test slot timeout">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="contact-message">Details</label>
-            <textarea id="contact-message" name="message" class="form-textarea"
-              required placeholder="Describe the error, portal URL, and what step needs updating..."></textarea>
-          </div>
-          <div class="callout callout-warning" style="font-size:0.85rem;margin-block-end:var(--space-5);">
-            ⚠️ <strong>Please do not include</strong> your Aadhaar number, PAN, OTP, application passwords, or bank details in this form.
-          </div>
-          <button type="submit" class="btn-primary">Submit Feedback</button>
-        </form>
-        <div id="form-success" hidden class="callout callout-success" style="margin-block-start:var(--space-5);" role="alert">
-          ✅ Thank you! Our editorial team will review and update the guide within 7 working days.
+        <p>Correction submissions are not available in this build because no feedback service or contact address is configured.</p>
+        <div class="callout callout-warning" role="status">
+          <strong>Nothing is sent or stored here.</strong> Do not enter personal or application details. For help with an active application, use the relevant official portal or helpline.
         </div>`
     }
   };
@@ -988,7 +1081,7 @@ function showStaticPage(pageId) {
   view.innerHTML = `
     <div class="container page-view-container">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="#/">Home</a>
+        <a href="/">Home</a>
         <span aria-hidden="true">/</span>
         <span aria-current="page">${escHtml(page.title)}</span>
       </nav>
@@ -1002,24 +1095,13 @@ function showStaticPage(pageId) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function handleContactSubmit(e) {
-  // Don't preventDefault — let Formspree handle the real POST
-  // On success, Formspree redirects; for demo/local show inline message
-  e.preventDefault();
-  const form    = document.getElementById('contact-form');
-  const success = document.getElementById('form-success');
-  if (form && success) {
-    form.style.display = 'none';
-    success.hidden = false;
-    success.focus();
-  }
-}
-
 /* ================================================================
    UTILITIES
    ================================================================ */
 function navigate(hash) {
-  window.location.hash = hash;
+  const path = hash.startsWith('#/') ? hash.slice(1) : hash;
+  window.history.pushState({}, '', path);
+  handleRouting();
 }
 
 function filterByCategory(category) {

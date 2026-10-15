@@ -13,8 +13,9 @@ author: "Digital India Error Decoder Research Team"
 
 > **Editorial Standard Reminder**:
 > - Never request personal identifiers (Aadhaar, PAN, OTP, application numbers, bank info).
-> - Cite official portals and check dates.
+> - Cite the exact official instruction, notice, or Citizen's Charter section supporting each portal-specific claim.
 > - Clearly separate general network/browser troubleshooting from portal-specific guidance.
+> - Label unsupported or conflicting claims "Needs verification"; a review date alone is not proof of verification.
 
 ---
 
@@ -26,7 +27,8 @@ author: "Digital India Error Decoder Research Team"
 ## Where It Appears
 - **Service / Portal**: Passport, Driving Licence, PAN
 - **Stage of Application**: Challan / Fee payment confirmation stage
-- **Last Verified**: 2026-10-06
+- **Recorded Review Date**: 2026-10-06
+- **Source Status**: Needs source review; claim-level references are not recorded in the project data.
 
 ---
 
@@ -46,13 +48,13 @@ author: "Digital India Error Decoder Research Team"
 ## Step-by-Step Resolution
 
 ### Step 1: Action 1
-**DO NOT PAY AGAIN IMMEDIATELY**: Wait at least 24 to 48 business hours for automated reconciliation.
+Do not pay again until the portal or bank confirms the first transaction failed. Follow the reconciliation timeframe shown by the portal or payment provider.
 
 ### Step 2: Action 2
 Log back into the portal (e.g. Passport Seva or Parivahan) and navigate to 'Payment Status' or 'Verify Payment'.
 
 ### Step 3: Action 3
-Click the official 'Track Payment Status' or 'Re-verify Payment' button. In over 80% of cases, this pulls the updated bank token and confirms the payment.
+Use the official payment-status or re-verification option if available. If the status remains unclear, contact the portal or bank using its published support route before making another payment.
 
 ### Step 4: Action 4
 If status remains pending after 48 hours, raise a ticket on the portal with your Bank Reference Number and Transaction ID.

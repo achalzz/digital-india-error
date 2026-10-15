@@ -2,7 +2,7 @@
 
 **Project Working Title**: Digital India Error Decoder  
 **Tagline**: *Understand the error. Find the reason. Know what to do next.*  
-**Domain**: `https://error-decoder.in`  
+**Target domain**: `https://error-decoder.in`
 **Date of Completion**: 2026-10-06  
 **Repository Working Directory**: `c:\Users\achal\Mini Project Search engine\digital india error decoder`  
 
@@ -16,20 +16,20 @@ Citizens faced with these messages experience high anxiety, risk paying duplicat
 
 **Digital India Error Decoder** is an independent, non-commercial public interest help engine designed to bridge this usability gap. It provides:
 1. Plain-language translations of technical error codes.
-2. Verified causes based on official documentation.
+2. Plain-language explanations and troubleshooting suggestions; claim-level source records remain incomplete.
 3. Safe, non-destructive checks that prevent duplicate payments.
 4. Clear escalation paths to official helplines and grievance cells (CPGRAMS).
-5. A strict trust boundary guaranteeing zero collection of personal identity data.
+5. A static application that does not send search terms or feedback; production hosting logs and privacy behavior depend on the selected host.
 
 ---
 
-## 2. Product Architecture & 25-Page Footprint
+## 2. Planned Content Architecture
 
-The system maintains a shallow, crawlable information architecture designed for high organic discoverability and zero crawl traps:
+The content export targets the URL structure below. The current SPA uses hash routes; crawlability depends on the selected host, route fallback, and rendered-page validation:
 
 ```
 https://error-decoder.in/
-├── / (Homepage with live search engine, category tabs, service cards)
+├── / (Homepage with client-side search, category filters, service links)
 ├── errors/ (Searchable error directory)
 │   ├── name-mismatch/
 │   ├── dob-mismatch/
@@ -54,21 +54,21 @@ https://error-decoder.in/
 ├── guides/ (General Safe Troubleshooting)
 │   └── safe-troubleshooting-before-contacting-support/
 ├── about/ (Academic & initiative background)
-├── editorial-policy/ (Official verification & update rules)
-├── contact/ (Correction submission & feedback form)
-├── privacy-policy/ (Zero-data collection pledge)
+├── editorial-policy/ (Source and review-date policy)
+├── contact/ (Explains that feedback is not configured in this build)
+├── privacy-policy/ (Current application and hosting data practices)
 └── disclaimer/ (Statutory non-affiliation declaration)
 ```
 
-**Total Core Footprint**: Exactly **25 core indexable pages**, with zero thin placeholder content.
+**Content footprint**: 25 content records are prepared for Markdown/WXR export. The static SPA now uses clean internal paths, but these URLs are not independently verified or live-indexed. Search visibility depends on deploying and testing the fallback and validating rendered HTML.
 
 ---
 
-## 3. SEO Keyword Strategy & Competitor Gap Matrix
+## 3. SEO Keyword Strategy & Research Hypotheses
 
-Based on live SERP research across the Indian search landscape, each topic targets high-intent citizen queries where existing search results either present outdated instructions or attempt to sell third-party services:
+The CSV records keyword hypotheses and intended queries. Live SERP captures and dated competitor evidence are not included here, so competitor-gap statements should be treated as research questions rather than established findings:
 
-| Topic ID | Category | Target Query Intent | Current SERP Weakness / Competitor Gap | Our Content Differentiation |
+| Topic ID | Category | Target Query Intent | SERP Hypothesis to Investigate | Proposed Content Angle |
 |:---|:---|:---|:---|:---|
 | **ERR-01** | Identity | "name mismatch in online application how to fix" | Official FAQs provide no unified comparison between Aadhaar and PAN spellings. | Clarifies "Master Anchor" concept; step-by-step correction before linking. |
 | **ERR-02** | Identity | "date of birth mismatch in application" | Fails to distinguish between legacy Aadhaar year-only records and full DOB. | Explains UIDAI's one-time lifetime DOB change restriction. |
@@ -88,9 +88,9 @@ Based on live SERP research across the Indian search landscape, each topic targe
 
 ---
 
-## 4. Technical Architecture, Security & Production Stack
+## 4. Current Stack and Deployment Plan
 
-The project adheres to a 100% free and open-source infrastructure architecture:
+The following is a proposed production topology, not a deployed or verified environment in this workspace:
 
 ```
 [ Citizen Web Client ]
@@ -110,60 +110,62 @@ The project adheres to a 100% free and open-source infrastructure architecture:
    └── WordPress Core (Modern Block Theme, Zero Heavy Builders)
 ```
 
-### Key Security & Configuration Files Implemented:
+### Deployment Reference Files (Not Live Evidence):
 1. **Nginx Web Server Hardening**: [`config/nginx-wordpress.conf`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/config/nginx-wordpress.conf)
    - Disallows PHP script execution within `/wp-content/uploads/`.
    - Denies XML-RPC (`/xmlrpc.php`) and sensitive files (`/wp-config.php`, `.git`, `.env`).
    - Implements `X-Frame-Options: SAMEORIGIN`, `nosniff`, and `CSP` security headers.
-2. **Automated Disaster Recovery Script**: [`docs/disaster-recovery-procedure.md`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/docs/disaster-recovery-procedure.md)
-   - Nightly database dumps via `mysqldump` piped through gzip.
-   - Syncs off-site via `rclone` to prevent data loss upon VPS outage.
-   - Tested and verified manual restoration drill.
+2. **Static SPA Route Fallback**: [`config/nginx-static-spa.conf`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/config/nginx-static-spa.conf) — Alternative clean-path fallback for the static app; production TLS configuration is still required.
+3. **Disaster Recovery Procedure**: [`docs/disaster-recovery-procedure.md`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/docs/disaster-recovery-procedure.md)
+   - Contains example commands for database and file backups plus a restore checklist.
+   - No scheduled job, remote storage, or completed restore drill is evidenced here.
 
 ---
 
 ## 5. Deliverables Package in Workspace
 
-All project assets have been built, validated, and placed in the workspace:
+The repository contains the following source and generated assets. Their presence does not imply a successful production deployment or external validation:
 
-1. **Interactive Live Web Application Engine**:
-   - [`public/index.html`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/public/index.html) — High-aesthetic, responsive web interface with live search and dynamic views.
-   - [`public/styles.css`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/public/styles.css) — Custom glassmorphism design system, dark/light mode tokens.
-   - [`public/app.js`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/public/app.js) — Real-time search engine with instant query matching, category filtering, and routing.
-   - [`public/sitemap.xml`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/public/sitemap.xml) & [`public/robots.txt`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/public/robots.txt) — Production SEO assets.
+1. **Static Web Application Prototype**:
+   - [`public/index.html`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/public/index.html) — Responsive interface with client-side search and dynamic views.
+   - [`public/styles.css`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/public/styles.css) — Responsive styles and light/dark theme tokens.
+   - [`public/app.js`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/public/app.js) — Client-side search, category filters, routing, and runtime metadata.
+   - [`public/sitemap.xml`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/public/sitemap.xml) & [`public/robots.txt`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/public/robots.txt) — Sitemap and crawler directives; clean paths require server support.
 2. **Master Dataset**:
    - [`data/errors-data.json`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/data/errors-data.json) — Complete structured database of all 15 errors, 4 service hubs, and metadata.
-   - [`data/editorial-and-keywords.csv`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/data/editorial-and-keywords.csv) — Fully populated keyword tracking workbook.
-3. **Written Editorial Markdown Guides (All 25 Pages)**:
-   - `content/errors/` — 15 individual, fully drafted error guides.
-   - `content/services/` — 4 comprehensive service hub pages.
+   - [`data/editorial-and-keywords.csv`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/data/editorial-and-keywords.csv) — Keyword targets and research fields; live SERP evidence is not attached.
+3. **Generated Editorial Markdown Content (25 Records)**:
+   - `content/errors/` — 15 error guide drafts; claim-level source records are incomplete.
+   - `content/services/` — 4 service hub drafts.
    - `content/guides/` — Master safe troubleshooting guide.
    - `content/pages/` — 5 governance pages (About, Editorial Policy, Privacy, Disclaimer, Contact).
-4. **WordPress WXR (XML) 1-Click Import**:
-   - [`export/wordpress-export.xml`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/export/wordpress-export.xml) — Valid WordPress eXtended RSS file containing all 25 posts and pages ready for immediate import via WordPress Admin Tools.
-5. **Audits & Outreaches**:
-   - [`docs/AUDIT_AND_SEO_REPORT.md`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/docs/AUDIT_AND_SEO_REPORT.md) — Technical SEO, Lighthouse (Score: 96+), and Schema.org audit.
+4. **WordPress WXR (XML) Export**:
+   - [`export/wordpress-export.xml`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/export/wordpress-export.xml) — Generated export; import and rendered output have not been tested.
+5. **Audit Planning & Outreach**:
+   - [`docs/AUDIT_AND_SEO_REPORT.md`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/docs/AUDIT_AND_SEO_REPORT.md) — Repository review and remaining live validation steps; no Lighthouse score is claimed.
    - [`docs/backlinks-and-outreach-log.md`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/docs/backlinks-and-outreach-log.md) — Ethical educational outreach directory.
-   - [`docs/disaster-recovery-procedure.md`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/docs/disaster-recovery-procedure.md) — Backup routines and tested recovery drill.
+   - [`docs/disaster-recovery-procedure.md`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/docs/disaster-recovery-procedure.md) — Proposed backup and restore steps; no executed restore evidence is included.
 
 ---
 
-## 6. MVP Acceptance & Evaluation Verification
+## 6. Current Verification Status
+
+These statuses reflect repository inspection and local browser checks only. They are not live-host or third-party audit results.
 
 | Verification Criteria | Handbook Requirement | Project Status | Evidence Location |
 |:---|:---|:---|:---|
-| **Live Web Presence** | Accessible web application with search & categories | **Passed** | Running locally on `http://localhost:8080/`, deployable via Nginx/WP |
-| **Trust Boundary** | No collection of Aadhaar, PAN, OTP, or payments | **Passed** | Zero form inputs; explicit disclaimers across all views |
-| **Page Breadth** | 25 distinct core pages (15 guides, 4 hubs, 1 guide, 5 governance) | **Passed** | Generated in `content/` and `export/wordpress-export.xml` |
-| **Search Engine Utility** | Instant keyword and category matching | **Passed** | Built in `public/app.js` with client-side indexing |
-| **Keyword Strategy** | SERP gap analysis and documented query themes | **Passed** | [`data/editorial-and-keywords.csv`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/data/editorial-and-keywords.csv) |
-| **Technical SEO** | Schema.org JSON-LD, sitemap, canonicals, 0 broken links | **Passed** | [`docs/AUDIT_AND_SEO_REPORT.md`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/docs/AUDIT_AND_SEO_REPORT.md) |
-| **Mobile Performance** | Lighthouse > 90 on mobile | **Passed** | 96 Performance, 100 Accessibility, 100 SEO |
-| **Disaster Recovery** | Automated backup script & tested restore | **Passed** | [`docs/disaster-recovery-procedure.md`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/docs/disaster-recovery-procedure.md) |
-| **WordPress Readiness** | WordPress compatibility & migration path | **Passed** | [`export/wordpress-export.xml`](file:///c:/Users/achal/Mini%20Project%20Search%20engine/digital%20india%20error%20decoder/export/wordpress-export.xml) |
+| **Local application** | Search, routes, categories, responsive layout | **Locally checked** | Static SPA; no hosted domain verified |
+| **Privacy boundary** | No unnecessary sensitive-data collection | **Partially addressed** | No analytics or feedback endpoint; hosting logs depend on provider |
+| **Content breadth** | 15 guides, 4 hubs, guide, 5 policy pages | **Generated** | Markdown and WXR exist; editorial verification is incomplete |
+| **Search** | Search and category filtering | **Locally checked** | Client-side index; `?q=` works on the homepage |
+| **Keyword research** | Live SERP gap analysis and documented query themes | **Not evidenced** | CSV has target themes; dated SERP captures are absent |
+| **Technical SEO** | Crawlable clean URLs, route metadata, valid structured data | **Partial / deployment-dependent** | Static fallback exists; runtime metadata needs live crawl validation and prerendering for non-JavaScript consumers |
+| **Performance** | Lighthouse and Core Web Vitals | **Not measured** | Run on deployed build and archive the report |
+| **Disaster recovery** | Backup and restore drill | **Procedure only** | No execution or restore evidence included |
+| **WordPress import** | WXR import and rendered pages | **Not tested** | Export is generated but import verification is outstanding |
 
 ---
 
 ## 7. Conclusion
 
-The **Digital India Error Decoder** project has been executed to the highest standard of academic rigor and production readiness. It provides a real, actionable citizen utility for Indian public service users, demonstrates best practices in technical SEO, responsive web design, and security architecture, and is fully packaged and ready for immediate presentation and grading.
+The **Digital India Error Decoder** is a local prototype with troubleshooting content and a responsive client-side search experience. Before describing it as production-ready, complete claim-level source review, choose and test one deployment architecture, verify clean URLs and metadata on that host, and run the documented performance, accessibility, security, and recovery checks.
