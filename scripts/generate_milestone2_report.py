@@ -153,7 +153,7 @@ def generate_report():
         ["Team Name", "Team Error Decoder (GovTech SEO Group)"],
         ["Live Website URL & hosting", "https://digital-india-error.netlify.app/ (Netlify High-Performance Edge CDN & SSL)"],
         ["Blog Article URL (with outbound links)", "https://digital-india-error.netlify.app/guides/safe-troubleshooting-before-contacting-support/"],
-        ["UpdraftPlus Backup Link (Google Drive)", "https://drive.google.com/drive/folders/1_EXAMPLE_UPDRAFT_BACKUP_TOKEN_DRIVE?usp=sharing"],
+        ["UpdraftPlus Backup Link (Google Drive)", "https://drive.google.com/drive/folders/1vsrcYtCfRPNg6kImEsaunVgCwsWCD3Tq?usp=sharing"],
         ["Submission Date (DD-MM-YYYY)", "26-11-2026"]
     ]
     t = doc.add_table(rows=len(cover_data), cols=2)
@@ -440,7 +440,7 @@ def generate_report():
         ["Backup date", "22-11-2026 (Full pre-submission milestone backup)"],
         ["Contents included (database, plugins, themes, uploads, others)", "Full WordPress/LEMP & Static Package: MySQL Database (`errordecoder_db`), Plugins (Rank Math SEO, UpdraftPlus), Themes (Blank Canvas Block Theme), Uploads, Nginx VHost configurations, and Netlify CI/CD build artifacts."],
         ["Total size (MB)", "48.6 MB (Compressed ZIP archive)"],
-        ["Google Drive link, shared as \"Anyone with the link\"", "https://drive.google.com/drive/folders/1_EXAMPLE_UPDRAFT_BACKUP_TOKEN_DRIVE?usp=sharing"]
+        ["Google Drive link, shared as \"Anyone with the link\"", "https://drive.google.com/drive/folders/1vsrcYtCfRPNg6kImEsaunVgCwsWCD3Tq?usp=sharing"]
     ]
     t = doc.add_table(rows=len(backup_data), cols=2)
     for r_idx, row in enumerate(backup_data):
@@ -510,8 +510,16 @@ def generate_report():
             t.cell(r_idx, c_idx).paragraphs[0].text = val
     style_table(t, [1.1, 4.9, 1.0], [WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.CENTER])
 
-    doc.save("Milestone_II_Report.docx")
-    print("✓ Successfully generated Milestone_II_Report.docx")
+    try:
+        doc.save("Milestone_II_Report.docx")
+        print("✓ Successfully generated Milestone_II_Report.docx")
+    except Exception as e:
+        print(f"Notice: Milestone_II_Report.docx is currently open in Word ({e}).")
+    
+    doc.save("CSET489_M2_Team14.docx")
+    print("✓ Successfully generated CSET489_M2_Team14.docx")
+    doc.save("Milestone_II_Report_Updated.docx")
+    print("✓ Successfully generated Milestone_II_Report_Updated.docx")
 
 if __name__ == "__main__":
     generate_report()

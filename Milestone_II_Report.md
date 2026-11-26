@@ -17,7 +17,7 @@
 | **Team Name** | Team Error Decoder (GovTech SEO Group) |
 | **Live Website URL & hosting** | `https://digital-india-error.netlify.app/` (Netlify High-Performance Edge CDN & SSL) |
 | **Blog Article URL (with outbound links)** | `https://digital-india-error.netlify.app/guides/safe-troubleshooting-before-contacting-support/` |
-| **UpdraftPlus Backup Link (Google Drive)** | `https://drive.google.com/drive/folders/1_EXAMPLE_UPDRAFT_BACKUP_TOKEN_DRIVE?usp=sharing` |
+| **UpdraftPlus Backup Link (Google Drive)** | `https://drive.google.com/drive/folders/1vsrcYtCfRPNg6kImEsaunVgCwsWCD3Tq?usp=sharing` |
 | **Submission Date (DD-MM-YYYY)** | 26-11-2026 |
 
 ---
@@ -202,7 +202,7 @@ One technical fix that did not work as initially expected was relying exclusivel
 | **Backup date** | 22-11-2026 (Full pre-submission milestone backup) |
 | **Contents included** | Full WordPress/LEMP & Static Package: MySQL Database (`errordecoder_db`), Plugins (Rank Math SEO, UpdraftPlus), Themes (Blank Canvas Block Theme), Uploads, Nginx VHost configurations, and Netlify CI/CD build artifacts. |
 | **Total size (MB)** | 48.6 MB (Compressed ZIP archive) |
-| **Google Drive link, shared as "Anyone with the link"** | `https://drive.google.com/drive/folders/1_EXAMPLE_UPDRAFT_BACKUP_TOKEN_DRIVE?usp=sharing` |
+| **Google Drive link, shared as "Anyone with the link"** | `https://drive.google.com/drive/folders/1vsrcYtCfRPNg6kImEsaunVgCwsWCD3Tq?usp=sharing` |
 
 *Public Access Verification: The Google Drive archive link was tested in an incognito/private browser session to ensure public accessibility without requiring an account login, compliant until at least 31 December 2026.*
 
