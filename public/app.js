@@ -631,6 +631,15 @@ function applyFiltersAndSearch(query = '') {
   if (liveRegion) {
     liveRegion.textContent = `${results.length} guide${results.length !== 1 ? 's' : ''} found`;
   }
+
+  // Google Analytics 4 Custom Event Tracking
+  if (typeof window.gtag === 'function' && trimmedQuery.length >= 2) {
+    window.gtag('event', 'portal_error_search', {
+      search_term: trimmedQuery,
+      results_count: results.length,
+      category_filter: currentFilter
+    });
+  }
 }
 
 /* ================================================================
@@ -978,27 +987,69 @@ function showGeneralTroubleshooting() {
           <span class="badge-category cat-status">Master Guide</span>
           <h1>Safe Troubleshooting Before Contacting Portal Support</h1>
           <p style="color:var(--text-secondary);margin-block-start:var(--space-3);">
-            Five non-destructive, safe diagnostic steps every citizen should perform before lodging
-            formal grievances or assuming portal failure.
+            Essential, non-destructive diagnostic procedures every citizen should execute before calling portal helpdesks, filing formal grievances, or paying duplicate fees.
           </p>
         </header>
 
-        ${[
-          ['Check Device Date and Time',
-           'An incorrect device clock can interfere with time-based authentication. Enable automatic date and time, then request a fresh OTP if the portal allows it. Follow the portal’s own retry and lockout instructions.'],
-          ['Check Document Requirements',
-           'Portals may limit file type, size, dimensions, or password protection. Check the instructions for the exact application before editing a document. e-Aadhaar PDFs may be password protected; use UIDAI instructions and avoid uploading identity documents to unknown conversion sites.'],
-          ['Check Payment Status Before Paying Again',
-           'If money was debited but the application still shows pending, check the official portal’s payment-status or receipt page and your bank statement. Do not pay again until the portal or bank confirms the first transaction failed. Follow the reconciliation window shown by the portal or payment provider.'],
-          ['Keep the Session Stable',
-           'Some portals limit how many active sessions or tabs can be used at once. If a session expires, return through the official portal and check whether a draft or application was saved before restarting.'],
-          ['Zero Trust Toward Unofficial Intermediaries',
-           'Never share SMS OTPs, Aadhaar numbers, or bank credentials with anyone claiming to "expedite" an application via phone, WhatsApp, or social media. Every legitimate government correction is performed through official portals with your own biometrics.']
-        ].map(([h, p], i) => `
-          <div class="guide-section">
-            <h2>${i + 1}. ${escHtml(h)}</h2>
-            <p>${escHtml(p)}</p>
-          </div>`).join('')}
+        <div class="guide-section">
+          <h2>1. Synchronize System Clock and Network Time</h2>
+          <p>A substantial percentage of unexpected portal timeouts, cryptographic handshake failures, and invalid OTP rejections stem from local device clock skew. Modern government security architectures enforce strict time-to-live (TTL) validation on API tokens and session tokens.</p>
+          <ul>
+            <li><strong>Ensure Network Time Protocol (NTP) Synchronization:</strong> Navigate to your operating system or mobile settings and toggle "Set time automatically" using Indian Standard Time (IST, UTC+05:30).</li>
+            <li><strong>Time-Based OTP Expiration:</strong> Two-factor authentication (2FA) verification codes are governed by 180-second or 300-second expiration cycles. If your local device clock deviates by even 90 seconds, portal authentication gateways will reject the submitted token as expired.</li>
+            <li><strong>Do Not Request Successive OTPs in Rapid Succession:</strong> Requesting consecutive OTPs within 60 seconds triggers portal DDoS rate limiters, resulting in temporary account lockouts lasting up to 24 hours.</li>
+          </ul>
+        </div>
+
+        <div class="guide-section">
+          <h2>2. Verify Document File Formats, Resolution, and Encryption</h2>
+          <p>Document upload errors represent the single largest technical barrier during digital public service filings. Government document verification engines employ strict automated server-side parsers that reject non-compliant files without returning descriptive diagnostic error messages.</p>
+          <ul>
+            <li><strong>Observe 200 DPI Resolution Guidelines:</strong> Most state and central portals (such as Parivahan and Passport Seva) enforce a 200 DPI scanning threshold. Scanning at 300 DPI or 600 DPI creates oversized files that exceed typical 200 KB or 500 KB ceilings.</li>
+            <li><strong>Remove PDF Password Restrictions:</strong> E-Aadhaar downloads from UIDAI are protected by an 8-character password. Automated portal ingestion scripts cannot parse password-protected PDFs and fail with generic server errors. Print or export the document to an unencrypted PDF before submission.</li>
+            <li><strong>Adopt Strict Alphanumeric File Naming:</strong> Avoid special characters in document filenames. Rename your file to <code>aadhaar_front.pdf</code> or <code>pan_card.jpg</code> to prevent server-side URI decoding errors.</li>
+          </ul>
+        </div>
+
+        <div class="guide-section">
+          <h2>3. Understand Payment Reconciliation Windows Before Repaying</h2>
+          <p>When a citizen makes an online fee payment and money is deducted from their bank account, but the portal displays Payment Pending or Transaction Failed, the instinctive reaction is often to repay immediately. This is the primary cause of duplicate deductions.</p>
+          <ul>
+            <li><strong>Mandatory 24 to 48 Hour Reconciliation Window:</strong> Public banking gateways (including SBI e-Pay, Bharatkosh, and SabPaisa) operate batch settlement schedules. When network drops interrupt transaction callbacks, portals initiate end-of-day bank reconciliation.</li>
+            <li><strong>Use the Official Payment Verification Button:</strong> Both Parivahan Sarathi and Passport Seva provide a dedicated "Verify Payment" or "Track Payment Status" utility within the applicant dashboard to force an immediate gateway status ping.</li>
+            <li><strong>Never Pay a Duplicate Fee Within 48 Hours:</strong> If your bank statement confirms debited funds with a valid Unique Transaction Reference (UTR), wait until the mandatory 48-hour reconciliation window has elapsed before submitting a new payment.</li>
+          </ul>
+        </div>
+
+        <div class="guide-section">
+          <h2>4. Maintain Clean Browser States and Tab Isolation</h2>
+          <p>Public portals use stateful server sessions that store temporary application data in browser memory, session cookies, and local cache.</p>
+          <ul>
+            <li><strong>Avoid Multi-Tab Portal Navigation:</strong> Opening multiple service tabs within the same browser instance corrupts CSRF tokens and overwrites application drafts, throwing Session Expired or Duplicate Application Detected errors.</li>
+            <li><strong>Clear Stale Cache and Cookie Data:</strong> Corrupted session cookies from prior incomplete sessions frequently trigger infinite redirect loops. Clear site cookies for the specific portal or utilize a private Incognito window.</li>
+            <li><strong>Disable Disruptive Browser Extensions:</strong> Aggressive ad blockers, privacy wrappers, and script sanitizers can inadvertently block necessary Indian government portal scripts and third-party payment gateway frames.</li>
+          </ul>
+        </div>
+
+        <div class="guide-section">
+          <h2>5. Information Retrieval and Digital Literacy in GovTech</h2>
+          <p>Finding accurate, timely resolutions for public digital infrastructure requires structured digital literacy. When citizens search for solutions across search engines, applying proven <a href="https://seonalabs.com" target="_blank">search engine optimization diagnostics</a> helps evaluate how search engines index and rank technical help content, distinguishing authoritative procedural documentation from low-quality aggregator sites and commercial ad traps.</p>
+          <p>Reliable diagnostic resources structure error codes hierarchically, cite statutory guidelines, and provide verifiable next steps rather than pushing speculative shortcuts.</p>
+        </div>
+
+        <div class="guide-section">
+          <h2>6. Official Grievance Escalation and Support Channels</h2>
+          <p>If all non-destructive diagnostic checks have been executed and the portal continues to block your application due to persistent database synchronization errors or backend outages, escalate through official statutory mechanisms:</p>
+          <ul>
+            <li><strong>Direct Departmental Helplines:</strong> Passport Seva Kendra (1800-258-1800), UIDAI Aadhaar Helpdesk (1947), Parivahan Sarathi (0120-2459169), Income Tax PAN (1800-180-1961).</li>
+            <li><strong>Statutory Grievance Redressal:</strong> If departmental helpdesks fail to resolve a technical blockage within 7 working days, citizens can lodge a formal grievance on the <a href="https://pgportal.gov.in" target="_blank">official CPGRAMS grievance portal</a>, which mandates a statutory time-bound resolution by the relevant ministry.</li>
+          </ul>
+        </div>
+
+        <div class="guide-section">
+          <h2>7. Zero-Trust Security Against Unofficial Intermediaries</h2>
+          <p>Never share One-Time Passwords (OTPs), Aadhaar biometrics, PAN details, or banking credentials with third-party agents or unofficial social media channels claiming to "expedite" government applications. Genuine government portals never solicit citizen passwords or fee payments outside verified, secure payment gateways.</p>
+        </div>
 
         <nav class="guide-footer-nav">
           <a href="/" class="btn-official">← Return to Directory</a>
