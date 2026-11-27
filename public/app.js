@@ -132,7 +132,7 @@ function registerSW() {
    ================================================================ */
 async function loadData() {
   try {
-    const res  = await fetch('data/errors-data.json');
+    const res  = await fetch('/data/errors-data.json');
     appData    = await res.json();
     initFuse();
     renderHomePage();
@@ -145,7 +145,7 @@ async function loadData() {
 async function loadHindi() {
   if (hiData) return;
   try {
-    const res = await fetch('i18n/hi.json');
+    const res = await fetch('/i18n/hi.json');
     hiData    = await res.json();
   } catch (err) {
     console.warn('Hindi data unavailable, falling back to English:', err);
@@ -198,7 +198,7 @@ function initFuse() {
    ================================================================ */
 async function checkPortalStatus() {
   try {
-    const res    = await fetch('portal-status.json');
+    const res    = await fetch('/portal-status.json');
     const data   = await res.json();
     const issues = data.portals.filter(p => p.status !== 'operational');
     const banner = document.getElementById('portal-status-banner');
