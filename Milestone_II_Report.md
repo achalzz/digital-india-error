@@ -13,7 +13,7 @@
 
 | Field | Entry |
 |:---|:---|
-| **Team ID (generate using the portal)** | Team 14 [Assigned Course Team ID] |
+| **Team ID (generate using the portal)** | `seo108` |
 | **Team Name** | Team Error Decoder (GovTech SEO Group) |
 | **Live Website URL & hosting** | `https://digital-india-error.netlify.app/` (Netlify High-Performance Edge CDN & SSL) |
 | **Blog Article URL (with outbound links)** | `https://digital-india-error.netlify.app/guides/safe-troubleshooting-before-contacting-support/` |

@@ -149,7 +149,7 @@ def generate_report():
     # Project Overview Table
     cover_data = [
         ["Field", "Entry"],
-        ["Team ID (generate using the portal)", "Team 14 [Assigned Course Team ID]"],
+        ["Team ID (generate using the portal)", "seo108"],
         ["Team Name", "Team Error Decoder (GovTech SEO Group)"],
         ["Live Website URL & hosting", "https://digital-india-error.netlify.app/ (Netlify High-Performance Edge CDN & SSL)"],
         ["Blog Article URL (with outbound links)", "https://digital-india-error.netlify.app/guides/safe-troubleshooting-before-contacting-support/"],
@@ -510,7 +510,7 @@ def generate_report():
             t.cell(r_idx, c_idx).paragraphs[0].text = val
     style_table(t, [1.1, 4.9, 1.0], [WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.CENTER])
 
-    for filename in ["Milestone_II_Report.docx", "CSET489_M2_Team14.docx", "Milestone_II_Report_Updated.docx", "CSET489_M2_Team14_Latest.docx"]:
+    for filename in ["CSET489_M2_seo108.docx", "CSET489_M2_SEO108.docx", "Milestone_II_Report.docx", "CSET489_M2_Team14.docx", "Milestone_II_Report_Updated.docx"]:
         try:
             doc.save(filename)
             print(f"✓ Successfully generated {filename}")
