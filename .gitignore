@@ -1,3 +1,17 @@
 ~$*
 .DS_Store
 Thumbs.db
+
+# Reports, templates, and team-specific files
+Milestone_I_Report*
+Milestone_II_Report*
+CSET489_M2_*
+CSET489*Template*
+audit_prompt.txt
+docs/AUDIT_AND_SEO_REPORT.md
+docs/FINAL_PROJECT_REPORT.md
+docs/backlinks-and-outreach-log.md
+scripts/generate_milestone1_md.py
+scripts/generate_milestone1_report.py
+scripts/generate_milestone2_report.py
+scratch/inspect_template.py
